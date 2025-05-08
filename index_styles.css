@@ -5,7 +5,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("images/Group 3.png") no-repeat center center fixed,
+  background: url("images/bg_index.png") no-repeat center center fixed,
     linear-gradient(135deg, #3e3807 0%, #101333 100%);
   background-size: cover;
   font-family: Arial, sans-serif;
