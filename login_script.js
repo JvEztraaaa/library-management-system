@@ -7,7 +7,7 @@ function handleLogin() {
 
     if (email && password) {
         if (storedPassword && password === storedPassword) {
-            window.location.href = "Home Page.html";
+            window.location.href = "homepage.html";
         } else {
             alert("Incorrect email or password.");
         }
@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (emailInput) emailInput.value = emailFromSignup;
     }
 
-    const signupLink = document.querySelector(".tab[href='SignUp.html']");
+    const signupLink = document.querySelector(".tab[href='ignUp.html']");
     if (signupLink) {
         signupLink.addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = "SignUp.html";
+            window.location.href = "signup.html";
         });
     }
 

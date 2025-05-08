@@ -20,5 +20,5 @@ function handleSignup() {
 
     alert("Account created successfully! Redirecting to login...");
     const encodedEmail = encodeURIComponent(email);
-    window.location.href = `Login.html?email=${encodedEmail}`;
+    window.location.href = `login.html?email=${encodedEmail}`;
 }
