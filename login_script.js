@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (emailInput) emailInput.value = emailFromSignup;
     }
 
-    const signupLink = document.querySelector(".tab[href='ignUp.html']");
+    const signupLink = document.querySelector(".tab[href='signup.html']");
     if (signupLink) {
         signupLink.addEventListener("click", (e) => {
             e.preventDefault();
