@@ -144,8 +144,26 @@ body::before {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 1.3rem;
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  padding: 12px 24px;
+  font-size: 2rem; /* Bigger size */
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 10px #ffffff88;
+  letter-spacing: 1.5px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 10px #ffffff88;
+  }
+  50% {
+    text-shadow: 0 0 16px #ffffffcc;
+  }
 }
