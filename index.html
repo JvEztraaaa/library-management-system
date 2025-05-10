@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <title>Loading Page</title> -->
-    <link rel="stylesheet" href="index_styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index_styles.css" />
+  </head>
+
+  <body>
     <div class="header">
-        <img src="images/logo_nudasma.png" alt="Logo" class="logo">
+      <img src="images/logo_nudasma.png" alt="Logo" class="logo" />
     </div>
+
     <div class="content">
-        <h1>Gateway to the Infinite<br> Knowledge.</h1>
-        <div class="buttons">
-            <a href="login.html" class="button login">Log in</a>
-            <a href="signup.html" class="button signup">Sign up</a>
-        </div>
+      <div class="container">
+        <input type="text" placeholder="Student Number" class="input-field" />
+      </div>
+
+      <div class="buttons">
+        <a href="login.html" class="button login">Log in</a>
+        <a href="signup.html" class="button signup">Sign up</a>
+      </div>
     </div>
-</body>
+
+    <div class="info-box">
+      <h3>Library Stats</h3>
+      <p>Total Students: 0</p>
+      <p>Male: 0</p>
+      <p>Female: 0</p>
+      <p>Staff on Duty: </p>
+    </div>
+
+    <div class="clock" id="clock"></div>
+  </body>
 </html>

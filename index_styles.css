@@ -5,7 +5,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("images/bg_index.png") no-repeat center center fixed,
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url("images/bg_index.png") no-repeat center center fixed,
     linear-gradient(135deg, #3e3807 0%, #101333 100%);
   background-size: cover;
   font-family: Arial, sans-serif;
@@ -86,4 +87,65 @@ body::before {
 
 .button.signup:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  min-width: 500px;
+  min-height: 20vh;
+  margin: 30px auto;
+}
+
+.input-field {
+  border: none;
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+.input-field:focus {
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+  border: 1px solid #007bff;
+}
+
+.info-box {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px 30px;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 220px;
+  font-size: 16px;
+}
+
+.info-box h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+.clock {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
