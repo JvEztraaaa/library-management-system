@@ -25,6 +25,13 @@ body::before {
   z-index: -1;
 }
 
+.main-heading {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
 .header {
   position: absolute;
   top: 20px;
@@ -67,7 +74,11 @@ body::before {
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
-  transition: background 0.3s;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.03);
 }
 
 .button.login {
@@ -114,8 +125,8 @@ body::before {
 }
 
 .input-field:focus {
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
   border: 1px solid #007bff;
+  box-shadow: 0 0 10px #007bff;
 }
 
 .info-box {
