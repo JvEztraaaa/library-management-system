@@ -11,6 +11,7 @@ body {
   position: relative;
 }
 
+/* === Header === */
 .header {
   position: absolute;
   top: 20px;
@@ -20,36 +21,47 @@ body {
 .logo {
   width: 450px;
   height: 80px;
+  max-width: 90%;
 }
 
+/* === Sign-Up Container === */
 .signup-container {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 30px;
-  box-shadow: 0 0 20px rgba(60, 59, 59, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   width: 300px;
   text-align: center;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
 .signup-container h2 {
   margin: 0 0 20px;
   font-size: 24px;
-  height: 30px;
+  height: 40px;
   padding-bottom: 10px;
 }
 
 .signup-container .tab {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-container .tab:hover {
+  color: #007bff;
+  text-shadow: 0 0 6px #004aad;
 }
 
 .signup-container .tab.active {
-  color: #250d82;
+  color: #007bff;
+  font-weight: bold;
 }
 
+/* === Form === */
 .signup-container .form {
   display: block;
   background: transparent;
@@ -57,37 +69,51 @@ body {
 
 .signup-container input {
   width: 100%;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 12px;
+  margin: 10px 0;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-top: none;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   color: white;
   font-size: 16px;
   box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container input:focus {
+  border: 1px solid #007bff;
+  box-shadow: 0 0 12px #004aad;
+  outline: none;
 }
 
 .signup-container input::placeholder {
   color: #ccc;
 }
 
+/* === Button === */
 .signup-container button {
   width: 100%;
-  padding: 10px;
-  background: #250d82;
+  padding: 12px;
+  background: linear-gradient(135deg, #250d82, #004aad);
   border: none;
   border-radius: 12px;
   color: white;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   margin-top: 40px;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .signup-container button:hover {
-  background: #0056b3;
+  background: linear-gradient(135deg, #ecb419, #f0d45b);
+  color: #007bff;
+  text-shadow: 0 0 10px #007bffcc, 0 0 15px #004aad88;
 }
 
+/* === Footer Links === */
 .footer-links {
   position: absolute;
   bottom: 20px;
@@ -100,8 +126,55 @@ body {
   color: white;
   text-decoration: none;
   opacity: 0.8;
+  margin: 0 15px;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .footer-links a:hover {
   opacity: 1;
+  color: #007bff;
+  text-shadow: 0 0 6px #00bfff88;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .signup-container {
+    width: 80%;
+    padding: 30px;
+  }
+
+  .logo {
+    width: 300px;
+    height: auto;
+  }
+
+  .signup-container h2 {
+    font-size: 20px;
+  }
+
+  .signup-container button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 20px;
+  }
+
+  .signup-container input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .signup-container button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .footer-links {
+    font-size: 12px;
+    right: 10px;
+    bottom: 10px;
+  }
 }
