@@ -11,7 +11,7 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 70vh; /* Top half of the page */
+  height: 70vh;
   overflow: hidden;
 }
 
