@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="login_styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="css/login_styles.css" />
 </head>
+
 <body>
-    <div class="header">
-        <img src="images/logo_nudasma.png" alt="Logo" class="logo">
+  <!-- Header -->
+  <div class="header">
+    <a href="../index.html">
+      <img src="images/logo_nudasma.png" alt="NU Dasma Logo" class="logo" />
+    </a>
+  </div>
+
+  <!-- Login Container -->
+  <div class="login-container">
+    <h2>
+      <span class="tab active">Log in</span> |
+      <a href="signup.html" class="tab">Sign up</a>
+    </h2>
+
+    <div class="form">
+      <input type="email" placeholder="Email" id="email" />
+      <input type="password" placeholder="Password" id="password" />
+      <button onclick="handleLogin()">Log in</button>
     </div>
-    <div class="login-container">
-        <h2>
-            <span class="tab active">Log in</span> | 
-            <a href="signup.html" class="tab">Sign up</a>
-        </h2>
-        <div class="form">
-            <input type="email" placeholder="Email" id="email">
-            <input type="password" placeholder="Password" id="password">
-            <button onclick="handleLogin()">Log in</button>
-        </div>
-    </div>
-    <div class="footer-links">
-        <a href="#">Contact us</a> | <a href="#">About us</a>
-    </div>
-    <script src="login_script.js"></script>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Contact Us</a> |
+    <a href="#">About Us</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/login_script.js"></script>
 </body>
 </html>

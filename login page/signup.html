@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="signup_styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="css/signup_styles.css" />
 </head>
+
 <body>
-    <div class="header">
-        <img src="images/logo_nudasma.png" alt="Logo" class="logo">
+  <!-- Header -->
+  <div class="header">
+    <a href="../index.html">
+      <img src="images/logo_nudasma.png" alt="NU Dasma Logo" class="logo" />
+    </a>
+  </div>
+
+  <!-- Signup Container -->
+  <div class="signup-container">
+    <h2>
+      <a href="login.html" class="tab">Log in</a> |
+      <span class="tab active">Sign up</span>
+    </h2>
+
+    <div class="form">
+      <input type="text" placeholder="Create Username" id="username" />
+      <input type="email" placeholder="School Email" id="school-email" />
+      <input type="text" placeholder="Student Number" id="student-number" />
+      <input type="password" placeholder="Create Password" id="create-password" />
+      <input type="password" placeholder="Confirm Password" id="confirm-password" />
+      <button onclick="handleSignup()">Sign up</button>
     </div>
-    <div class="signup-container">
-        <h2>
-            <a href="login.html" class="tab">Log in</a> | 
-            <span class="tab active">Sign up</span>
-        </h2>
-        <div class="form">
-            <input type="text" placeholder="Create Username" id="username">
-            <input type="email" placeholder="School Email" id="school-email">
-            <input type="text" placeholder="Student Number" id="student-number">
-            <input type="password" placeholder="Create Password" id="create-password">
-            <input type="password" placeholder="Confirm Password" id="confirm-password">
-            <button onclick="handleSignup()">Sign up</button>
-        </div>
-    </div>
-    <div class="footer-links">
-        <a href="#">Contact us</a> | <a href="#">About us</a>
-    </div>
-    <script src="signup_script.js"></script>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Contact Us</a> |
+    <a href="#">About Us</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/signup_script.js"></script>
 </body>
 </html>
