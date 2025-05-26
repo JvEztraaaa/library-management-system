@@ -138,6 +138,29 @@ body::before {
   animation: pulse 2s infinite ease-in-out;
 }
 
+/* === Student Homepage Link === */
+.student-link {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.student-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #007bff;
+  text-shadow: 0 0 8px #00bfff88;
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -171,6 +194,13 @@ body::before {
     bottom: 20px;
     transform: translateX(-50%);
     font-size: 14px;
+  }
+
+  .student-link {
+    right: 20px;
+    bottom: 80px;
+    font-size: 0.9rem;
+    padding: 10px 16px;
   }
 }
 
