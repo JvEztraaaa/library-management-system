@@ -1,3 +1,4 @@
+/* === Global Styles === */
 body {
   margin: 0;
   height: 100vh;
@@ -5,13 +6,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: Arial, sans-serif;
+  position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
     url("../images/bg_index.png") no-repeat center center fixed,
     linear-gradient(135deg, #3e3807 0%, #101333 100%);
   background-size: cover;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-  position: relative;
 }
 
 body::before {
@@ -21,17 +21,11 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
   z-index: -1;
 }
 
-.main-heading {
-  color: white;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-}
-
+/* === Header Section === */
 .header {
   position: absolute;
   top: 20px;
@@ -41,94 +35,68 @@ body::before {
 .logo {
   width: 450px;
   height: 80px;
+  max-width: 100%;
 }
 
-.content {
-  text-align: center;
-  color: white;
-  z-index: 1;
-}
-
-.content h1 {
-  font-size: 64px;
-  font-weight: 700;
-  font-family: "Times New Roman", serif;
-  margin-bottom: 50px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  line-height: 1.2;
-  margin-top: auto;
-}
-
-.buttons {
+/* === Main Content === */
+.center-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
-.button {
-  padding: 15px 50px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  transition: transform 0.3s ease;
-}
-
-.button:hover {
-  transform: scale(1.03);
-}
-
-.button.login {
-  background: #250d82;
+.main-heading {
   color: white;
-}
-
-.button.login:hover {
-  background: #0056b3;
-}
-
-.button.signup {
-  background: transparent;
-  border: 3px solid white;
-  color: white;
-}
-
-.button.signup:hover {
-  background: rgba(255, 255, 255, 0.2);
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
 }
 
 .container {
-  width: 90%;
-  max-width: 1000px;
-  min-width: 500px;
-  min-height: 20vh;
-  margin: 30px auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.input-field {
-  border: none;
+.student-number {
   width: 100%;
   padding: 18px 24px;
   font-size: 1.2rem;
+  border: none;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   outline: none;
   transition: all 0.3s ease;
 }
 
-.input-field::placeholder {
+.student-number::placeholder {
   color: #999;
   font-weight: 500;
 }
 
-.input-field:focus {
+.student-number:focus {
   border: 1px solid #007bff;
   box-shadow: 0 0 10px #007bff;
 }
 
+.student-hint {
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 12px;
+  opacity: 0.8;
+}
+
+/* === Info Box === */
 .info-box {
   position: absolute;
   bottom: 30px;
@@ -151,6 +119,7 @@ body::before {
   padding-bottom: 5px;
 }
 
+/* === Clock === */
 .clock {
   position: absolute;
   top: 20px;
@@ -176,5 +145,50 @@ body::before {
   }
   50% {
     text-shadow: 0 0 16px #ffffffcc;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+
+  .logo {
+    width: 300px;
+    height: auto;
+  }
+
+  .clock {
+    font-size: 1.5rem;
+    padding: 10px 18px;
+    top: 15px;
+    right: 20px;
+  }
+
+  .info-box {
+    width: 90%;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 1.5rem;
+  }
+
+  .student-number {
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+
+  .student-hint {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 10px;
   }
 }

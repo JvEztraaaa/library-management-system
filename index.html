@@ -3,29 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <title>Landing Page</title> -->
+    <title>Landing Page</title>
     <link rel="stylesheet" href="logging-page/css/index_styles.css" />
   </head>
 
   <body>
-    <h1 class="main-heading">Welcome to NU Dasma Library</h1>
-    
+    <!-- Header Section -->
     <div class="header">
       <a href="index.html">
-        <img src="logging-page/images/logo_nudasma.png" alt="Logo" class="logo"/></a>
+        <img
+          src="logging-page/images/logo_nudasma.png"
+          alt="Logo"
+          class="logo"
+        />
+      </a>
     </div>
 
-    <div class="content">
+    <!-- Main Content -->
+    <div class="center-wrapper">
+      <h1 class="main-heading">Welcome to NU Dasma Library</h1>
+
       <div class="container">
-        <input type="text" placeholder="Student Number" class="input-field" />
-      </div>
-
-      <div class="buttons">
-        <a href="login.html" class="button login">Log in</a>
-        <a href="signup.html" class="button signup">Sign up</a>
+        <input
+          type="text"
+          class="student-number"
+          placeholder="Student Number"
+        />
+        <p class="student-hint">Enter your student number</p>
       </div>
     </div>
 
+    <!-- Info Box -->
     <div class="info-box">
       <h3>Library Stats</h3>
       <p>Total Students: 0</p>
@@ -34,7 +42,10 @@
       <p>Staff on Duty:</p>
     </div>
 
+    <!-- Clock -->
     <div class="clock" id="clock"></div>
+
+    <!-- JavaScript -->
     <script src="logging-page/js/index_script.js"></script>
   </body>
 </html>
