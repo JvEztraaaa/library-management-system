@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Loading Page</title> -->
-    <link rel="stylesheet" href="index_styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="index_styles.css" />
+  </head>
+
+  <body>
+    <!-- Header Section -->
     <div class="header">
-        <img src="images/logo_nudasma.png" alt="Logo" class="logo">
+      <a href="index.html">
+        <img
+          src="images/logo_nudasma.png"
+          alt="Logo"
+          class="logo"
+        />
+      </a>
     </div>
-    <div class="content">
-        <h1>Gateway to the Infinite<br> Knowledge.</h1>
-        <div class="buttons">
-            <a href="login.html" class="button login">Log in</a>
-            <a href="signup.html" class="button signup">Sign up</a>
-        </div>
+
+    <!-- Main Content -->
+    <div class="center-wrapper">
+      <h1 class="main-heading">Welcome to NU Dasma Library</h1>
+
+      <div class="container">
+        <input
+          type="text"
+          class="student-number"
+          placeholder="Student Number"
+        />
+        <p class="student-hint">Enter your Student Number</p>
+      </div>
     </div>
-</body>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <h3>Library Stats</h3>
+      <p>Total Students: 0</p>
+      <p>Male: 0</p>
+      <p>Female: 0</p>
+      <p>Staff on Duty:</p>
+    </div>
+
+    <!-- Student Homepage Link -->
+    <a href="login page/login.html" class="student-link">Go to Student Homepage</a>
+
+    <!-- Clock -->
+    <div class="clock" id="clock"></div>
+
+    <!-- JavaScript -->
+    <script src="index_script.js"></script>
+  </body>
 </html>
