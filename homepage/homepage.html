@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
   <link rel="stylesheet" href="css/homepage_styles.css">
+  <link rel="stylesheet" href="hover_styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -45,18 +46,83 @@
   </div>
 
   <!-- General Works Section -->
+<!-- General Works Section -->
   <div class="books-section">
     <h2>Books</h2>
     <h3>General Works (Reference)</h3>
     <div class="books-carousel">
       <div class="books-slides">
-        <img src="images/book1.png" alt="Encyclopaedia Britannica" class="book">
-        <img src="images/book2.png" alt="The World Book Encyclopedia" class="book">
-        <img src="images/book3.png" alt="Guinness World Records 2024" class="book">
-        <img src="images/book4.png" alt="World Almanac 2023" class="book">
-        <img src="images/book5.png" alt="Oxford English Dictionary" class="book">
-        <img src="images/book6.png" alt="Roget's Thesaurus" class="book">
-        <img src="images/book7.png" alt="CIA World Factbook" class="book">
+        <div class="book-container">
+          <img src="images/book1.png" alt="Encyclopaedia Britannica" class="book" />
+          <div class="book-card">
+            <div
+              class="background-image-container"
+              style="background-image:url('images/book1.png')"   
+            >
+              <div class="gradient"></div>
+              <div class="controls">
+                <h1 class="title">Encyclopaedia Britannica</h1>
+                <button class="btn-book" onclick="location.href='#'">Book</button>
+                <button class="btn-favorites">♡</button>
+              </div>
+            </div> 
+            <div class="infos">
+              <div class="info-left">
+                Comprehensive encyclopedia covering general knowledge topics. <!-- Description ng Book -->
+              </div>
+              <div class="info-right">
+                <p><span>Author:</span> Encyclopaedia Britannica Inc.</p>
+                <p><span>Genres:</span> Reference</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End ng Hover -->
+        <!-- Copy code and Gawin sa lahat ng Book -->
+        <div class="book-container">
+          <img src="images/book2.png" alt="The World Book Encyclopedia" class="book">
+          <div class="book-card">
+            <div
+              class="background-image-container"
+              style="background-image:url('images/book2.png')"   
+            >
+              <div class="gradient"></div>
+              <div class="controls">
+                <h1 class="title">The World Book Encyclopedia</h1>
+                <button class="btn-book" onclick="location.href='#'">Book</button>
+                <button class="btn-favorites">♡</button>
+              </div>
+            </div> 
+            <div class="infos">
+              <div class="info-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Repellendus numquam autem libero ad consequuntur ipsam quibusdam impedit quos maxime eum deserunt, 
+                non porro corrupti eos, commodi rem. Corrupti, velit perferendis? <!-- Description ng Book -->
+              </div>
+              <div class="info-right">
+                <p><span>Author:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p><span>Genres:</span> Reference</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Books -->
+        <div class="book-container">
+          <img src="images/book3.png" alt="Guinness World Records 2024" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book4.png" alt="World Almanac 2023" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book5.png" alt="Oxford English Dictionary" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book6.png" alt="Roget's Thesaurus" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book7.png" alt="CIA World Factbook" class="book" />
+        </div>
       </div>
       <button class="carousel-btn books-prev">❮</button>
       <button class="carousel-btn books-next">❯</button>
@@ -68,12 +134,24 @@
     <h3>Filipiniana</h3>
     <div class="books-carousel">
       <div class="books-slides">
-        <img src="images/book30.png" alt="Noli Me Tangere" class="book">
-        <img src="images/book11.png" alt="El Filibusterismo" class="book">
-        <img src="images/book13.png" alt="Banaag at Sikat" class="book">
-        <img src="images/book14.png" alt="Ibong Mandaragit" class="book">
-        <img src="images/book15.png" alt="Ilustrado" class="book">
-        <img src="images/book16.png" alt="Dogeaters" class="book">
+        <div class="book-container">
+          <img src="images/book30.png" alt="Noli Me Tangere" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book11.png" alt="El Filibusterismo" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book13.png" alt="Banaag at Sikat" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book14.png" alt="Ibong Mandaragit" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book15.png" alt="Ilustrado" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book16.png" alt="Dogeaters" class="book" />
+        </div>
       </div>
       <button class="carousel-btn books-prev">❮</button>
       <button class="carousel-btn books-next">❯</button>
@@ -85,17 +163,30 @@
     <h3>Foreign Books</h3>
     <div class="books-carousel">
       <div class="books-slides">
-        <img src="images/book20.png" alt="100 Years of Solitude" class="book">
-        <img src="images/book22.png" alt="The Alchemist" class="book">
-        <img src="images/book23.png" alt="The Little Prince" class="book">
-        <img src="images/book24.png" alt="Crime and Punishment" class="book">
-        <img src="images/book25.png" alt="The Stranger" class="book">
-        <img src="images/book26.png" alt="Things Fall Apart" class="book">
+        <div class="book-container">
+          <img src="images/book20.png" alt="100 Years of Solitude" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book22.png" alt="The Alchemist" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book23.png" alt="The Little Prince" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book24.png" alt="Crime and Punishment" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book25.png" alt="The Stranger" class="book" />
+        </div>
+        <div class="book-container">
+          <img src="images/book26.png" alt="Things Fall Apart" class="book" />
+        </div>
       </div>
       <button class="carousel-btn books-prev">❮</button>
       <button class="carousel-btn books-next">❯</button>
     </div>
   </div>
+
 
   <!-- Footer Links -->
   <div class="footer-links">

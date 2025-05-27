@@ -1,90 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="admin.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <div class="sidebar">
-    <div class="logo">
-      <i class="fas fa-bars"></i>
+  <div class="main-dashboard">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-list">
+        <li><i class="fas fa-search"></i><span class="label">Search</span></li>
+        <li><i class="fas fa-home"></i><span class="label">Home</span></li>
+        <li><i class="fas fa-bell"></i><span class="label">Notification</span></li>
+        <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
+        <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
+      </ul>
+      <div class="settings">
+        <i class="fas fa-cog"></i><span class="label">Settings</span>
+      </div>
     </div>
-    <ul class="nav-list">
-      <li><i class="fas fa-search"></i><span class="label">Search</span></li>
-      <li><i class="fas fa-home"></i><span class="label">Home</span></li>
-      <li><i class="fas fa-bell"></i><span class="label">Notification</span></li>
-      <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
-      <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
-    </ul>
-    <div class="settings">
-      <i class="fas fa-cog"></i><span class="label">Settings</span>
+
+    <div class="dashboard">
+      <div class="main-content">
+        <div class="grid-container">
+          <div class="div1">Total In</div>
+          <div class="div2">Total Out</div>
+          <div class="div3">Total Students</div>
+          <div class="div4">Total Borrowed Books</div>
+          <div class="div5">Student Library Engagement</div>
+            <div class="div6">
+                <h2 style="margin-bottom: 10px;">Popular Book Category</h2>
+                <div class="chart-legend-container">
+                    <canvas id="bookCategoryChart"></canvas>
+                    <ul class="custom-legend">
+                    <li><span style="background:#4e73df"></span>Fiction</li>
+                    <li><span style="background:#1cc88a"></span>Science</li>
+                    <li><span style="background:#36b9cc"></span>History</li>
+                    <li><span style="background:#f6c23e"></span>Technology</li>
+                    <li><span style="background:#e74a3b"></span>Biography</li>
+                    </ul>
+                </div>
+            </div>
+          <div class="div7">Recent Activity Log</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <main class="main-content">
-    <div class="grid-container">
-      <div class="div1">Total In</div>
-      <div class="div2">Total Out</div>
-      <div class="div3">Total Students</div>
-      <div class="div4">Total Borrowed Books</div>
-      <div class="div5">Student Library Engagement</div>
-        <div class="div6">
-            <h2 style="margin-bottom: 10px;">Popular Book Category</h2>
-            <div class="chart-legend-container">
-                <canvas id="bookCategoryChart"></canvas>
-                <ul class="custom-legend">
-                <li><span style="background:#4e73df"></span>Fiction</li>
-                <li><span style="background:#1cc88a"></span>Science</li>
-                <li><span style="background:#36b9cc"></span>History</li>
-                <li><span style="background:#f6c23e"></span>Technology</li>
-                <li><span style="background:#e74a3b"></span>Biography</li>
-                </ul>
-            </div>
-        </div>
-      <div class="div7">Recent Activity Log</div>
-    </div>
-  </main>
 
-  <script>
-    const ctx = document.getElementById('bookCategoryChart').getContext('2d');
-    const bookCategoryChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: ['Fiction', 'Science', 'History', 'Technology', 'Biography'],
-        datasets: [{
-          label: 'Popular Book Categories',
-          data: [40, 25, 15, 10, 10],
-          backgroundColor: [
-            '#4e73df',
-            '#1cc88a',
-            '#36b9cc',
-            '#f6c23e',
-            '#e74a3b'
-          ],
-          borderColor: '#000',
-          borderWidth: 1
-        }]
-      },
-        options: {
-        responsive: true,
-        plugins: {
-            legend: {
-            display: false // Hide default legend
-            },
-            tooltip: {
-            callbacks: {
-                label: function(context) {
-                return `${context.label}: ${context.raw}%`;
-                }
-            }
-            }
-        }
-        }
-    });
-  </script>
+  <script src="admin.js"></script>
 </body>
 </html>

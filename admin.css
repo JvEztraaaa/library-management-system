@@ -77,9 +77,22 @@ body {
   cursor: pointer;
 }
 
-
 .settings:hover {
   background-color: #2e2e45;
+}
+
+.main-dashboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-content {
@@ -93,7 +106,7 @@ body {
   align-items: center;
 }
 
-.sidebar:hover ~ .main-content {
+.sidebar:hover ~ .dashboard {
   margin-left: 200px;
 }
 

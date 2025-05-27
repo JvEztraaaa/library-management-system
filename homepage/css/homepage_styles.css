@@ -187,7 +187,6 @@ body {
   background: black;
   padding: 20px;
   flex: 1;
-  overflow: hidden;
   box-sizing: border-box;
   min-height: 200px;
 }
@@ -211,19 +210,13 @@ body {
 
 .books-slides {
   display: flex;
+  position: relative;
   gap: 15px;
   transition: transform 0.5s ease-in-out;
   height: 100%;
   width: 100%;
 }
 
-.book {
-  height: 350px;
-  width: calc(20% - 12px);
-  object-fit: cover;
-  flex: 0 0 calc(20% - 12px);
-  margin-bottom: 30px;
-}
 
 .footer-links {
   position: absolute;

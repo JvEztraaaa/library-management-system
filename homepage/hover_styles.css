@@ -1,0 +1,140 @@
+ /* Reset and basic */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+
+  /* Container around each book image */
+  .book-container {
+    position: relative;
+    margin: 0 15px 40px 15px;
+    width: 45vw;
+  }
+
+  /* Book images remain normal size */
+  .book {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    width: 100%;        /* fill the container's width */
+    height: 100%; 
+    object-fit: cover;
+    
+  }
+
+  /* The hover card panel - fixed size exactly as per hover.html default size */
+  .book-card {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    z-index: 999;
+    width: 30vw;
+    height: 70vh;
+    background: #3a3a3a;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.1s ease;
+  }
+
+  /* Show the hover card on container hover */
+  .book-container:hover .book-card,
+  .book-card:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  /* Inside the hover card: mimic your hover.html styles */
+  .background-image-container {
+    height: 60%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(46, 46, 46, 0.6));
+    border-radius: inherit;
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    gap: 15px;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .btn-book, .btn-favorites {
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  .btn-book {
+    background-color: white;
+    color: black;
+  }
+
+  .btn-favorites {
+    background-color: rgba(44,44,44,0.5);
+    color: white;
+  }
+
+  .infos {
+    height: 40%;
+    padding: 12px 16px;
+    background: linear-gradient(to bottom, rgba(37,37,37,0.85), rgba(32,32,32,1));
+    display: flex;
+    gap: 25px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.95rem;
+    color: white;
+  }
+
+  .info-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 60%;
+    line-height: 1.3;
+  }
+
+  .info-right {
+    display: flex;
+    flex: 70%;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2.5;
+  }
+
+  .info-right span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #4b4b4b;
+  }
