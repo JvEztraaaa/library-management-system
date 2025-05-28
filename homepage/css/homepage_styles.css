@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -109,6 +114,11 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+.banner-carousel,
+.banner-slides {
+  overflow-x: hidden;
+}
+
 .banner-slide {
   display: flex;
   align-items: center;
@@ -186,9 +196,7 @@ body {
   width: 100%;
   background: black;
   padding: 20px;
-  flex: 1;
   box-sizing: border-box;
-  min-height: 200px;
 }
 
 .books-section h2 {
@@ -234,6 +242,13 @@ body {
 
 .footer-links a:hover {
   opacity: 1;
+}
+
+.books-carousel,
+.books-slides,
+.books-section {
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Responsive Design */
