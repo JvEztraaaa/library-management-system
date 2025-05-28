@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
-  <link rel="stylesheet" href="css/homepage_styles.css" />
-  <link rel="stylesheet" href="css/hover_styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="css/homepage_styles.css">
+  <link rel="stylesheet" href="css/hover_styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
   <!-- Header Section -->
   <div class="banner">
     <div class="header">
       <a href="../index.html">
-        <img src="images/logo_nudasma.png" alt="Logo" class="logo" />
+        <img src="images/logo_nudasma.png" alt="Logo" class="logo">
       </a>
 
       <nav class="nav-links">
@@ -29,7 +24,7 @@
       </nav>
 
       <div class="header-right">
-        <input type="text" class="search-bar" placeholder="Search..." />
+        <input type="text" class="search-bar" placeholder="Search...">
         <div class="user-icons">
           <span class="icon notification"><i class="fa-solid fa-bell"></i></span>
           <span class="icon profile"><i class="fa-solid fa-circle-user"></i></span>
@@ -45,280 +40,473 @@
         <div class="banner-slide slide-3"></div>
         <div class="banner-slide slide-4"></div>
       </div>
-
       <button class="carousel-btn banner-prev">❮</button>
       <button class="carousel-btn banner-next">❯</button>
     </div>
   </div>
 
-  <!-- General Works Section -->
-  <div class="books-section">
-    <h2>Books</h2>
-    <h3>General Works (Reference)</h3>
+  
+<!-- General Works Section -->
+<div class="books-section">
+  <h2>Books</h2>
+  <h3>General Works (Reference)</h3>
+  <div class="books-carousel">
+    <div class="books-slides">
 
-    <div class="books-carousel">
-      <div class="books-slides">
-
-        <!-- Book: Encyclopaedia Britannica -->
-        <div class="book-container">
-          <img src="images/book1.png" alt="Encyclopaedia Britannica" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book1.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">Encyclopaedia Britannica</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
+      <!-- Book: Encyclopaedia Britannica -->
+      <div class="book-container">
+        <img src="images/book1.png" alt="Encyclopaedia Britannica" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book1.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Encyclopaedia Britannica</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
             </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Comprehensive encyclopedia covering a wide range of general knowledge
-                topics from science to culture.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> Encyclopaedia Britannica Inc.</p>
-                <p><span>Genres:</span> Reference, Knowledge</p>
-              </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              Comprehensive encyclopedia covering a wide range of general knowledge topics from science to culture.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Encyclopaedia Britannica Inc.</p>
+              <p><span>Genres:</span> Reference, Knowledge</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Book: The World Book Encyclopedia -->
-        <div class="book-container">
-          <img src="images/book2.png" alt="The World Book Encyclopedia" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book2.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">The World Book Encyclopedia</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
+      <!-- Book: The World Book Encyclopedia -->
+      <div class="book-container">
+        <img src="images/book2.png" alt="The World Book Encyclopedia" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book2.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">The World Book Encyclopedia</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
             </div>
-
-            <div class="infos">
-              <div class="info-left">
-                A comprehensive encyclopedia designed especially for students and educators with
-                updated facts and visuals.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> World Book Inc.</p>
-                <p><span>Genres:</span> Reference, Educational</p>
-              </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A comprehensive encyclopedia designed especially for students and educators with updated facts and visuals.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> World Book Inc.</p>
+              <p><span>Genres:</span> Reference, Educational</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Book: Guinness World Records 2024 -->
-        <div class="book-container">
-          <img src="images/book3.png" alt="Guinness World Records 2024" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book3.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">Guinness World Records 2024</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
+      <!-- Book: Guinness World Records 2024 -->
+      <div class="book-container">
+        <img src="images/book3.png" alt="Guinness World Records 2024" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book3.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Guinness World Records 2024</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
             </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Annual publication featuring extraordinary world records in sports, nature,
-                science, and human achievement.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> Guinness World Records</p>
-                <p><span>Genres:</span> Reference, Records</p>
-              </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              Annual publication featuring extraordinary world records in sports, nature, science, and human achievement.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Guinness World Records</p>
+              <p><span>Genres:</span> Reference, Records</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Book: World Almanac 2023 -->
-        <div class="book-container">
-          <img src="images/book4.png" alt="World Almanac 2023" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book4.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">World Almanac 2023</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
+      <!-- Book: World Almanac 2023 -->
+      <div class="book-container">
+        <img src="images/book4.png" alt="World Almanac 2023" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book4.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">World Almanac 2023</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
             </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Trusted annual almanac with facts, statistics, and trends across global topics
-                like politics and sports.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> Sarah Janssen (Editor)</p>
-                <p><span>Genres:</span> Almanac, Reference</p>
-              </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              Trusted annual almanac with facts, statistics, and trends across global topics like politics and sports.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Sarah Janssen (Editor)</p>
+              <p><span>Genres:</span> Almanac, Reference</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Book: Oxford English Dictionary -->
-        <div class="book-container">
-          <img src="images/book5.png" alt="Oxford English Dictionary" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book5.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">Oxford English Dictionary</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
+      <!-- Book: Oxford English Dictionary -->
+      <div class="book-container">
+        <img src="images/book5.png" alt="Oxford English Dictionary" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book5.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Oxford English Dictionary</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
             </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Authoritative dictionary tracing the historical development of English words
-                across centuries.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> Oxford University Press</p>
-                <p><span>Genres:</span> Language, Reference</p>
-              </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              Authoritative dictionary tracing the historical development of English words across centuries.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Oxford University Press</p>
+              <p><span>Genres:</span> Language, Reference</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Book: Roget's Thesaurus -->
-        <div class="book-container">
-          <img src="images/book6.png" alt="Roget's Thesaurus" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book6.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">Roget's Thesaurus</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
+      <!-- Book: Roget's Thesaurus -->
+      <div class="book-container">
+        <img src="images/book6.png" alt="Roget's Thesaurus" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book6.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Roget's Thesaurus</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
             </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Classic reference guide offering synonyms and antonyms to expand vocabulary
-                and expression.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> Peter Mark Roget</p>
-                <p><span>Genres:</span> Thesaurus, Reference</p>
-              </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              Classic reference guide offering synonyms and antonyms to expand vocabulary and expression.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Peter Mark Roget</p>
+              <p><span>Genres:</span> Thesaurus, Reference</p>
             </div>
           </div>
         </div>
-
-        <!-- Book: CIA World Factbook -->
-        <div class="book-container">
-          <img src="images/book7.png" alt="CIA World Factbook" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book7.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">CIA World Factbook</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
-            </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Comprehensive data on countries including geography, population, government,
-                and economy.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> Central Intelligence Agency</p>
-                <p><span>Genres:</span> Reference, Government</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Book: The Chicago Manual of Style -->
-        <div class="book-container">
-          <img src="images/book8.png" alt="The Chicago Manual of Style" class="book" />
-          <div class="book-card">
-            <div
-              class="background-image-container"
-              style="background-image:url('images/book8.png')"
-            >
-              <div class="gradient"></div>
-
-              <div class="controls">
-                <h1 class="title">The Chicago Manual of Style</h1>
-                <button class="btn-book" onclick="location.href='#'">Borrow</button>
-                <button class="btn-favorites">❤️</button>
-              </div>
-            </div>
-
-            <div class="infos">
-              <div class="info-left">
-                Widely used style guide for American English writing, editing, and publishing
-                conventions.
-              </div>
-
-              <div class="info-right">
-                <p><span>Author:</span> University of Chicago Press</p>
-                <p><span>Genres:</span> Reference, Writing</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-       </div>
-    <button class="carousel-btn books-prev">❮</button>
-    <button class="carousel-btn books-next">❯</button>
+      </div>
   </div>
-</div>
+
+
+<!-- Filipiniana Section -->
+<div class="books-section">
+  <h3>Filipiniana</h3>
+  <div class="books-carousel">
+    <div class="books-slides">
+
+      <!-- Book: Noli Me Tangere -->
+      <div class="book-container">
+        <img src="images/book30.png" alt="Noli Me Tangere" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book30.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Noli Me Tangere</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A groundbreaking novel exposing the social injustices in the Philippines during the Spanish colonization.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Dr. José Rizal</p>
+              <p><span>Genres:</span> Historical Fiction, Political Commentary</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: El Filibusterismo -->
+      <div class="book-container">
+        <img src="images/book11.png" alt="El Filibusterismo" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book11.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">El Filibusterismo</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              The dark and revolutionary sequel to *Noli Me Tangere*, exploring themes of vengeance and reform.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Dr. José Rizal</p>
+              <p><span>Genres:</span> Historical Fiction, Political Satire</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: Banaag at Sikat -->
+      <div class="book-container">
+        <img src="images/book13.png" alt="Banaag at Sikat" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book13.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Banaag at Sikat</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A social realist novel that discusses class struggle, labor rights, and Filipino nationalism.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Lope K. Santos</p>
+              <p><span>Genres:</span> Social Realism, Political Fiction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: Ibong Mandaragit -->
+      <div class="book-container">
+        <img src="images/book14.png" alt="Ibong Mandaragit" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book14.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Ibong Mandaragit</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A post-war novel reflecting on neo-colonialism and the unfinished revolution of Rizal's vision.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Amado V. Hernandez</p>
+              <p><span>Genres:</span> Political Fiction, Resistance Literature</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: Ilustrado -->
+      <div class="book-container">
+        <img src="images/book15.png" alt="Ilustrado" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book15.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Ilustrado</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A modern novel weaving together history, politics, and identity through the life of a Filipino writer.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Miguel Syjuco</p>
+              <p><span>Genres:</span> Contemporary Fiction, Historical Mystery</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: Dogeaters -->
+      <div class="book-container">
+        <img src="images/book16.png" alt="Dogeaters" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book16.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Dogeaters</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A bold narrative exploring power, culture, and media in a fictionalized Philippines under dictatorship.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Jessica Hagedorn</p>
+              <p><span>Genres:</span> Postcolonial Fiction, Satire</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  
+<!-- Foreign Books Section -->
+<div class="books-section">
+  <h3>Foreign Books</h3>
+  <div class="books-carousel">
+    <div class="books-slides">
+
+      <!-- Book: 100 Years of Solitude -->
+      <div class="book-container">
+        <img src="images/book20.png" alt="100 Years of Solitude" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book20.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">100 Years of Solitude</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A multi-generational saga of the Buendía family in the fictional town of Macondo, blending myth and reality.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Gabriel García Márquez</p>
+              <p><span>Genres:</span> Magical Realism, Literary Fiction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: The Alchemist -->
+      <div class="book-container">
+        <img src="images/book22.png" alt="The Alchemist" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book22.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">The Alchemist</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A mystical fable about following your dreams, centered on Santiago, a shepherd seeking treasure in Egypt.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Paulo Coelho</p>
+              <p><span>Genres:</span> Adventure, Philosophical Fiction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: The Little Prince -->
+      <div class="book-container">
+        <img src="images/book23.png" alt="The Little Prince" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book23.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">The Little Prince</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A poetic tale about a young prince from another planet, exploring themes of love, loneliness, and imagination.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Antoine de Saint-Exupéry</p>
+              <p><span>Genres:</span> Children’s Literature, Allegorical Fiction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: Crime and Punishment -->
+      <div class="book-container">
+        <img src="images/book24.png" alt="Crime and Punishment" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book24.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Crime and Punishment</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A psychological thriller about morality, guilt, and redemption centered on a troubled ex-student in St. Petersburg.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Fyodor Dostoevsky</p>
+              <p><span>Genres:</span> Psychological Fiction, Classic Literature</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: The Stranger -->
+      <div class="book-container">
+        <img src="images/book25.png" alt="The Stranger" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book25.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">The Stranger</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A philosophical novel exploring absurdism and detachment through the indifferent protagonist, Meursault.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Albert Camus</p>
+              <p><span>Genres:</span> Existential Fiction, Philosophy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book: Things Fall Apart -->
+      <div class="book-container">
+        <img src="images/book26.png" alt="Things Fall Apart" class="book" />
+        <div class="book-card">
+          <div class="background-image-container" style="background-image:url('images/book26.png')">
+            <div class="gradient"></div>
+            <div class="controls">
+              <h1 class="title">Things Fall Apart</h1>
+              <button class="btn-book" onclick="location.href='#'">Borrow</button>
+              <button class="btn-favorites">❤️</button>
+            </div>
+          </div>
+          <div class="infos">
+            <div class="info-left">
+              A tragic story of a respected Igbo leader’s downfall as colonialism and cultural clash disrupt his world.
+            </div>
+            <div class="info-right">
+              <p><span>Author:</span> Chinua Achebe</p>
+              <p><span>Genres:</span> African Literature, Tragedy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 
   <!-- Footer Links -->
   <div class="footer-links">
     <a href="#">Contact us</a> | <a href="#">About us</a>
   </div>
 
-  <script src="homepage_script.js"></script>
-  
-  </body>
+  <script src="js/homepage_script.js"></script>
+</body>
 </html>

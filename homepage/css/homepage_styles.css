@@ -211,12 +211,10 @@ body {
 .books-slides {
   display: flex;
   position: relative;
-  gap: 15px;
   transition: transform 0.5s ease-in-out;
   height: 100%;
   width: 100%;
 }
-
 
 .footer-links {
   position: absolute;
