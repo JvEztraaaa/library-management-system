@@ -1,7 +1,4 @@
-html,
-body {
-  overflow-x: hidden;
-}
+
 
 body {
   margin: 0;
@@ -214,6 +211,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  
 }
 
 .books-slides {
@@ -222,13 +220,17 @@ body {
   transition: transform 0.5s ease-in-out;
   height: 100%;
   width: 100%;
+  
 }
 
 .footer-links {
-  position: absolute;
-  bottom: 20px;
-  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  padding: 3vw;
   color: white;
+  background: black;
   font-size: 14px;
   z-index: 2;
 }
@@ -244,12 +246,7 @@ body {
   opacity: 1;
 }
 
-.books-carousel,
-.books-slides,
-.books-section {
-  overflow-x: hidden;
-  position: relative;
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

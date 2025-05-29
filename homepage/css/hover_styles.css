@@ -1,9 +1,19 @@
+
+
 /* Container around each book image */
 .book-container {
   position: relative;
   margin: 0 40px;
-  width: 45vw;
+  width: 35vw;
 }
+
+.book-container:nth-last-child(-n+2) .book-card {
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: 12px;
+}
+
 
 /* Book images */
 .book {
@@ -26,9 +36,11 @@
   top: 0;
   left: 100%;
   margin-left: 12px;
+  max-height: 90vh;
   z-index: 1000;
   width: 25vw;
-  height: 50vh;
+  height: 120%;
+  overflow-y: auto;
   border-radius: 16px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.06);
