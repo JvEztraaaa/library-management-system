@@ -38,23 +38,27 @@ body {
 }
 
 /* Navigation Links */
-.nav-links {
-  display: flex;
-  gap: 20px;
-  flex: 1;
-  justify-content: center;
-}
-
 .nav-links a {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 20px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a:hover {
+  background: rgba(0, 25, 255, 0.2);
+  box-shadow: 0 0 8px #0019ff80;
+  color: #aaccff;
 }
 
 .nav-links a.active {
-  color: #0019ff;
-  border-bottom: 2px solid #0019ff;
+  background: #0019ff88;
+  color: white;
+  box-shadow: 0 0 10px #0019ff88;
 }
 
 /* Header Right Section (Search + Icons) */
@@ -66,18 +70,33 @@ body {
 }
 
 .search-bar {
-  height: 15px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 15px;
-  width: 200px;
-  margin: 10 10px;
+  height: 36px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 220px;
+  margin-right: 20px;
+  transition: all 0.3s ease;
   outline: none;
+  font-size: 14px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar::placeholder {
+  color: #ccc;
+}
+
+.search-bar:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff88;
 }
 
 .user-icons {
   display: flex;
-  gap: 15px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -85,7 +104,7 @@ body {
 .user-icons .notification,
 .user-icons .profile {
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -245,51 +264,59 @@ body {
 /* Tablets and small desktops */
 @media (max-width: 768px) {
   .banner {
-    height: 40vh;
+    height: 45vh; /* slightly taller for more room */
   }
 
   .books-section {
-    height: 60vh;
+    height: auto; /* let it grow naturally */
+    padding: 15px 10px 30px;
   }
 
   .logo {
-    width: 300px;
-    height: 53px;
+    width: 260px;
+    height: auto;
   }
 
   .nav-links {
-    gap: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-links a {
     font-size: 14px;
+    padding: 6px 12px;
   }
 
   .user-icons .icon {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .banner-slide {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
 
   .books-section h2 {
-    font-size: 28px;
+    font-size: 26px;
+    margin: 15px 0 30px;
   }
 
   .books-section h3 {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 0 0 15px;
   }
 
   .book {
-    width: calc(33.33% - 10px);
-    flex: 0 0 calc(33.33% - 10px);
+    width: calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+    margin-bottom: 20px;
   }
 
   .footer-links {
-    bottom: 15px;
-    right: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 10px;
     font-size: 12px;
   }
 }
@@ -297,11 +324,12 @@ body {
 /* Phones */
 @media (max-width: 480px) {
   .banner {
-    height: 35vh;
+    height: 40vh;
   }
 
   .books-section {
-    height: 65vh;
+    height: auto;
+    padding: 10px 10px 30px;
   }
 
   .header {
@@ -311,49 +339,54 @@ body {
   }
 
   .logo {
-    width: 200px;
-    height: 35px;
+    width: 180px;
+    height: auto;
   }
 
   .nav-links {
-    margin-top: 10px;
-    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    gap: 8px;
   }
 
   .nav-links a {
     font-size: 12px;
+    padding: 6px 10px;
   }
 
   .user-icons {
     position: absolute;
     top: 10px;
     right: 10px;
+    gap: 15px;
   }
 
   .user-icons .icon {
-    font-size: 16px;
-  }
-
-  .books-section {
-    padding: 10px;
+    font-size: 18px;
   }
 
   .books-section h2 {
-    font-size: 20px;
+    font-size: 22px;
+    margin: 10px 0 20px;
   }
 
   .books-section h3 {
     font-size: 16px;
+    margin: 0 0 10px;
   }
 
   .book {
-    width: calc(50% - 8px);
-    flex: 0 0 calc(50% - 8px);
+    width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 20px;
   }
 
   .footer-links {
-    bottom: 10px;
-    right: 10px;
-    font-size: 10px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    padding: 15px 5px;
+    text-align: center;
+    gap: 10px;
   }
 }
