@@ -1,5 +1,4 @@
-
-
+/* Base Layout and Typography */
 body {
   margin: 0;
   min-height: 100vh;
@@ -10,6 +9,7 @@ body {
   flex-direction: column;
 }
 
+/* Banner Section */
 .banner {
   position: relative;
   width: 100%;
@@ -17,6 +17,7 @@ body {
   overflow: hidden;
 }
 
+/* Header Section */
 .header {
   display: flex;
   justify-content: space-between;
@@ -36,6 +37,7 @@ body {
   height: 80px;
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -55,6 +57,7 @@ body {
   border-bottom: 2px solid #0019ff;
 }
 
+/* Header Right Section (Search + Icons) */
 .header-right {
   display: flex;
   align-items: center;
@@ -78,23 +81,15 @@ body {
   align-items: center;
 }
 
-.user-icons .icon i {
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.user-icons .notification {
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
+.user-icons .icon i,
+.user-icons .notification,
 .user-icons .profile {
+  color: white;
   font-size: 20px;
   cursor: pointer;
 }
 
+/* Banner Carousel and Slides */
 .banner-carousel {
   position: absolute;
   top: 0;
@@ -128,6 +123,7 @@ body {
   position: relative;
 }
 
+/* Overlay on Banner Slides */
 .banner-slide::before {
   content: "";
   position: absolute;
@@ -139,22 +135,15 @@ body {
   z-index: 1;
 }
 
-.banner-slide.slide-1 {
-  background-image: url("images/bg_cover.png");
-}
-
-.banner-slide.slide-2 {
-  background-image: url("images/bg_cover.png");
-}
-
-.banner-slide.slide-3 {
-  background-image: url("images/bg_cover.png");
-}
-
+/* Individual Banner Slides */
+.banner-slide.slide-1,
+.banner-slide.slide-2,
+.banner-slide.slide-3,
 .banner-slide.slide-4 {
   background-image: url("images/bg_cover.png");
 }
 
+/* Carousel Buttons (Shared for Banners and Books) */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -173,45 +162,47 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.carousel-btn.banner-prev {
-  left: 10px;
-}
-
-.carousel-btn.banner-next {
-  right: 10px;
-}
-
+/* Specific Carousel Button Positions */
+.carousel-btn.banner-prev,
 .carousel-btn.books-prev {
   left: 10px;
 }
 
+.carousel-btn.banner-next,
 .carousel-btn.books-next {
   right: 10px;
 }
 
+/* Books Section */
 .books-section {
   width: 100%;
   background: black;
   padding: 20px;
+  padding-bottom: 40px;
   box-sizing: border-box;
 }
 
 .books-section h2 {
-  font-size: 36px;
-  margin: 0 0 10px;
+  font-size: 48px;
+  margin: 20px 0 50px;
 }
 
 .books-section h3 {
   font-size: 24px;
-  margin: 0 0 15px;
+  margin: 0 0 20px;
   font-weight: 400;
 }
 
+.books-section h2,
+.books-section h3 {
+  margin-left: 40px;
+}
+
+/* Books Carousel Slides */
 .books-carousel {
   position: relative;
   width: 100%;
   height: 100%;
-  
 }
 
 .books-slides {
@@ -220,15 +211,15 @@ body {
   transition: transform 0.5s ease-in-out;
   height: 100%;
   width: 100%;
-  
 }
 
+/* Footer Section */
 .footer-links {
   display: flex;
   align-items: center;
   justify-content: end;
   gap: 20px;
-  padding: 3vw;
+  padding: 1.3vw;
   color: white;
   background: black;
   font-size: 14px;
@@ -239,16 +230,19 @@ body {
   color: white;
   text-decoration: none;
   opacity: 0.8;
-  transition: opacity 0.3s;
+  margin: 0 15px;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .footer-links a:hover {
   opacity: 1;
+  color: #007bff;
+  text-shadow: 0 0 6px #00bfff88;
 }
 
-
-
 /* Responsive Design */
+
+/* Tablets and small desktops */
 @media (max-width: 768px) {
   .banner {
     height: 40vh;
@@ -300,6 +294,7 @@ body {
   }
 }
 
+/* Phones */
 @media (max-width: 480px) {
   .banner {
     height: 35vh;

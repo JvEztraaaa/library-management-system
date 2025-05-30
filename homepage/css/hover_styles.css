@@ -1,5 +1,3 @@
-
-
 /* Container around each book image */
 .book-container {
   position: relative;
@@ -7,13 +5,12 @@
   width: 35vw;
 }
 
-.book-container:nth-last-child(-n+2) .book-card {
+.book-container:nth-last-child(-n + 2) .book-card {
   left: auto;
   right: 100%;
   margin-left: 0;
   margin-right: 12px;
 }
-
 
 /* Book images */
 .book {
