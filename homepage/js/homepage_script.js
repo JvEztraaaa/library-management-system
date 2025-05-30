@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentSlide = 0;
   const totalSlides = slides.length;
-  const slideDuration = 6000;
+  const slideDuration = 10000;
 
   slides.forEach((slide, index) => {
     slide.style.backgroundImage = `url("images/bg_cover.png")`;
