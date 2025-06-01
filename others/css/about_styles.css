@@ -162,10 +162,9 @@ body {
 
 .card-content a:hover {
   color: #ecb419;
-  text-shadow: 0 0 6px #ecb419, 0 0 10px #f0d45b;
-  text-decoration: none; /* optional: keep underline off */
+  text-shadow: 0 0 6px #ecb419, 0 0 10px ;
+  text-decoration: none; 
 }
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
