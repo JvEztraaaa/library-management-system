@@ -1,0 +1,196 @@
+/* ===== Global Reset and Font ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a, #000000);
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Container Wrapper ===== */
+.container {
+  padding: 30px 15%;
+}
+
+/* ===== Header ===== */
+header {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  height: 100px; 
+  margin-left: -30px;
+}
+
+/* ===== Main Content Layout ===== */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== Left Section ===== */
+.left {
+  flex: 1 1 55%;
+}
+
+.left h2 {
+  font-size: 30px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.left-image {
+  text-align: left;
+}
+
+.image-overlay-card {
+  background-image: url('../images/card_bg.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 40px 30px;
+  max-width: 750px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overlay-text {
+  color: white;
+  text-align: left;
+}
+
+.overlay-text h1 {
+  font-size: 48px;
+}
+
+.overlay-text h2 {
+  font-size: 22px;
+  margin: 10px 0 25px;
+  font-weight: 400;
+}
+
+.overlay-text h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.overlay-text p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* ===== Right Section (Contact Form) ===== */
+.right {
+  flex: 0 1 30%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Form Styling ===== */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+/* ===== Submit Button ===== */
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #250d82, #004aad);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #ecb419, #f0d45b);
+  color: #007bff;
+  text-shadow: 0 0 10px #007bffcc, 0 0 15px #004aad88;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left, .right {
+    flex: 1 1 100%;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  .overlay-text {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .overlay-text h1 {
+    font-size: 36px;
+  }
+
+  .overlay-text h2 {
+    font-size: 20px;
+  }
+
+  .overlay-text h3,
+  .overlay-text p {
+    font-size: 16px;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+}
