@@ -22,13 +22,27 @@
       <span class="tab active">Sign up</span>
     </h2>
 
-    <div class="form">
-      <input type="email" placeholder="School Email" id="school-email" />
-      <input type="text" placeholder="Student Number" id="student-number" />
-      <input type="password" placeholder="Create Password" id="create-password" />
-      <input type="password" placeholder="Confirm Password" id="confirm-password" />
-      <button onclick="handleSignup()">Sign up</button>
-    </div>
+  <div class="form">
+    <form id="signup-form">
+      <input type="email" placeholder="School Email" id="school-email" required />
+      <input type="text" placeholder="Student Number" id="student-number" required />
+
+      <!-- Password -->
+      <div class="input-with-icon">
+        <input type="password" placeholder="Create Password" id="create-password" required />
+        <span class="toggle-password" data-target="create-password" title="Show/Hide">🙈</span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-with-icon">
+        <input type="password" placeholder="Confirm Password" id="confirm-password" required />
+        <span class="toggle-password" data-target="confirm-password" title="Show/Hide">🙈</span>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
   </div>
 
   <!-- Footer Links -->

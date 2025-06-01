@@ -102,9 +102,9 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 40px;
   transition: all 0.5s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
 }
 
 .signup-container button:hover {
@@ -134,6 +134,43 @@ body {
   opacity: 1;
   color: #007bff;
   text-shadow: 0 0 6px #00bfff88;
+}
+
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+/* Input styles stay the same */
+.input-with-icon input {
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 12px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #007bff;
+  text-shadow: 0 0 8px #004aad;
 }
 
 /* === Responsive Design === */
