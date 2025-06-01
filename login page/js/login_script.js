@@ -34,7 +34,7 @@ form.addEventListener("submit", function (event) {
 
   function showMessage(text, isError = true) {
     messageDiv.textContent = text;
-    messageDiv.style.color = isError ? "red" : "green";
+    messageDiv.style.color = isError ? "red" : "deepskyblue";
     form.prepend(messageDiv);
   }
 
