@@ -133,10 +133,10 @@ body {
 .banner-slide {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(100% / 6);
   height: 100%;
   flex-shrink: 0;
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -152,14 +152,6 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
-}
-
-/* Individual Banner Slides */
-.banner-slide.slide-1,
-.banner-slide.slide-2,
-.banner-slide.slide-3,
-.banner-slide.slide-4 {
-  background-image: url("images/bg_cover.png");
 }
 
 /* Carousel Buttons (Shared for Banners and Books) */
