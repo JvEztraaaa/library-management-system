@@ -6,17 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentSlide = 0;
   const totalSlides = slides.length;
-  const slideDuration = 20000;
+  const slideDuration = 10000;
 
   slidesContainer.style.width = `${totalSlides * 100}%`;
 
   const imagePaths = [
     "images/bg_cover.png",
-    "images/bg_cover1.JPG",
     "images/bg_cover2.JPG",
-    "images/bg_cover3.JPG",
-    "images/bg_cover4.JPG",
-    "images/bg_cover5.JPG",
+    "images/bg_cover3.JPG"
   ];
 
   slides.forEach((slide, index) => {
