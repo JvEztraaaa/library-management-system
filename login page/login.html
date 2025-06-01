@@ -23,9 +23,16 @@
     </h2>
 
     <div class="form">
-      <input type="email" placeholder="Email" id="email" />
-      <input type="password" placeholder="Password" id="password" />
-      <a href="../homepage/homepage.html"><button>Log in</button></a>
+      <form id="login-form">
+        <input type="email" placeholder="School Email" id="email" required />
+
+        <div class="input-with-icon">
+          <input type="password" placeholder="Password" id="password" required />
+          <span class="toggle-password" data-target="password" title="Show/Hide">🙈</span>
+        </div>
+
+        <button type="submit">Log in</button>
+      </form>
     </div>
   </div>
 
