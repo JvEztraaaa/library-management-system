@@ -92,7 +92,7 @@ body {
 }
 
 /* === Button === */
-.signup-container button {
+.signup-container button{
   width: 100%;
   padding: 12px;
   background: linear-gradient(135deg, #250d82, #004aad);
@@ -102,7 +102,6 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 40px;
   transition: all 0.5s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -177,4 +176,40 @@ body {
     right: 10px;
     bottom: 10px;
   }
+  
 }
+
+/* CSS for Show Password Buttons */
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.password-wrapper input {
+  flex-grow: 1;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 1;
+  height: 40px;         
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-password:hover {
+  background-color: #ddd;
+}
+
+
