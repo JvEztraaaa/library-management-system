@@ -25,8 +25,20 @@
     <div class="form">
       <input type="email" placeholder="School Email" id="school-email" />
       <input type="text" placeholder="Student Number" id="student-number" />
-      <input type="password" placeholder="Create Password" id="create-password" />
-      <input type="password" placeholder="Confirm Password" id="confirm-password" />
+
+      <!--Password-->
+      <div class="password-wrapper">
+        <input type="password" placeholder="Create Password" id="create-password" />
+        <button type="button" class="toggle-password" data-target="create-password">Show</button>
+      </div>
+      
+      <!--Confirm Password-->
+      <div class="password-wrapper">
+        <input type="password" placeholder="Confirm Password" id="confirm-password" />
+        <button type="button" class="toggle-password" data-target="confirm-password">Show</button>
+      </div>
+      
+      <!--Button-->
       <button onclick="handleSignup()">Sign up</button>
     </div>
   </div>
