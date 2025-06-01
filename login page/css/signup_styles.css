@@ -92,7 +92,7 @@ body {
 }
 
 /* === Button === */
-.signup-container button{
+.signup-container button {
   width: 100%;
   padding: 12px;
   background: linear-gradient(135deg, #250d82, #004aad);
@@ -177,7 +177,4 @@ body {
     right: 10px;
     bottom: 10px;
   }
-  
 }
-
-
