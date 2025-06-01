@@ -61,8 +61,8 @@ body {
 .about-right h1 {
   font-size: 42px;
   margin-bottom: 20px;
-  color: #00bcd4;
-  font-weight: 600;
+  color: #007bff;
+  font-weight: 700;
 }
 
 .about-right p {
@@ -140,27 +140,32 @@ body {
 .card-content h3 {
   font-size: 18px;
   margin: 10px 0 5px;
-  min-height: 48px; /* NEW: fixes height for name block to align email */
+  min-height: 48px; 
   display: flex;
   align-items: center;
-  justify-content: center; /* or 'flex-start' for left-aligned names */
+  justify-content: center; 
   text-align: center;
 }
 
 .card-content p {
   font-size: 14px;
-  color: #00bcd4;
+  color: #007bff;
   word-wrap: break-word;
 }
 
 .card-content a {
-  color: #00bcd4;
+  color: #007bff;
   text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .card-content a:hover {
-  text-decoration: underline;
+  color: #ecb419;
+  text-shadow: 0 0 6px #ecb419, 0 0 10px #f0d45b;
+  text-decoration: none; /* optional: keep underline off */
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
