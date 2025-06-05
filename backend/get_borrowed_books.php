@@ -4,16 +4,17 @@ if ($conn->connect_error) {
   die("Database connection failed");
 }
 
-$sql = "SELECT bb.title, bb.author, bb.genre, bb.status, u.first_name, u.last_name
+session_start();
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT bb.title, bb.author, bb.genre, bb.status
         FROM borrowed_books bb
-        LEFT JOIN users u ON bb.user_id = u.id
+        WHERE bb.user_id = $user_id
         ORDER BY bb.borrow_time DESC";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    $userName = htmlspecialchars($row['first_name'] . " " . $row['last_name']);
     echo "<tr>
             <td>" . htmlspecialchars($row['title']) . "</td>
             <td>" . htmlspecialchars($row['author']) . "</td>
