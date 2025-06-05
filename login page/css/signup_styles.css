@@ -173,6 +173,15 @@ body {
   text-shadow: 0 0 8px #004aad;
 }
 
+.name-fields {
+  display: flex;
+  gap: 12px;
+}
+
+.name-fields input {
+  flex: 1;
+}
+
 /* === Responsive Design === */
 @media (max-width: 768px) {
   .signup-container {
