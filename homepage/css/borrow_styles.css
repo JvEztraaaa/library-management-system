@@ -1,0 +1,269 @@
+/* General Layout */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: black;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.banner {
+  width: 100%;
+  background: #000;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+}
+
+.logo {
+  width: 450px;
+  height: 80px;
+}
+
+/* Navigation */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(0, 25, 255, 0.2);
+  color: #aaccff;
+}
+
+.nav-links a.active {
+  background: #0019ff88;
+  color: white;
+  box-shadow: 0 0 10px #0019ff88;
+}
+
+/* Search and Icons */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar {
+  height: 36px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 220px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-bar::placeholder {
+  color: #ccc;
+}
+
+.user-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.user-icons .icon i {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Borrow Books Section */
+.books-section {
+  padding: 40px 30px 60px;
+  background: black;
+  flex-grow: 1;
+}
+
+.books-section h2 {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* Books Carousel */
+.books-carousel .books-slides {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Footer Section */
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 30px;
+  background: black;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: #007bff;
+  text-shadow: 0 0 6px #00bfff88;
+}
+
+/* Borrowed Books Table */
+.borrow-table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.borrow-table {
+  width: 90%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.borrow-table thead {
+  background: #222;
+}
+
+.borrow-table th,
+.borrow-table td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.borrow-table th {
+  font-weight: bold;
+  color: #0f89fa88;
+  background-color: #151515;
+}
+
+.borrow-table .placeholder {
+  color: #aaa;
+  font-style: italic;
+  padding: 16px 20px;
+  text-align: center;
+  background-color: #111;
+  border-bottom: 1px solid #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    width: 260px;
+    height: auto;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .header-right {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .books-section {
+    padding: 20px 15px 40px;
+  }
+
+  .books-section h2 {
+    font-size: 28px;
+    margin-left: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .borrow-table th,
+  .borrow-table td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .borrow-table-wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 180px;
+  }
+
+  .books-section h2 {
+    font-size: 22px;
+    margin-left: 15px;
+  }
+
+  .footer-links {
+    padding: 15px 10px;
+  }
+
+  .borrow-table th,
+  .borrow-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .borrow-table {
+    font-size: 13px;
+  }
+}

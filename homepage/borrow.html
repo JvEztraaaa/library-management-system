@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Borrow Books</title>
-  <link rel="stylesheet" href="css/homepage_styles.css" />
+  <link rel="stylesheet" href="css/borrow_styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -18,10 +18,10 @@
 
       <nav class="nav-links">
         <a href="homepage.html">Home</a>
-        <a href="borrow.html" class="active">E-borrowers Card</a>
+        <a href="borrow.html" class="active">Borrowed Books</a>
         <a href="favorites.html">Favorites</a>
       </nav>
-      
+
       <div class="header-right">
         <input type="text" class="search-bar" placeholder="Search..." />
         <div class="user-icons">
@@ -30,26 +30,32 @@
         </div>
       </div>
     </div>
-
-    <!-- Banner Carousel -->
-    <div class="banner-carousel">
-      <div class="banner-slides">
-        <div class="banner-slide slide-1"></div>
-        <div class="banner-slide slide-2"></div>
-        <div class="banner-slide slide-3"></div>
-        <div class="banner-slide slide-4"></div>
-      </div>
-      <button class="carousel-btn banner-prev">❮</button>
-      <button class="carousel-btn banner-next">❯</button>
-    </div>
   </div>
 
-  <!-- Favorites Section -->
+  <!-- Borrow Section -->
   <div class="books-section">
     <h2>Borrow Books</h2>
+    
+    <!-- Borrowed Books Table -->
+    <div class="borrow-table-wrapper">
+      <table class="borrow-table">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4" class="placeholder">No borrowed books yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="books-carousel">
       <div class="books-slides">
-        <!-- Favorite books go here -->
+        <!-- Borrowed books go here -->
       </div>
     </div>
   </div>
