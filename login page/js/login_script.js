@@ -43,16 +43,30 @@ form.addEventListener("submit", function (event) {
     return;
   }
 
-  // Fetch stored credentials
-  const storedEmail = localStorage.getItem("userEmail");
-  const storedPassword = localStorage.getItem("userPassword");
-
-  if (email === storedEmail && password === storedPassword) {
-    showMessage("Login successful! Redirecting...", false);
-    setTimeout(() => {
-      window.location.href = "../homepage/homepage.html";
-    }, 1500);
-  } else {
-    showMessage("Invalid email or password.");
-  }
+  // Send login request to the backend
+  fetch("../backend/login.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      email: email,
+      password: password,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        showMessage(data.message, false);
+        setTimeout(() => {
+          window.location.href = "../homepage/homepage.html"; // Redirect on success
+        }, 1500);
+      } else {
+        showMessage(data.message);
+      }
+    })
+    .catch((error) => {
+      showMessage("An error occurred. Please try again later.");
+      console.error("Error:", error);
+    });
 });
