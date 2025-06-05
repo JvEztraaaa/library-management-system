@@ -21,12 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("submit", function (e) {
       e.preventDefault(); // Prevent default form submission
 
+      // Get all form values including first and last name
+      const firstName = document.getElementById("first-name").value.trim();
+      const lastName = document.getElementById("last-name").value.trim();
       const email = document.getElementById("school-email").value.trim();
       const studentNumber = document.getElementById("student-number").value.trim();
       const password = document.getElementById("create-password").value;
       const confirmPassword = document.getElementById("confirm-password").value;
       const form = document.querySelector(".form");
 
+      // Remove existing messages
       const existingMessage = document.querySelector(".form-message");
       if (existingMessage) existingMessage.remove();
 
@@ -37,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = text;
         messageDiv.style.color = isError ? "red" : "deepskyblue";
         form.prepend(messageDiv);
+      }
+
+      // Validate first name and last name (not empty)
+      if (!firstName || !lastName) {
+        showMessage("Please enter both first and last names.");
+        return;
       }
 
       // Validate student number (must be 4-digit number)
@@ -58,13 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Send signup request to the backend
+      // Send signup request to the backend with firstName and lastName added
       fetch("../backend/signup.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams({
+          first_name: firstName,
+          last_name: lastName,
           email: email,
           student_number: studentNumber,
           password: password,

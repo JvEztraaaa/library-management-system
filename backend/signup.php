@@ -21,9 +21,17 @@ function sanitize($data) {
 }
 
 // Get POST data
+$first_name = sanitize($_POST['first_name'] ?? '');
+$last_name = sanitize($_POST['last_name'] ?? '');
 $email = sanitize($_POST['email'] ?? '');
 $student_number = sanitize($_POST['student_number'] ?? '');
 $pass = $_POST['password'] ?? '';
+
+// Validate first and last name (non-empty, optional further validation)
+if (empty($first_name) || empty($last_name)) {
+    echo json_encode(["success" => false, "message" => "First name and last name are required."]);
+    exit();
+}
 
 // Basic validation
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -57,14 +65,18 @@ $stmt->close();
 // Hash the password securely
 $password_hash = password_hash($pass, PASSWORD_DEFAULT);
 
-// Insert user into database
-$stmt = $conn->prepare("INSERT INTO users (email, student_number, password_hash) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $email, $student_number, $password_hash);
+// Insert user into database with first_name and last_name
+$stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, student_number, password_hash) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $first_name, $last_name, $email, $student_number, $password_hash);
 
 if ($stmt->execute()) {
     echo json_encode(["success" => true, "message" => "Signup successful! You can now log in."]);
 } else {
-    echo json_encode(["success" => false, "message" => "Signup failed. Please try again later."]);
+    echo json_encode([
+        "success" => false,
+        "message" => "Signup failed. Please try again later.",
+        "error" => $stmt->error // Remove this line in production
+    ]);
 }
 
 $stmt->close();
