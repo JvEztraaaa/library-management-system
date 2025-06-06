@@ -13,7 +13,7 @@ function setupEventListeners() {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            etchApprovalRequests(button.dataset.status);
+            fetchApprovalRequests(button.dataset.status);
         });
     });
 }

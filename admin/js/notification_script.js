@@ -45,6 +45,7 @@ async function fetchNotifications() {
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'listitem');
       card.setAttribute('aria-label', `Notification: ${n.message}`);
+      card.setAttribute('data-status', n.type.toLowerCase());
 
       // Create notification header with title and student name
       const header = document.createElement('div');
@@ -60,7 +61,7 @@ async function fetchNotifications() {
 
       // Add status indicator
       const status = document.createElement('span');
-      status.className = `notification-status status-${n.type}`;
+      status.className = `notification-status status-${n.type.toLowerCase()}`;
       status.textContent = n.type || 'borrowed';
 
       header.appendChild(title);

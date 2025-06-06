@@ -289,32 +289,41 @@ body {
 }
 
 .notification-status {
-  display: inline-block;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.85em;
   font-weight: 500;
   text-transform: capitalize;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
-.status-borrowed {
+.status-pending {
+  background: rgba(246, 194, 62, 0.2);
+  color: #f6c23e;
+  border: 1px solid rgba(246, 194, 62, 0.3);
+}
+
+.status-approved {
   background: rgba(28, 200, 138, 0.2);
   color: #1cc88a;
   border: 1px solid rgba(28, 200, 138, 0.3);
 }
 
-.status-returned {
+.status-rejected {
+  background: rgba(231, 74, 59, 0.2);
+  color: #e74a3b;
+  border: 1px solid rgba(231, 74, 59, 0.3);
+}
+
+.status-borrowed {
   background: rgba(78, 115, 223, 0.2);
   color: #4e73df;
   border: 1px solid rgba(78, 115, 223, 0.3);
 }
 
-.status-reserved {
-  background: rgba(246, 194, 62, 0.2);
-  color: #f6c23e;
-  border: 1px solid rgba(246, 194, 62, 0.3);
+.status-returned {
+  background: rgba(54, 185, 204, 0.2);
+  color: #36b9cc;
+  border: 1px solid rgba(54, 185, 204, 0.3);
 }
 
 .status-overdue {
