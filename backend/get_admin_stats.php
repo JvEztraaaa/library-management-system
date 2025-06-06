@@ -100,15 +100,27 @@ try {
 
     // Get book category statistics
     $category_stats = [];
-    $category_query = "SELECT genre, COUNT(*) as count 
+    $category_query = "SELECT 
+                        SUBSTRING_INDEX(genre, ',', 1) as main_genre, 
+                        COUNT(*) as count 
                       FROM borrowed_books 
-                      GROUP BY genre 
+                      WHERE status != 'Rejected'
+                      AND genre IS NOT NULL 
+                      AND genre != ''
+                      GROUP BY main_genre 
                       ORDER BY count DESC 
                       LIMIT 5";
+    
+    // Debug: Log the query results
     $category_result = $conn->query($category_query);
+    if (!$category_result) {
+        error_log("Category query error: " . $conn->error);
+    }
+    
     while ($row = $category_result->fetch_assoc()) {
+        error_log("Genre: " . $row['main_genre'] . ", Count: " . $row['count']);
         $category_stats[] = [
-            'genre' => $row['genre'],
+            'genre' => $row['main_genre'],
             'count' => (int)$row['count']
         ];
     }

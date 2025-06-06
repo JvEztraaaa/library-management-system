@@ -56,12 +56,35 @@ function updateEngagementChart(engagementData) {
 
 // Update category chart
 function updateCategoryChart(categoryStats) {
+    console.log('Category Stats:', categoryStats); // Debug log
+    
     const labels = categoryStats.map(cat => cat.genre);
     const data = categoryStats.map(cat => cat.count);
 
+    // Update chart
     bookCategoryChart.data.labels = labels;
     bookCategoryChart.data.datasets[0].data = data;
     bookCategoryChart.update();
+
+    // Update legend
+    const legendContainer = document.getElementById('categoryLegend');
+    const colors = [
+        "#4e73df",  // Blue
+        "#1cc88a",  // Green
+        "#36b9cc",  // Cyan
+        "#f6c23e",  // Yellow
+        "#e74a3b",  // Red
+    ];
+
+    // Clear existing legend
+    legendContainer.innerHTML = '';
+
+    // Add new legend items
+    categoryStats.forEach((stat, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span style="background:${colors[index % colors.length]}"></span>${stat.genre}`;
+        legendContainer.appendChild(li);
+    });
 }
 
 // Initialize charts
