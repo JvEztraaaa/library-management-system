@@ -18,8 +18,8 @@ try {
     // Get total students
     $total_students = $conn->query("SELECT COUNT(*) as count FROM users WHERE role = 'user'")->fetch_assoc()['count'];
 
-    // Get total borrowed books
-    $total_borrowed = $conn->query("SELECT COUNT(*) as count FROM borrowed_books")->fetch_assoc()['count'];
+    // Get total borrowed books (excluding rejected)
+    $total_borrowed = $conn->query("SELECT COUNT(*) as count FROM borrowed_books WHERE status != 'Rejected'")->fetch_assoc()['count'];
 
     // Get total books in (returned)
     $total_in = $conn->query("SELECT COUNT(*) as count FROM borrowed_books WHERE status = 'Returned'")->fetch_assoc()['count'];
@@ -36,34 +36,67 @@ try {
                       LIMIT 5";
     $activity_result = $conn->query($activity_query);
     while ($row = $activity_result->fetch_assoc()) {
+        $action = '';
+        switch($row['status']) {
+            case 'Approved':
+                $action = 'borrowed';
+                break;
+            case 'Rejected':
+                $action = 'request was rejected';
+                break;
+            case 'Pending':
+                $action = 'wants to borrow';
+                break;
+            default:
+                $action = $row['status'];
+        }
+        
         $activity_log[] = [
             'student_name' => $row['first_name'] . ' ' . $row['last_name'],
-            'action' => $row['status'] === 'Borrowed' ? 'borrowed' : 'returned',
+            'action' => $action,
             'book_title' => $row['title'],
             'time' => $row['borrow_time']
         ];
     }
 
-    // Get student engagement data (last 7 days)
+    // Get student engagement data (last 3 days)
     $engagement_data = [];
+    
+    // Get data for last 3 days
     $engagement_query = "SELECT 
                             DATE(borrow_time) as date,
-                            COUNT(*) as total_borrows,
-                            COUNT(CASE WHEN status = 'Borrowed' THEN 1 END) as active_borrows,
-                            COUNT(CASE WHEN status = 'Returned' THEN 1 END) as returns
+                            COUNT(DISTINCT user_id) as total_students,
+                            SUM(CASE WHEN status = 'Approved' THEN 1 ELSE 0 END) as borrowed_books,
+                            COUNT(CASE WHEN status = 'Overdue' THEN 1 END) as overdue_books
                         FROM borrowed_books 
-                        WHERE borrow_time >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)
+                        WHERE borrow_time >= DATE_SUB(CURRENT_DATE, INTERVAL 3 DAY)
+                        OR status = 'Overdue'
                         GROUP BY DATE(borrow_time)
-                        ORDER BY date";
+                        ORDER BY date ASC";
     $engagement_result = $conn->query($engagement_query);
-    while ($row = $engagement_result->fetch_assoc()) {
-        $engagement_data[] = [
-            'date' => $row['date'],
-            'total_borrows' => (int)$row['total_borrows'],
-            'active_borrows' => (int)$row['active_borrows'],
-            'returns' => (int)$row['returns']
+    
+    // Fill in missing dates with zero values
+    $dates = [];
+    for ($i = 2; $i >= 0; $i--) {
+        $date = date('Y-m-d', strtotime("-$i days"));
+        $dates[$date] = [
+            'date' => $date,
+            'total_students' => 0,
+            'borrowed_books' => 0,
+            'overdue_books' => 0
         ];
     }
+    
+    while ($row = $engagement_result->fetch_assoc()) {
+        $dates[$row['date']] = [
+            'date' => $row['date'],
+            'total_students' => (int)$row['total_students'],
+            'borrowed_books' => (int)$row['borrowed_books'],
+            'overdue_books' => (int)$row['overdue_books']
+        ];
+    }
+    
+    $engagement_data = array_values($dates);
 
     // Get book category statistics
     $category_stats = [];
@@ -80,6 +113,7 @@ try {
         ];
     }
 
+    // Add debug info to the response
     echo json_encode([
         'success' => true,
         'stats' => [

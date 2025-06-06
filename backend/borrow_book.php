@@ -56,8 +56,9 @@ try {
     }
     $check->close();
 
-    // ✅ Insert book since it's not borrowed yet
-    $sql = "INSERT INTO borrowed_books (title, author, genre, user_id) VALUES (?, ?, ?, ?)";
+    // Insert book since it's not borrowed yet
+    $sql = "INSERT INTO borrowed_books (title, author, genre, user_id, status, borrow_time, due_date) 
+            VALUES (?, ?, ?, ?, 'Pending', NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY))";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
         throw new Exception("Prepare failed: " . $conn->error);
@@ -80,14 +81,14 @@ try {
         $user_data = $user_result->fetch_assoc();
         $user_name = $user_data['first_name'] . ' ' . $user_data['last_name'];
         
-        // Create notification using the function
-        $message = $user_name . " borrowed the book \"" . $title . "\".";
-        createNotification($conn, $user_id, 'borrowed', $title, $message);
+        // Create notification for borrow request
+        $message = $user_name . " requested to borrow the book \"" . $title . "\".";
+        createNotification($conn, $user_id, 'pending', $title, $message);
         
         $user_stmt->close();
-        echo json_encode(['success' => true, 'message' => 'Book borrowed successfully']);
+        echo json_encode(['success' => true, 'message' => 'Book borrow request submitted successfully']);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Failed to borrow book']);
+        echo json_encode(['success' => false, 'message' => 'Failed to submit borrow request']);
     }
 
     $stmt->close();

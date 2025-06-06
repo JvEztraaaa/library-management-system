@@ -46,21 +46,20 @@ try {
     $stmt->bind_param('ssii', $status, $comment, $adminId, $requestId);
     $stmt->execute();
 
-    // Create notification for the student
-    $notificationQuery = "
-        INSERT INTO notifications (user_id, type, book_title, message)
-        SELECT 
-            bb.user_id,
-            ?,
-            bb.title,
-            CONCAT('Your request for \"', bb.title, '\" has been ', LOWER(?))
-        FROM borrowed_books bb
-        WHERE bb.id = ?
+    // Delete the corresponding notification
+    $deleteNotificationQuery = "
+        DELETE FROM notifications 
+        WHERE book_title = (
+            SELECT title 
+            FROM borrowed_books 
+            WHERE id = ?
+        )
+        AND type = 'pending'
     ";
     
-    $stmt = $conn->prepare($notificationQuery);
-    $stmt->bind_param('ssi', $status, $status, $requestId);
-    $stmt->execute();
+    $deleteStmt = $conn->prepare($deleteNotificationQuery);
+    $deleteStmt->bind_param('i', $requestId);
+    $deleteStmt->execute();
 
     // Commit transaction
     $conn->commit();

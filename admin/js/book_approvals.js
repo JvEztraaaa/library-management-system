@@ -18,42 +18,56 @@ function setupEventListeners() {
     });
 }
 
-// Fetch approval requests from the server with optional status filter
+// Fetch approval requests from the server
 async function fetchApprovalRequests(status = 'all') {
     try {
-        const response = await fetch(`../backend/get_approval_requests.php?status=${status}`);
+        const response = await fetch(`../backend/get_approval_requests.php${status !== 'all' ? `?status=${status}` : ''}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
-        
         if (data.success) {
             displayApprovalRequests(data.requests);
         } else {
-            showError(data.message || 'Failed to fetch approval requests');
+            throw new Error(data.message || 'Failed to fetch approval requests');
         }
     } catch (error) {
         console.error('Error fetching approval requests:', error);
-        showError('Error connecting to server');
+        const container = document.getElementById('approvalContainer');
+        if (container) {
+            container.innerHTML = `<div class="error-message">Error loading approval requests: ${error.message}</div>`;
+        }
     }
 }
 
 // Display approval requests in the approval box
 function displayApprovalRequests(requests) {
-    const approvalBox = document.getElementById('approvalBox');
-    if (!approvalBox) return;
+    const container = document.getElementById('approvalContainer');
+    if (!container) {
+        console.error('Approval container not found');
+        return;
+    }
 
-    approvalBox.innerHTML = '';
+    container.innerHTML = '';
+
+    // Sort requests: pending first, then by date (newest first)
+    requests.sort((a, b) => {
+        // If one is pending and the other isn't, pending comes first
+        if (a.status === 'Pending' && b.status !== 'Pending') return -1;
+        if (a.status !== 'Pending' && b.status === 'Pending') return 1;
+        
+        // If both are pending or both are not pending, sort by date
+        return new Date(b.borrow_time) - new Date(a.borrow_time);
+    });
 
     if (requests.length === 0) {
-        approvalBox.innerHTML = `
-            <div class="no-requests">
-                <p>No approval requests found</p>
-            </div>
-        `;
+        container.innerHTML = '<div class="no-requests">No approval requests found</div>';
         return;
     }
 
     requests.forEach(request => {
         const card = createApprovalCard(request);
-        approvalBox.appendChild(card);
+        container.appendChild(card);
     });
 }
 
@@ -133,8 +147,12 @@ async function handleApproval(requestId, status, comment) {
         const data = await response.json();
         
         if (data.success) {
-            showSuccess(`Request ${status.toLowerCase()} successfully`);
-            fetchApprovalRequests(); 
+            if (status === 'Rejected') {
+                showError(`Request ${status.toLowerCase()} successfully`);
+            } else {
+                showSuccess(`Request ${status.toLowerCase()} successfully`);
+            }
+            fetchApprovalRequests();
         } else {
             showError(data.message || 'Failed to update request status');
         }

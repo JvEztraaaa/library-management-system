@@ -190,7 +190,10 @@ body {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
     transition: all 0.3s ease;
+    margin-right: 10px;
 }
 
 .filter-btn:hover {

@@ -221,6 +221,18 @@ body {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Add styles for clickable cards */
+.notification-card[data-status="pending"] {
+  cursor: pointer;
+}
+
+.notification-card[data-status="pending"]:hover {
+  background: rgba(78, 115, 223, 0.1);
+  border-color: rgba(78, 115, 223, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(78, 115, 223, 0.2);
+}
+
 .notification-header {
   display: flex;
   justify-content: space-between;
@@ -242,6 +254,13 @@ body {
   text-overflow: ellipsis;
 }
 
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 .notification-student {
   color: #1cc88a;
   font-weight: 500;
@@ -250,7 +269,38 @@ body {
   padding: 4px 12px;
   border-radius: 20px;
   white-space: nowrap;
-  flex-shrink: 0;
+}
+
+.action-type {
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.action-borrow {
+  color: #4e73df;
+  background: rgba(78, 115, 223, 0.1);
+  border: 1px solid rgba(78, 115, 223, 0.2);
+}
+
+.action-return {
+  color: #1cc88a;
+  background: rgba(28, 200, 138, 0.1);
+  border: 1px solid rgba(28, 200, 138, 0.2);
+}
+
+.action-overdue {
+  color: #e74a3b;
+  background: rgba(231, 74, 59, 0.1);
+  border: 1px solid rgba(231, 74, 59, 0.2);
+}
+
+.action-pending {
+  color: #f6c23e;
+  background: rgba(246, 194, 62, 0.1);
+  border: 1px solid rgba(246, 194, 62, 0.2);
 }
 
 .notification-message {
