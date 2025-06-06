@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #181818, #0a215f);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.approval-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    width: 100%;
+    background: linear-gradient(135deg, #181818, #0a215f);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo1 {
+    height: 70px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.user-icons .profile {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 30px;
+    transition: transform 0.2s ease;
+}
+
+.user-icons .profile:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 90px);
+}
+
+.sidebar {
+    background-color: #1a1a2e;
+    width: 70px;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 90px);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    overflow: hidden;
+    z-index: 998;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+.logo {
+    text-align: start;
+    margin: 20px;
+    color: white;
+    font-size: 1.5em;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.nav-list li:hover {
+    background-color: #2e2e45;
+    transform: translateX(5px);
+}
+
+.nav-list li.active {
+    background-color: #4e73df;
+}
+
+.nav-list i {
+    min-width: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.label {
+    opacity: 0;
+    margin-left: 15px;
+    white-space: nowrap;
+    color: white;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.sidebar:hover .label {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.settings {
+    margin-top: auto;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.settings:hover {
+    background-color: #2e2e45;
+}
+
+.approvals-container {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    transition: margin-left 0.3s, width 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar:hover ~ .approvals-container {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+}
+
+.approvals-container h2 {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(78, 115, 223, 0.6);
+}
+
+.approval-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+    background: #4e73df;
+    box-shadow: 0 0 10px rgba(78, 115, 223, 0.5);
+}
+
+.approval-box {
+    flex: 1;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.approval-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.approval-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.approval-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.approval-title {
+    color: #4e73df;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.approval-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-pending {
+    background: rgba(246, 194, 62, 0.2);
+    color: #f6c23e;
+    border: 1px solid rgba(246, 194, 62, 0.3);
+}
+
+.status-approved {
+    background: rgba(28, 200, 138, 0.2);
+    color: #1cc88a;
+    border: 1px solid rgba(28, 200, 138, 0.3);
+}
+
+.status-rejected {
+    background: rgba(231, 74, 59, 0.2);
+    color: #e74a3b;
+    border: 1px solid rgba(231, 74, 59, 0.3);
+}
+
+.approval-details {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.approval-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.approval-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.approve-btn {
+    background: #1cc88a;
+    color: white;
+}
+
+.approve-btn:hover {
+    background: #169b6b;
+    box-shadow: 0 0 10px rgba(28, 200, 138, 0.5);
+    transform: translateY(-2px);
+}
+
+.reject-btn {
+    background: #e74a3b;
+    color: white;
+}
+
+.reject-btn:hover {
+    background: #be2617;
+    box-shadow: 0 0 10px rgba(231, 74, 59, 0.5);
+    transform: translateY(-2px);
+}
+
+.approval-comment {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.approval-comment:focus {
+    outline: none;
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease;
+}
+
+.toast.success {
+    background: #1cc88a;
+}
+
+.toast.error {
+    background: #e74a3b;
+}
+
+.toast i {
+    font-size: 1.2em;
+}
+
+.toast.fade-out {
+    animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Status Colors */
+.status-pending {
+    background: rgba(246, 194, 62, 0.2);
+    color: #f6c23e;
+    border: 1px solid rgba(246, 194, 62, 0.3);
+}
+
+.status-approved {
+    background: rgba(28, 200, 138, 0.2);
+    color: #1cc88a;
+    border: 1px solid rgba(28, 200, 138, 0.3);
+}
+
+.status-rejected {
+    background: rgba(231, 74, 59, 0.2);
+    color: #e74a3b;
+    border: 1px solid rgba(231, 74, 59, 0.3);
+}
+
+.status-borrowed {
+    background: rgba(78, 115, 223, 0.2);
+    color: #4e73df;
+    border: 1px solid rgba(78, 115, 223, 0.3);
+}
+
+.status-returned {
+    background: rgba(54, 185, 204, 0.2);
+    color: #36b9cc;
+    border: 1px solid rgba(54, 185, 204, 0.3);
+}
+
+.status-overdue {
+    background: rgba(231, 74, 59, 0.2);
+    color: #e74a3b;
+    border: 1px solid rgba(231, 74, 59, 0.3);
+} 
