@@ -59,7 +59,7 @@ form.addEventListener("submit", function (event) {
       if (data.success) {
         showMessage(data.message, false);
         setTimeout(() => {
-          window.location.href = "../homepage/homepage.html"; // Redirect on success
+          window.location.href = "../" + data.redirect_url; // Use the redirect_url from response
         }, 1500);
       } else {
         showMessage(data.message);

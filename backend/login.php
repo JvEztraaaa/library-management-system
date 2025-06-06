@@ -37,7 +37,7 @@ if (strlen($pass) < 8) {
 }
 
 // Retrieve full user data by email
-$stmt = $conn->prepare("SELECT id, first_name, last_name, password_hash FROM users WHERE email = ?");
+$stmt = $conn->prepare("SELECT id, first_name, last_name, password_hash, role FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $stmt->store_result();
@@ -49,7 +49,7 @@ if ($stmt->num_rows === 0) {
     exit();
 }
 
-$stmt->bind_result($user_id, $first_name, $last_name, $password_hash_from_db);
+$stmt->bind_result($user_id, $first_name, $last_name, $password_hash_from_db, $role);
 $stmt->fetch();
 
 // Verify password
@@ -59,8 +59,23 @@ if (password_verify($pass, $password_hash_from_db)) {
     $_SESSION['email'] = $email;
     $_SESSION['first_name'] = $first_name;
     $_SESSION['last_name'] = $last_name;
+    $_SESSION['role'] = $role;
 
-    echo json_encode(["success" => true, "message" => "Login successful! Redirecting..."]);
+    // Debug role value
+    error_log("User role: " . $role);
+    
+    // Determine redirect URL based on role - using strict comparison with correct folder paths
+    $redirect_url = ($role === 'admin') ? 'admin/admin.html' : 'homepage/homepage.html';
+    
+    // Debug redirect URL
+    error_log("Redirect URL: " . $redirect_url);
+    
+    echo json_encode([
+        "success" => true, 
+        "message" => "Login successful! Redirecting...",
+        "redirect_url" => $redirect_url,
+        "role" => $role // Adding role to response for debugging
+    ]);
 } else {
     echo json_encode(["success" => false, "message" => "Invalid email or password."]);
 }

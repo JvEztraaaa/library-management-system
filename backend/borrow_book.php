@@ -1,53 +1,104 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 
-if (!isset($_SESSION['user_id'])) {
-    http_response_code(403);
-    echo "unauthorized";
-    exit;
-}
+// Include database connection and functions
+require_once 'notification.php';
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "library";
+try {
+    if (!isLoggedIn()) {
+        http_response_code(403);
+        echo json_encode(['success' => false, 'message' => 'unauthorized']);
+        exit;
+    }
 
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    // Validate input
+    if (!isset($_POST['title']) || !isset($_POST['author']) || !isset($_POST['genre'])) {
+        echo json_encode(['success' => false, 'message' => 'Missing required fields']);
+        exit;
+    }
 
-$title = $_POST['title'];
-$author = $_POST['author'];
-$genre = $_POST['genre'];
-$user_id = $_SESSION['user_id'];
+    $title = trim($_POST['title']);
+    $author = trim($_POST['author']);
+    $genre = trim($_POST['genre']);
+    $user_id = $_SESSION['user_id'];
 
-// ✅ Check if book is already borrowed (based on title)
-$check = $conn->prepare("SELECT id FROM borrowed_books WHERE title = ?");
-$check->bind_param("s", $title);
-$check->execute();
-$check->store_result();
+    if (empty($title) || empty($author) || empty($genre)) {
+        echo json_encode(['success' => false, 'message' => 'All fields are required']);
+        exit;
+    }
 
-if ($check->num_rows > 0) {
-    echo "already_borrowed";
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $db = "library";
+
+    $conn = new mysqli($host, $user, $pass, $db);
+    if ($conn->connect_error) {
+        throw new Exception("Connection failed: " . $conn->connect_error);
+    }
+
+    // ✅ Check if book is already borrowed (based on title)
+    $check = $conn->prepare("SELECT id FROM borrowed_books WHERE title = ?");
+    if (!$check) {
+        throw new Exception("Prepare failed: " . $conn->error);
+    }
+    
+    $check->bind_param("s", $title);
+    $check->execute();
+    $check->store_result();
+
+    if ($check->num_rows > 0) {
+        echo json_encode(['success' => false, 'message' => 'already_borrowed']);
+        $check->close();
+        $conn->close();
+        exit;
+    }
     $check->close();
-    $conn->close();
-    exit;
+
+    // ✅ Insert book since it's not borrowed yet
+    $sql = "INSERT INTO borrowed_books (title, author, genre, user_id) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        throw new Exception("Prepare failed: " . $conn->error);
+    }
+    
+    $stmt->bind_param("sssi", $title, $author, $genre, $user_id);
+    $result = $stmt->execute();
+
+    if ($result && $stmt->affected_rows > 0) {
+        // Get user's name for the notification
+        $user_query = "SELECT first_name, last_name FROM users WHERE id = ?";
+        $user_stmt = $conn->prepare($user_query);
+        if (!$user_stmt) {
+            throw new Exception("Prepare failed: " . $conn->error);
+        }
+        
+        $user_stmt->bind_param("i", $user_id);
+        $user_stmt->execute();
+        $user_result = $user_stmt->get_result();
+        $user_data = $user_result->fetch_assoc();
+        $user_name = $user_data['first_name'] . ' ' . $user_data['last_name'];
+        
+        // Create notification using the function
+        $message = $user_name . " borrowed the book \"" . $title . "\".";
+        createNotification($conn, $user_id, 'borrowed', $title, $message);
+        
+        $user_stmt->close();
+        echo json_encode(['success' => true, 'message' => 'Book borrowed successfully']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Failed to borrow book']);
+    }
+
+    $stmt->close();
+
+} catch (Exception $e) {
+    error_log("Error in borrow_book.php: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'An error occurred while borrowing the book']);
+} finally {
+    // Ensure connection is closed
+    if (isset($conn)) {
+        $conn->close();
+    }
 }
-$check->close();
-
-// ✅ Insert book since it's not borrowed yet
-$sql = "INSERT INTO borrowed_books (title, author, genre, user_id) VALUES (?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sssi", $title, $author, $genre, $user_id);
-$stmt->execute();
-
-if ($stmt->affected_rows > 0) {
-    echo "success";
-} else {
-    echo "error";
-}
-
-$stmt->close();
-$conn->close();
 ?>

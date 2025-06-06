@@ -107,17 +107,20 @@ function borrowBook(button) {
     },
     body: `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}&genre=${encodeURIComponent(genre)}`
   })
-  .then(response => response.text())
-  .then(result => {
-    result = result.trim();
-    if (result === "success") {
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
       alert(`You borrowed "${title}"!`);
-    } else if (result === "already_borrowed") {
+    } else if (data.message === 'already_borrowed') {
       alert(`"${title}" is already being borrowed.`);
-    } else if (result === "unauthorized") {
+    } else if (data.message === 'unauthorized') {
       alert("Please log in to borrow books.");
     } else {
-      alert("Error borrowing book.");
+      alert(data.message || "Error borrowing book.");
     }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert("Error borrowing book. Please try again.");
   });
 }

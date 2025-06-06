@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifications</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/notification_styles.css">
+    <script src="js/notification_script.js"></script>
 </head>
 <body>
     <div class="notification-dashboard">
@@ -39,66 +41,12 @@
 
             <div class="notifications-container">
                 <h2>NOTIFICATIONS</h2>
-                <div class="notification-box">
-                
-                <!-- Borrowed Book -->
-                <div class="notification">
-                    <span class="badge blue">Borrowed</span>
-                    <div class="notification-content">
-                    <h4>John Reyes borrowed "Introduction to Java Programming"</h4>
-                    <p>Book due on: June 15, 2025</p>
-                    <span class="sender">John Reyes</span>
-                    </div>
-                    <span class="time">6 Jun 2025 at 9:00 AM</span>
-                </div>
-
-                <!-- Returned Book -->
-                <div class="notification">
-                    <span class="badge green">Returned</span>
-                    <div class="notification-content">
-                    <h4>Anna Cruz returned "Basic Statistics Vol. 1"</h4>
-                    <p>Returned on time. No penalties applied.</p>
-                    <span class="sender">Anna Cruz</span>
-                    </div>
-                    <span class="time">6 Jun 2025 at 8:45 AM</span>
-                </div>
-
-                <!-- Overdue Book -->
-                <div class="notification">
-                    <span class="badge orange">Overdue</span>
-                    <div class="notification-content">
-                    <h4>Reminder: Paolo Santos has overdue book</h4>
-                    <p>"Data Structures in C" was due on June 1, 2025.</p>
-                    <span class="sender">Paolo Santos</span>
-                    </div>
-                    <span class="time">6 Jun 2025 at 8:30 AM</span>
-                </div>
-
-                <!-- Reservation -->
-                <div class="notification">
-                    <span class="badge purple">Reserved</span>
-                    <div class="notification-content">
-                    <h4>Marie Gomez reserved "History of the Philippines"</h4>
-                    <p>Reservation confirmed. Pick-up within 24 hours.</p>
-                    <span class="sender">Marie Gomez</span>
-                    </div>
-                    <span class="time">6 Jun 2025 at 8:15 AM</span>
-                </div>
-
-                <!-- New Book Added -->
-                <div class="notification">
-                    <span class="badge teal">New Book</span>
-                    <div class="notification-content">
-                    <h4>New book added: "Modern Web Development"</h4>
-                    <p>Now available in Computer Science section.</p>
-                    <span class="sender">Library Admin</span>
-                    </div>
-                    <span class="time">6 Jun 2025 at 8:00 AM</span>
-                </div>
-
+                <div class="notification-box" id="notificationBox">
+                    
                 </div>
             </div>
         </div>
     </div>
+    
 </body>
 </html>
