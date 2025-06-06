@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the page
     fetchApprovalRequests();
     setupEventListeners();
     
@@ -7,18 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(fetchApprovalRequests, 30000);
 });
 
+// Set up event listeners for filter buttons (All, Pending, Approved, Rejected)
 function setupEventListeners() {
-    // Filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            fetchApprovalRequests(button.dataset.status);
+            etchApprovalRequests(button.dataset.status);
         });
     });
 }
 
+// Fetch approval requests from the server with optional status filter
 async function fetchApprovalRequests(status = 'all') {
     try {
         const response = await fetch(`../backend/get_approval_requests.php?status=${status}`);
@@ -35,6 +35,7 @@ async function fetchApprovalRequests(status = 'all') {
     }
 }
 
+// Display approval requests in the approval box
 function displayApprovalRequests(requests) {
     const approvalBox = document.getElementById('approvalBox');
     if (!approvalBox) return;
@@ -56,6 +57,7 @@ function displayApprovalRequests(requests) {
     });
 }
 
+// Create an approval card for a single request
 function createApprovalCard(request) {
     const card = document.createElement('div');
     card.className = 'approval-card';
@@ -95,6 +97,7 @@ function createApprovalCard(request) {
     return card;
 }
 
+// Handle approval of a request
 async function approveRequest(requestId) {
     const card = document.querySelector(`[data-request-id="${requestId}"]`);
     if (!card) return;
@@ -103,6 +106,7 @@ async function approveRequest(requestId) {
     await handleApproval(requestId, 'Approved', comment);
 }
 
+// Handle rejection of a request
 async function rejectRequest(requestId) {
     const card = document.querySelector(`[data-request-id="${requestId}"]`);
     if (!card) return;
@@ -111,6 +115,7 @@ async function rejectRequest(requestId) {
     await handleApproval(requestId, 'Rejected', comment);
 }
 
+// Handle the approval/rejection process by sending request to server
 async function handleApproval(requestId, status, comment) {
     try {
         const response = await fetch('../backend/update_approval_status.php', {
@@ -129,7 +134,7 @@ async function handleApproval(requestId, status, comment) {
         
         if (data.success) {
             showSuccess(`Request ${status.toLowerCase()} successfully`);
-            fetchApprovalRequests(); // Refresh the list
+            fetchApprovalRequests(); 
         } else {
             showError(data.message || 'Failed to update request status');
         }
@@ -139,6 +144,7 @@ async function handleApproval(requestId, status, comment) {
     }
 }
 
+// Format date 
 function formatDate(dateString) {
     const options = { 
         year: 'numeric', 
@@ -150,8 +156,8 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
+// Success toast notification
 function showSuccess(message) {
-    // Create toast element
     const toast = document.createElement('div');
     toast.className = 'toast success';
     toast.innerHTML = `
@@ -161,8 +167,8 @@ function showSuccess(message) {
     showToast(toast);
 }
 
+// Error toast notification
 function showError(message) {
-    // Create toast element
     const toast = document.createElement('div');
     toast.className = 'toast error';
     toast.innerHTML = `
@@ -172,8 +178,8 @@ function showError(message) {
     showToast(toast);
 }
 
+// Display toast notifications
 function showToast(toast) {
-    // Add toast to container
     let container = document.querySelector('.toast-container');
     if (!container) {
         container = document.createElement('div');

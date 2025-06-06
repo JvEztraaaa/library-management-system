@@ -9,6 +9,8 @@ body {
   background: linear-gradient(135deg, #181818, #0a215f);
   min-height: 100vh;
   overflow-x: hidden;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .notification-dashboard {
@@ -65,6 +67,7 @@ body {
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   height: calc(100vh - 90px);
   position: fixed;
   top: 90px;
@@ -80,34 +83,32 @@ body {
 .logo {
   text-align: start;
   margin: 20px;
+  padding: 10px 0;
   color: white;
   font-size: 1.5em;
 }
 
 .nav-list {
   list-style: none;
-  padding: 0;
+  padding: 20px 0;
 }
 
 .nav-list li {
   padding: 15px 20px;
   display: flex;
-  align-items: center;
+  align-items: start;
   color: white;
-  transition: all 0.3s;
+  transition: background 0.2s;
   cursor: pointer;
-  border-radius: 10px;
 }
 
 .nav-list li:hover {
   background-color: #2e2e45;
-  transform: translateX(5px);
 }
 
 .nav-list i {
   min-width: 30px;
-  text-align: center;
-  font-size: 18px;
+  text-align: start;
 }
 
 .label {
@@ -115,12 +116,11 @@ body {
   margin-left: 15px;
   white-space: nowrap;
   color: white;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s;
 }
 
 .sidebar:hover .label {
   opacity: 1;
-  transform: translateX(5px);
 }
 
 .settings {
@@ -128,13 +128,23 @@ body {
   padding: 25px 20px;
   display: flex;
   align-items: center;
-  color: white;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 .settings:hover {
   background-color: #2e2e45;
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+}
+
+.logout-link:hover {
+  color: white;
 }
 
 .notifications-container {

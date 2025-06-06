@@ -1,9 +1,11 @@
+// Fetch notifications from the server and display them
 async function fetchNotifications() {
   const container = document.querySelector('.notification-box');
   container.setAttribute('aria-busy', 'true');
   container.innerHTML = '<p class="loading">Loading notifications...</p>';
 
   try {
+    // Fetch notifications from the server
     const response = await fetch('../backend/get_notification.php', {
       method: 'GET',
       credentials: 'include',
@@ -14,8 +16,8 @@ async function fetchNotifications() {
 
     const data = await response.json();
 
+    // Handle authentication errors
     if (!response.ok) {
-      // Handle specific error messages
       if (response.status === 403) {
         if (data.error === 'User not logged in') {
           window.location.href = '../login-page/login.html';
@@ -28,16 +30,15 @@ async function fetchNotifications() {
       throw new Error(data.error || `Server returned ${response.status}`);
     }
 
+    // Handle empty notifications
     if (!Array.isArray(data) || data.length === 0) {
       container.innerHTML = '<p class="empty">No notifications to show.</p>';
       container.setAttribute('aria-busy', 'false');
       return;
     }
 
-    // Clear container
+    // Clear container and create notification cards
     container.innerHTML = '';
-
-    // Create notification cards
     data.forEach(n => {
       const card = document.createElement('article');
       card.className = 'notification-card';
@@ -45,7 +46,7 @@ async function fetchNotifications() {
       card.setAttribute('role', 'listitem');
       card.setAttribute('aria-label', `Notification: ${n.message}`);
 
-      // Header with title and student name
+      // Create notification header with title and student name
       const header = document.createElement('div');
       header.className = 'notification-header';
 
@@ -66,18 +67,18 @@ async function fetchNotifications() {
       header.appendChild(student);
       header.appendChild(status);
 
-      // Message
+      // Create notification message
       const message = document.createElement('p');
       message.className = 'notification-message';
       message.textContent = n.message || 'No message content';
 
-      // Timestamp
+      // Create timestamp
       const timestamp = document.createElement('time');
       timestamp.className = 'notification-timestamp';
       timestamp.dateTime = n.timestamp || '';
       timestamp.textContent = formatDate(n.timestamp);
 
-      // Compose card
+      // Assemble notification card
       card.appendChild(header);
       card.appendChild(message);
       card.appendChild(timestamp);
@@ -93,6 +94,7 @@ async function fetchNotifications() {
   }
 }
 
+// Format date 
 function formatDate(dateString) {
   if (!dateString) return '';
   const date = new Date(dateString);
@@ -106,11 +108,11 @@ function formatDate(dateString) {
   });
 }
 
-// Initial fetch on page load
+// Initialize notifications on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchNotifications();
 });
 
-// Auto refresh every 30 seconds for new notifications
+// Auto refresh notifications every 30 seconds
 setInterval(fetchNotifications, 30000);
 

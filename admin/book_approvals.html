@@ -11,7 +11,7 @@
 <body>
     <div class="approval-dashboard">
         <div class="header">
-            <a href="admin.html">
+            <a href="admin.html" class="logo-link">
                 <img src="../homepage/images/logo_nudasma.png" alt="Logo" class="logo1">
             </a>
 
@@ -33,10 +33,11 @@
                     <li><i class="fas fa-bell"></i><a href="notification.html"><span class="label">Notification</span></a></li>
                     <li><i class="fas fa-book"></i><a href="book_approvals.html" class="active"><span class="label">Book Approvals</span></a></li>
                     <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
-                    <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
                 </ul>
                 <div class="settings">
+                    <a href="../login-page/login.html" class="logout-link">
                     <i class="fas fa-sign-out-alt"></i><span class="label">Log Out</span>
+                    </a>
                 </div>
             </div>
 
@@ -49,7 +50,7 @@
                     <button class="filter-btn" data-status="rejected">Rejected</button>
                 </div>
                 <div class="approval-box" id="approvalBox">
-                    <!-- Approval cards will be dynamically added here -->
+                    <!-- Approval cards will be added here -->
                 </div>
             </div>
         </div>

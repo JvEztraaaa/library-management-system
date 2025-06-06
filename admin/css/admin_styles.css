@@ -5,10 +5,12 @@
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0e0e1a;
   color: white;
   height: 100vh;
+  opacity: 1;
+  transition: opacity 5s ease;
 }
 
 .header {
@@ -113,12 +115,25 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .settings:hover {
   background-color: #2e2e45;
+  transform: translateX(5px);
 }
 
+.logout-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+}
+
+.logout-link:hover {
+  color: white;
+}
 
 .dashboard {
   flex: 1;

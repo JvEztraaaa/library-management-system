@@ -6,11 +6,12 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="css/admin_styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="header">
-      <a href="admin.html">
+      <a href="admin.html" class="logo-link">
         <img src="../homepage/images/logo_nudasma.png" alt="Logo" class="logo1">
       </a>
 
@@ -29,12 +30,13 @@
           <li><i class="fas fa-search"></i><span class="label">Search</span></li>
           <li><i class="fas fa-home" ></i><a href="admin.html"><span class="label">Home</span></a></li>
           <li><i class="fas fa-bell"></i><a href="notification.html"><span class="label">Notification</span></a></li>
-          <li><i class="fas fa-book"></i><a href="book_approvals.html"><span class="label">Book</span></a></li>
+          <li><i class="fas fa-book"></i><a href="book_approvals.html"><span class="label">Book Approvals</span></a></li>
           <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
-          <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
         </ul>
         <div class="settings">
-          <i class="fas fa-sign-out-alt"></i><span class="label">Log Out</span>
+          <a href="../login-page/login.html" class="logout-link">
+            <i class="fas fa-sign-out-alt"></i><span class="label">Log Out</span>
+          </a>
         </div>
       </div>
 

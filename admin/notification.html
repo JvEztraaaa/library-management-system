@@ -12,7 +12,7 @@
 <body>
     <div class="notification-dashboard">
         <div class="header">
-        <a href="admin.html">
+        <a href="admin.html" class="logo-link">
             <img src="../homepage/images/logo_nudasma.png" alt="Logo" class="logo1">
         </a>
 
@@ -31,22 +31,26 @@
                 <li><i class="fas fa-search"></i><span class="label">Search</span></li>
                 <li><i class="fas fa-home" ></i><a href="admin.html"><span class="label">Home</span></a></li>
                 <li><i class="fas fa-bell"></i><a href="notification.html"><span class="label">Notification</span></a></li>
+                <li><i class="fas fa-book"></i><a href="book_approvals.html"><span class="label">Book Approvals</span></a></li>
                 <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
-                <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
                 </ul>
                 <div class="settings">
+                <a href="../login-page/login.html" class="logout-link">
                 <i class="fas fa-sign-out-alt"></i><span class="label">Log Out</span>
+                </a>
                 </div>
             </div>
 
             <div class="notifications-container">
                 <h2>NOTIFICATIONS</h2>
                 <div class="notification-box" id="notificationBox">
-                    
+                    <!-- Notification cards will be added here -->
                 </div>
             </div>
         </div>
     </div>
     
+    <script src="js/common.js"></script>
+    <script src="js/notification_script.js"></script>
 </body>
 </html>

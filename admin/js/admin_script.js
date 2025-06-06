@@ -1,6 +1,7 @@
 const ctx = document.getElementById("bookCategoryChart").getContext("2d");
 const engagementCtx = document.getElementById('engagementChart').getContext('2d');
 
+// Create pie chart for book categories
 const bookCategoryChart = new Chart(ctx, {
   type: "pie",
   data: {
@@ -10,11 +11,11 @@ const bookCategoryChart = new Chart(ctx, {
         label: "Popular Book Categories",
         data: [40, 25, 15, 10, 10],
         backgroundColor: [
-          "#4e73df",
-          "#1cc88a",
-          "#36b9cc",
-          "#f6c23e",
-          "#e74a3b",
+          "#4e73df",  // Blue
+          "#1cc88a",  // Green
+          "#36b9cc",  // Cyan
+          "#f6c23e",  // Yellow
+          "#e74a3b",  // Red
         ],
         borderColor: "#000",
         borderWidth: 1,
@@ -25,7 +26,7 @@ const bookCategoryChart = new Chart(ctx, {
     responsive: true,
     plugins: {
       legend: {
-        display: false, // Hide default legend
+        display: false, 
       },
       tooltip: {
         callbacks: {
@@ -38,10 +39,7 @@ const bookCategoryChart = new Chart(ctx, {
   },
 });
 
-
-
-
-
+// Create line chart for student engagement
 new Chart(engagementCtx, {
   type: 'line',
   data: {
@@ -50,7 +48,7 @@ new Chart(engagementCtx, {
       {
         label: 'Total Students',
         data: [100, 120, 130, 140, 150, 160],
-        borderColor: '#4e73df',
+        borderColor: '#4e73df',  // Blue
         backgroundColor: 'rgba(78, 115, 223, 0.1)',
         tension: 0.4,
         pointRadius: 4,
@@ -59,7 +57,7 @@ new Chart(engagementCtx, {
       {
         label: 'Borrowed Books',
         data: [30, 45, 40, 50, 60, 70],
-        borderColor: '#1cc88a',
+        borderColor: '#1cc88a',  // Green
         backgroundColor: 'rgba(28, 200, 138, 0.1)',
         tension: 0.4,
         pointRadius: 4,
@@ -68,7 +66,7 @@ new Chart(engagementCtx, {
       {
         label: 'Returned Books',
         data: [10, 25, 20, 30, 35, 45],
-        borderColor: '#e74a3b',
+        borderColor: '#e74a3b',  // Red
         backgroundColor: 'rgba(231, 74, 59, 0.1)',
         tension: 0.4,
         pointRadius: 4,
