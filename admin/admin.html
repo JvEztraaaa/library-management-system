@@ -1,59 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div class="main-dashboard">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="css/admin_styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body>
-    <div class="sidebar">
-      <div class="logo">
-        <i class="fas fa-bars"></i>
-      </div>
-      <ul class="nav-list">
-        <li><i class="fas fa-search"></i><span class="label">Search</span></li>
-        <li><i class="fas fa-home"></i><span class="label">Home</span></li>
-        <li><i class="fas fa-bell"></i><span class="label">Notification</span></li>
-        <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
-        <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
-      </ul>
-      <div class="settings">
-        <i class="fas fa-cog"></i><span class="label">Settings</span>
-      </div>
-    </div>
+</head>
+<body>
+    <div class="header">
+      <a href="admin.html">
+        <img src="../homepage/images/logo_nudasma.png" alt="Logo" class="logo1">
+      </a>
 
-    <div class="dashboard">
-      <div class="main-content">
-        <div class="grid-container">
-          <div class="div1">Total In</div>
-          <div class="div2">Total Out</div>
-          <div class="div3">Total Students</div>
-          <div class="div4">Total Borrowed Books</div>
-          <div class="div5">Student Library Engagement</div>
-            <div class="div6">
-                <h2 style="margin-bottom: 10px;">Popular Book Category</h2>
-                <div class="chart-legend-container">
-                    <canvas id="bookCategoryChart"></canvas>
-                    <ul class="custom-legend">
-                    <li><span style="background:#4e73df"></span>Fiction</li>
-                    <li><span style="background:#1cc88a"></span>Science</li>
-                    <li><span style="background:#36b9cc"></span>History</li>
-                    <li><span style="background:#f6c23e"></span>Technology</li>
-                    <li><span style="background:#e74a3b"></span>Biography</li>
-                    </ul>
-                </div>
-            </div>
-          <div class="div7">Recent Activity Log</div>
+      <div class="header-right">
+        <div class="user-icons">
+          <span class="icon profile"><i class="fa-solid fa-circle-user"></i></span>
         </div>
       </div>
     </div>
-  </div>
+    <div class="content">
+      <div class="sidebar">
+        <div class="logo">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-list">
+          <li><i class="fas fa-search"></i><span class="label">Search</span></li>
+          <li><i class="fas fa-home" ></i><a href="admin.html"><span class="label">Home</span></a></li>
+          <li><i class="fas fa-bell"></i><a href="notification.html"><span class="label">Notification</span></a></li>
+          <li><i class="fas fa-calendar"></i><span class="label">Calendar</span></li>
+          <li><i class="fas fa-user-graduate"></i><span class="label">Students</span></li>
+        </ul>
+        <div class="settings">
+          <i class="fas fa-sign-out-alt"></i><span class="label">Log Out</span>
+        </div>
+      </div>
 
+      <div class="dashboard">
+        <div class="main-content">
+          <div class="grid-container">
+          <div class="stat-card div1">
+            <h3>Total In</h3>
+            <div class="stat-value"><p>150</p></div>
+            
+          </div>
+          <div class="stat-card div2">
+            <h3>Total Out</h3>
+            <div class="stat-value"><p>80</p></div>
+          </div>
+          <div class="stat-card div3">
+            <h3>Total Students</h3>
+            <div class="stat-value"><p>320</p></div>
+          </div>
+          <div class="stat-card div4">
+            <h3>Total Borrowed Books</h3>
+            <div class="stat-value"><p>210</p></div>
+          </div>
 
-  <script src="js/admin_script.js"></script>
+          <div class="div5">
+            <h2>Student Library Engagement</h2>
+            <div class="div5content">
+              <canvas id="engagementChart"></canvas>
+            </div>
+          </div>
+              <div class="div6">
+                  <h2 style="margin-bottom: 10px;">Popular Book Category</h2>
+                  <div class="chart-legend-container">
+                      <canvas id="bookCategoryChart"></canvas>
+                      <ul class="custom-legend">
+                      <li><span style="background:#4e73df"></span>Fiction</li>
+                      <li><span style="background:#1cc88a"></span>Science</li>
+                      <li><span style="background:#36b9cc"></span>History</li>
+                      <li><span style="background:#f6c23e"></span>Technology</li>
+                      <li><span style="background:#e74a3b"></span>Biography</li>
+                      </ul>
+                  </div>
+              </div>
+            <div class="div7">
+              <h2>Recent Activity Log</h2>
+              <ul id="activity-log" class="activity-log">
+                <li><strong>John Doe</strong> checked in at 9:05 AM</li>
+                <li><strong>Jane Smith</strong> borrowed "Atomic Habits" at 9:10 AM</li>
+                <li><strong>Ali Khan</strong> returned "Clean Code" at 9:20 AM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/admin_script.js"></script>
 </body>
 </html>
