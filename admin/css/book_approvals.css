@@ -576,4 +576,20 @@ body {
     .sidebar {
         height: 100vh;
     }
+}
+
+.fine-amount {
+    color: #e74a3b;
+    font-weight: 600;
+    padding: 10px;
+    background-color: rgba(231, 74, 59, 0.1);
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 1px solid rgba(231, 74, 59, 0.2);
+    display: block !important;
+}
+
+.fine-amount strong {
+    color: #e74a3b;
+    margin-right: 5px;
 } 

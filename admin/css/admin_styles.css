@@ -171,6 +171,7 @@ body {
   background: linear-gradient(135deg, #181818, #0a215f);
   padding: 20px;
   border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .div1 {
@@ -199,6 +200,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
   gap: 40px;
   flex-wrap: nowrap;
   width: 100%;
@@ -250,7 +252,7 @@ body {
 
 .div5 h2 {
   font-size: 1.5rem;
-  color: #fff;
+  color: #ffffff;
 }
 
 .div5content {
@@ -358,6 +360,12 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.div6 h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
 
 /* Responsive Styles */
