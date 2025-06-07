@@ -26,7 +26,7 @@ body {
   padding: 10px 30px;
   width: 100%;
   background: linear-gradient(135deg, #181818, #0a215f);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   z-index: 999;
@@ -34,25 +34,6 @@ body {
 
 .logo1 {
   height: 70px;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  justify-content: center;
-}
-
-.user-icons .profile {
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  margin-right: 30px;
-  transition: transform 0.2s ease;
-}
-
-.user-icons .profile:hover {
-  transform: scale(1.1);
 }
 
 .content {
@@ -68,9 +49,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: calc(100vh - 90px);
+  height: 100vh;
   position: fixed;
-  top: 90px;
+  top: 0;
   left: 0;
   overflow: hidden;
   z-index: 998;
@@ -380,4 +361,151 @@ body {
   background: rgba(231, 74, 59, 0.2);
   color: #e74a3b;
   border: 1px solid rgba(231, 74, 59, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .notifications-container {
+        padding: 15px;
+    }
+
+    .notification-card {
+        padding: 15px;
+    }
+
+    .notification-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .student-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .sidebar {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo1 {
+        height: 50px;
+    }
+
+    .user-icons .profile {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    .notifications-container {
+        padding: 10px;
+    }
+
+    .notifications-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .notification-box {
+        padding: 15px;
+    }
+
+    .notification-card {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    .notification-header h3 {
+        font-size: 1.1em;
+    }
+
+    .notification-student {
+        font-size: 0.9em;
+        padding: 3px 10px;
+    }
+
+    .action-type {
+        font-size: 0.85em;
+        padding: 3px 10px;
+    }
+
+    .notification-message {
+        font-size: 0.9em;
+        margin: 10px 0;
+    }
+
+    .notification-timestamp {
+        font-size: 0.8em;
+    }
+
+    .sidebar {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 8px 10px;
+    }
+
+    .logo1 {
+        height: 40px;
+    }
+
+    .user-icons .profile {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .notifications-container h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .notification-box {
+        padding: 10px;
+    }
+
+    .notification-card {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .notification-header h3 {
+        font-size: 1em;
+    }
+
+    .notification-student {
+        font-size: 0.85em;
+        padding: 2px 8px;
+    }
+
+    .action-type {
+        font-size: 0.8em;
+        padding: 2px 8px;
+    }
+
+    .notification-message {
+        font-size: 0.85em;
+        margin: 8px 0;
+    }
+
+    .notification-timestamp {
+        font-size: 0.75em;
+    }
+
+    .error-message {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .sidebar {
+        height: 100vh;
+    }
 }

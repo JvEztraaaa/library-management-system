@@ -39,6 +39,9 @@ function updateActivityLog(activities) {
 
 // Update engagement chart
 function updateEngagementChart(engagementData) {
+    // Sort the data by date in ascending order
+    engagementData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    
     const dates = engagementData.map(d => {
         const date = new Date(d.date);
         return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });

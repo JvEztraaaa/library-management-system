@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Calendar - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/calendar.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+</head>
+<body>
+    <div class="calendar-dashboard">
+        <div class="header">
+            <a href="admin.html" class="logo-link">
+                <img src="../homepage/images/logo_nudasma.png" alt="Logo" class="logo1">
+            </a>
+        </div>
+
+        <div class="content">
+            <div class="sidebar">
+                <div class="logo">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><i class="fas fa-search"></i><span class="label">Search</span></li>
+                    <li><i class="fas fa-home"></i><a href="admin.html"><span class="label">Home</span></a></li>
+                    <li><i class="fas fa-bell"></i><a href="notification.html"><span class="label">Notification</span></a></li>
+                    <li><i class="fas fa-book"></i><a href="book_approvals.html"><span class="label">Book Approvals</span></a></li>
+                    <li><i class="fas fa-calendar"></i><a href="calendar.html" class="active"><span class="label">Calendar</span></a></li>
+                </ul>
+                <div class="settings">
+                    <a href="../login-page/login.html" class="logout-link">
+                        <i class="fas fa-sign-out-alt"></i><span class="label">Log Out</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="calendar-container">
+                <h2>Library Events Calendar</h2>
+                <div class="calendar-header">
+                    <button class="add-event-btn" onclick="openAddEventModal()">
+                        <i class="fas fa-plus"></i> Add Event
+                    </button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Modal -->
+    <div id="eventDetailsModal" class="event-modal">
+        <div class="event-modal-content">
+            <div class="event-modal-header">
+                <h2 class="event-modal-title">Event Details</h2>
+                <span class="event-modal-close">&times;</span>
+            </div>
+            <div class="event-modal-body">
+                <div class="event-detail">
+                    <div class="event-detail-label">Title</div>
+                    <div class="event-detail-value" id="modalEventTitle"></div>
+                </div>
+                <div class="event-detail">
+                    <div class="event-detail-label">Description</div>
+                    <div class="event-detail-value" id="modalEventDescription"></div>
+                </div>
+                <div class="event-detail">
+                    <div class="event-detail-label">Date & Time</div>
+                    <div class="event-detail-value" id="modalEventDateTime"></div>
+                </div>
+                <div class="event-detail">
+                    <div class="event-detail-label">Location</div>
+                    <div class="event-detail-value" id="modalEventLocation"></div>
+                </div>
+                <div class="event-detail">
+                    <div class="event-detail-label">Event Type</div>
+                    <div class="event-detail-value">
+                        <span id="modalEventType" class="event-type-badge"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Event Modal -->
+    <div id="addEventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Event</h3>
+                <span class="close" onclick="closeAddEventModal()">&times;</span>
+            </div>
+            <form id="addEventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" id="eventTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" name="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date</label>
+                    <input type="date" id="eventDate" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Time</label>
+                    <div class="time-inputs">
+                        <div class="form-group">
+                            <input type="time" id="startTime" name="start_time" required>
+                        </div>
+                        <span class="time-separator">to</span>
+                        <div class="form-group">
+                            <input type="time" id="endTime" name="end_time" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Location</label>
+                    <input type="text" id="eventLocation" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventType">Event Type</label>
+                    <select id="eventType" name="event_type" required>
+                        <option value="Book Fair">Book Fair</option>
+                        <option value="Author Visit">Author Visit</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Library Closure">Library Closure</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeAddEventModal()">Cancel</button>
+                    <button type="submit" class="submit-btn">Add Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/calendar.js"></script>
+</body>
+</html> 

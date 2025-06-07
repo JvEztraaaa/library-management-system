@@ -70,7 +70,6 @@ try {
                             COUNT(CASE WHEN status = 'Overdue' THEN 1 END) as overdue_books
                         FROM borrowed_books 
                         WHERE borrow_time >= DATE_SUB(CURRENT_DATE, INTERVAL 3 DAY)
-                        OR status = 'Overdue'
                         GROUP BY DATE(borrow_time)
                         ORDER BY date ASC";
     $engagement_result = $conn->query($engagement_query);

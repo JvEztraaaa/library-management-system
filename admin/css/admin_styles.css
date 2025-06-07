@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px ;
+  padding: 10px;
   width: 100%;
   z-index: 2;
   background: transparent;
@@ -28,21 +28,6 @@ body {
 .logo1 {
   width: 100%;
   height: 70px;
-
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  justify-content: center;
-}
-
-.user-icons .profile {
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  margin-right: 30px;
 }
 
 .sidebar {
@@ -52,9 +37,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
+  height: 100%;
 }
-
 
 .content {
   display: flex;
@@ -196,34 +180,41 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .custom-legend {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex: 0 1 auto;
+  min-width: 200px;
 }
 
 .custom-legend li {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .custom-legend span {
   display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 8px;
+  margin-right: 12px;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 #bookCategoryChart {
-  margin: 20px;
+  margin: 0;
   width: 200px !important;
   height: 200px !important;
+  flex-shrink: 0;
 }
 
 .div5 {
@@ -257,7 +248,6 @@ body {
   width: 100% !important;
   height: 100% !important;
 }
-
 
 .div7 {
   background: linear-gradient(135deg, #1a1a2e, #0f3460);
@@ -349,4 +339,166 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    .div1, .div2, .div3, .div4 {
+        grid-area: auto;
+    }
+
+    .div5 {
+        grid-area: 3 / 1 / 7 / 3;
+    }
+
+    .div6 {
+        grid-area: 7 / 1 / 9 / 3;
+    }
+
+    .div7 {
+        grid-area: 9 / 1 / 13 / 3;
+    }
+
+    .chart-legend-container {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7 {
+      min-height: 300px;
+    }
+
+    #bookCategoryChart {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .custom-legend {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo1 {
+        height: 50px;
+    }
+
+    .user-icons .profile {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, auto);
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7 {
+        grid-area: auto;
+        min-height: 400px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h3 {
+        font-size: 1rem;
+    }
+
+    .stat-card p {
+        font-size: 2rem;
+    }
+
+    .chart-legend-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    #bookCategoryChart {
+        width: 160px !important;
+        height: 160px !important;
+        margin: 10px auto;
+    }
+
+    .custom-legend {
+        min-width: 160px;
+    }
+
+    .custom-legend li {
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .sidebar {
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 8px 10px;
+    }
+
+    .logo1 {
+        height: 40px;
+    }
+
+    .user-icons .profile {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .stat-card p {
+        font-size: 1.8rem;
+    }
+
+    .activity-log li {
+        font-size: 0.85rem;
+    }
+
+    .chart-legend-container {
+        gap: 15px;
+    }
+
+    #bookCategoryChart {
+        width: 140px !important;
+        height: 140px !important;
+        margin: 5px auto;
+    }
+
+    .custom-legend {
+        min-width: 140px;
+    }
+
+    .custom-legend li {
+        font-size: 12px;
+    }
+
+    .custom-legend span {
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+    }
 }
