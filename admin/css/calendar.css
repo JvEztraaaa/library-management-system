@@ -80,7 +80,7 @@ body {
 }
 
 .sidebar:hover {
-    width: 200px;
+    width: 250px;
 }
 
 .logo {
@@ -168,8 +168,8 @@ body {
 }
 
 .sidebar:hover ~ .calendar-container {
-    margin-left: 200px;
-    width: calc(100% - 200px);
+    margin-left: 250px;
+    width: calc(100% - 250px);
 }
 
 .calendar-container h2 {

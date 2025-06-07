@@ -6,27 +6,31 @@
 
 body {
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0e0e1a;
-  color: white;
-  height: 100vh;
+  background: linear-gradient(135deg, #181818, #0a215f);
+  min-height: 100vh;
+  overflow-x: hidden;
   opacity: 1;
-  transition: opacity 5s ease;
+  transition: opacity 0.3s ease;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 30px;
   width: 100%;
-  z-index: 2;
-  background: transparent;
-  box-sizing: border-box;
   background: linear-gradient(135deg, #181818, #0a215f);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo-link {
+  text-decoration: none;
 }
 
 .logo1 {
-  width: 100%;
   height: 70px;
 }
 
@@ -37,17 +41,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%;
-}
-
-.content {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 998;
 }
 
 .sidebar:hover {
-  width: 200px;
+  width: 250px;
 }
 
 .logo {
@@ -76,6 +79,10 @@ body {
   background-color: #2e2e45;
 }
 
+.nav-list li.active {
+  background-color: #4e73df;
+}
+
 .nav-list i {
   min-width: 30px;
   text-align: start;
@@ -99,12 +106,10 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .settings:hover {
   background-color: #2e2e45;
-  transform: translateX(5px);
 }
 
 .logout-link {
@@ -119,13 +124,27 @@ body {
   color: white;
 }
 
+.content {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 90px);
+}
+
 .dashboard {
   flex: 1;
+  height: 100%;
+  padding: 20px;
+  margin-left: 70px;
+  width: calc(100% - 70px);
+  transition: margin-left 0.3s, width 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ .dashboard {
+  margin-left: 250px;
+  width: calc(100% - 250px);
 }
 
 .main-content {
