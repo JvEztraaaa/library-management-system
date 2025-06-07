@@ -27,7 +27,7 @@ try {
         while ($row = $result->fetch_assoc()) {
             $user_name = $row['first_name'] . ' ' . $row['last_name'];
             $message = $user_name . "'s book \"" . $row['title'] . "\" is overdue.";
-            createNotification($conn, $row['user_id'], 'overdue', $row['title'], $message);
+            createAdminNotification($conn, $row['user_id'], 'overdue', $row['title'], $message);
         }
         
         echo json_encode(['success' => true, 'message' => 'Overdue books updated successfully']);
@@ -36,7 +36,7 @@ try {
     }
     
 } catch (Exception $e) {
-    error_log("Error in check_overdue.php: " . $e->getMessage());
+    error_log("Error in admin_check_overdue.php: " . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'Error updating overdue books']);
 } finally {
     if (isset($conn)) {

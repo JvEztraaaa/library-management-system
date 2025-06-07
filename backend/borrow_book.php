@@ -1,21 +1,41 @@
 <?php
+// Prevent any output before headers
+ob_start();
+
+// Disable error display
+ini_set('display_errors', 0);
+error_reporting(E_ALL);
+
+// Start session and set JSON header
 session_start();
 header('Content-Type: application/json');
 
+// Function to send JSON response and exit
+function sendJsonResponse($success, $message, $code = 200) {
+    http_response_code($code);
+    echo json_encode(['success' => $success, 'message' => $message]);
+    ob_end_flush();
+    exit;
+}
+
+// Check if required file exists
+$notification_file = __DIR__ . '/admin/admin_notification.php';
+if (!file_exists($notification_file)) {
+    error_log("Required file not found: " . $notification_file);
+    sendJsonResponse(false, 'Server configuration error', 500);
+}
+
 // Include database connection and functions
-require_once 'notification.php';
+require_once $notification_file;
 
 try {
     if (!isLoggedIn()) {
-        http_response_code(403);
-        echo json_encode(['success' => false, 'message' => 'unauthorized']);
-        exit;
+        sendJsonResponse(false, 'unauthorized', 403);
     }
 
     // Validate input
     if (!isset($_POST['title']) || !isset($_POST['author']) || !isset($_POST['genre'])) {
-        echo json_encode(['success' => false, 'message' => 'Missing required fields']);
-        exit;
+        sendJsonResponse(false, 'Missing required fields', 400);
     }
 
     $title = trim($_POST['title']);
@@ -24,8 +44,7 @@ try {
     $user_id = $_SESSION['user_id'];
 
     if (empty($title) || empty($author) || empty($genre)) {
-        echo json_encode(['success' => false, 'message' => 'All fields are required']);
-        exit;
+        sendJsonResponse(false, 'All fields are required', 400);
     }
 
     $host = "localhost";
@@ -38,7 +57,7 @@ try {
         throw new Exception("Connection failed: " . $conn->connect_error);
     }
 
-    // ✅ Check if book is already borrowed (based on title)
+    // Check if book is already borrowed
     $check = $conn->prepare("SELECT id FROM borrowed_books WHERE title = ?");
     if (!$check) {
         throw new Exception("Prepare failed: " . $conn->error);
@@ -49,10 +68,9 @@ try {
     $check->store_result();
 
     if ($check->num_rows > 0) {
-        echo json_encode(['success' => false, 'message' => 'already_borrowed']);
         $check->close();
         $conn->close();
-        exit;
+        sendJsonResponse(false, 'already_borrowed', 400);
     }
     $check->close();
 
@@ -83,19 +101,19 @@ try {
         
         // Create notification for borrow request
         $message = $user_name . " requested to borrow the book \"" . $title . "\".";
-        createNotification($conn, $user_id, 'pending', $title, $message);
+        createAdminNotification($conn, $user_id, 'pending', $title, $message);
         
         $user_stmt->close();
-        echo json_encode(['success' => true, 'message' => 'Book borrow request submitted successfully']);
+        sendJsonResponse(true, 'Book borrow request submitted successfully');
     } else {
-        echo json_encode(['success' => false, 'message' => 'Failed to submit borrow request']);
+        sendJsonResponse(false, 'Failed to submit borrow request', 500);
     }
 
     $stmt->close();
 
 } catch (Exception $e) {
-    error_log("Error in borrow_book.php: " . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'An error occurred while borrowing the book']);
+    error_log("Error in borrow_book.php: " . $e->getMessage() . "\nStack trace: " . $e->getTraceAsString());
+    sendJsonResponse(false, 'An error occurred while borrowing the book', 500);
 } finally {
     // Ensure connection is closed
     if (isset($conn)) {

@@ -6,7 +6,7 @@ async function fetchNotifications() {
 
   try {
     // Fetch notifications from the server
-    const response = await fetch('../backend/get_notification.php', {
+    const response = await fetch('../backend/admin/admin_get_notification.php', {
       method: 'GET',
       credentials: 'include',
       headers: {

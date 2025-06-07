@@ -12,9 +12,27 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
+// Database configuration
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'library';
+
+// Create connection
+$conn = mysqli_connect($host, $username, $password, $database);
+
+// Check connection
+if (!$conn) {
+    die(json_encode([
+        'success' => false,
+        'message' => 'Database connection failed: ' . mysqli_connect_error()
+    ]));
+}
+
+// Set charset to utf8mb4
+mysqli_set_charset($conn, "utf8mb4");
+
 try {
-    require_once 'status.php';
-    
     $status = isset($_GET['status']) ? $_GET['status'] : 'all';
     $statusFilter = $status !== 'all' ? "WHERE bb.status = ?" : "";
     
@@ -38,17 +56,17 @@ try {
         ORDER BY bb.borrow_time DESC
     ";
 
-    $stmt = $conn->prepare($query);
+    $stmt = mysqli_prepare($conn, $query);
     
     if ($status !== 'all') {
-        $stmt->bind_param('s', $status);
+        mysqli_stmt_bind_param($stmt, 's', $status);
     }
     
-    $stmt->execute();
-    $result = $stmt->get_result();
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     
     $requests = [];
-    while ($row = $result->fetch_assoc()) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $requests[] = [
             'id' => $row['id'],
             'book_title' => $row['book_title'],
@@ -70,7 +88,7 @@ try {
     ]);
 
 } catch (Exception $e) {
-    error_log("Error in get_approval_requests.php: " . $e->getMessage());
+    error_log("Error in admin_get_approval_requests.php: " . $e->getMessage());
     http_response_code(500);
     echo json_encode([
         'success' => false,
@@ -78,7 +96,7 @@ try {
     ]);
 } finally {
     if (isset($conn)) {
-        $conn->close();
+        mysqli_close($conn);
     }
 }
 ?> 

@@ -93,6 +93,9 @@ body {
   padding: 40px 30px 60px;
   background: black;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .books-section h2 {
@@ -133,49 +136,153 @@ body {
   text-shadow: 0 0 6px #00bfff88;
 }
 
-/* Borrowed Books Table */
+/* Table Styles */
 .borrow-table-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  overflow-x: auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .borrow-table {
-  width: 90%;
-  max-width: 1000px;
-  border-collapse: collapse;
-  background: #111;
-  color: white;
-  font-size: 16px;
-  border-radius: 10px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
   overflow: hidden;
-}
-
-.borrow-table thead {
-  background: #222;
 }
 
 .borrow-table th,
 .borrow-table td {
-  padding: 16px 20px;
-  text-align: center;
-  border-bottom: 1px solid #333;
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .borrow-table th {
-  font-weight: bold;
-  color: #0f89fa88;
-  background-color: #151515;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
 }
 
-.borrow-table .placeholder {
-  color: #aaa;
-  font-style: italic;
-  padding: 16px 20px;
+.borrow-table tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.return-btn {
+  background: #1cc88a;
+}
+
+.return-btn:hover {
+  background: #169b6b;
+  box-shadow: 0 0 10px rgba(28, 200, 138, 0.5);
+  transform: translateY(-2px);
+}
+
+.view-feedback-btn {
+  background: #e74a3b;
+}
+
+.view-feedback-btn:hover {
+  background: #be2617;
+  box-shadow: 0 0 10px rgba(231, 74, 59, 0.5);
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #f6c23e;
+}
+
+.cancel-btn:hover {
+  background: #dda20a;
+  box-shadow: 0 0 10px rgba(246, 194, 62, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Status Text */
+.status-text {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-text i {
+  font-size: 0.8em;
+}
+
+.status-returned {
+  background: rgba(54, 185, 204, 0.2);
+  color: #36b9cc;
+  border: 1px solid rgba(54, 185, 204, 0.3);
+}
+
+.status-cancelled {
+  background: rgba(108, 117, 125, 0.2);
+  color: #6c757d;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+}
+
+.status-pending {
+  background: rgba(246, 194, 62, 0.2);
+  color: #f6c23e;
+  border: 1px solid rgba(246, 194, 62, 0.3);
+}
+
+.status-approved {
+  background: rgba(28, 200, 138, 0.2);
+  color: #1cc88a;
+  border: 1px solid rgba(28, 200, 138, 0.3);
+}
+
+.status-rejected {
+  background: rgba(231, 74, 59, 0.2);
+  color: #e74a3b;
+  border: 1px solid rgba(231, 74, 59, 0.3);
+}
+
+/* Status Colors */
+.status-overdue,
+.status-overdue i,
+td.status-overdue {
+    color: #ff0000 !important;
+    font-weight: bold !important;
+}
+
+/* Placeholder Text */
+.placeholder {
   text-align: center;
-  background-color: #111;
-  border-bottom: 1px solid #333;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
 }
 
 /* Responsive Design */
@@ -231,15 +338,20 @@ body {
     gap: 10px;
   }
 
-  .borrow-table th,
-  .borrow-table td {
-    padding: 12px 14px;
-    font-size: 14px;
+  .borrow-table-wrapper {
+    width: 95%;
+    padding: 15px;
   }
 
-  .borrow-table-wrapper {
-    margin-left: 10px;
-    margin-right: 10px;
+  .borrow-table th,
+  .borrow-table td {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+
+  .action-btn {
+    padding: 6px 12px;
+    font-size: 0.9em;
   }
 }
 
@@ -265,5 +377,127 @@ body {
 
   .borrow-table {
     font-size: 13px;
+  }
+}
+
+.overdue-text {
+    color: #ff0000;  /* Same bright red as status-overdue */
+    font-weight: bold;
+}
+
+/* Custom Popup Styles */
+.custom-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    animation: popupFadeIn 0.3s ease-out;
+    border: 1px solid #333;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.popup-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.close-popup {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #888;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-popup:hover {
+    color: #fff;
+}
+
+.popup-body {
+    margin-bottom: 25px;
+}
+
+.popup-body p {
+    margin: 0;
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.popup-footer {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.popup-btn {
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+}
+
+.popup-btn.confirm-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.popup-btn.confirm-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.popup-btn.cancel-btn {
+    background-color: #666;
+    color: white;
+}
+
+.popup-btn.cancel-btn:hover {
+    background-color: #555;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
   }
 }

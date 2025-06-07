@@ -5,6 +5,21 @@
   width: 35vw;
 }
 
+/* Responsive adjustments for book container */
+@media screen and (max-width: 1400px) {
+  .book-container {
+    width: 300px;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .book-container {
+    width: 250px;
+    margin: 0 15px;
+  }
+}
+
 .book-container:nth-last-child(-n + 2) .book-card {
   left: auto;
   right: 100%;
@@ -49,6 +64,47 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Responsive adjustments for book card */
+@media screen and (max-width: 1400px) {
+  .book-card {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .book-card {
+    width: 250px;
+    height: 100%;
+  }
+}
+
+/* Adjust card position for last items */
+@media screen and (min-width: 769px) {
+  .book-container:nth-last-child(-n + 2) .book-card {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 12px;
+  }
+}
+
+/* For smaller screens, always show card on the right */
+@media screen and (max-width: 768px) {
+  .book-card {
+    left: 100%;
+    right: auto;
+    margin-left: 12px;
+    margin-right: 0;
+  }
+  
+  .book-container:nth-last-child(-n + 2) .book-card {
+    left: 100%;
+    right: auto;
+    margin-left: 12px;
+    margin-right: 0;
+  }
+}
+
 .book-card.left {
   left: auto;
   right: 100%;
@@ -91,6 +147,38 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments for controls */
+@media screen and (max-width: 768px) {
+  .controls {
+    flex-wrap: nowrap;
+    gap: 8px;
+    bottom: 8px;
+    left: 12px;
+    right: 12px;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .btn-book,
+  .btn-favorites {
+    padding: 8px;
+    height: 36px;
+    min-width: 36px;
+    max-width: 36px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
 }
 
 .title {
@@ -102,6 +190,12 @@
   line-height: 1.2;
   letter-spacing: 0.5px;
   transition: transform 0.2s ease;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .title:hover {
@@ -114,6 +208,7 @@
   padding: 8px 16px;
   height: 42px;
   min-width: 42px;
+  max-width: 42px;
   border-radius: 8px;
   border: none;
   font-weight: 600;
@@ -126,6 +221,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .btn-book:hover,
@@ -142,6 +240,31 @@
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
+  width: 42px;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-favorites {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    max-width: 36px;
+  }
+}
+
+/* Borrow button specific styles */
+.btn-book {
+  width: auto;
+  min-width: 80px;
+  max-width: none;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-book {
+    min-width: 70px;
+    padding: 8px 12px;
+  }
 }
 
 .btn-favorites.in-favorites {
@@ -194,6 +317,25 @@
   color: #eee;
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+/* Responsive adjustments for infos */
+@media screen and (max-width: 768px) {
+  .infos {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .info-left,
+  .info-right {
+    width: 100%;
+  }
+  
+  .info-right {
+    margin-top: 8px;
+  }
 }
 
 /* Description */

@@ -21,7 +21,7 @@ function setupEventListeners() {
 // Fetch approval requests from the server
 async function fetchApprovalRequests(status = 'all') {
     try {
-        const response = await fetch(`../backend/get_approval_requests.php${status !== 'all' ? `?status=${status}` : ''}`);
+        const response = await fetch(`../backend/admin/admin_get_approval_requests.php${status !== 'all' ? `?status=${status}` : ''}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -182,7 +182,7 @@ async function rejectRequest(requestId) {
 // Handle the approval/rejection process by sending request to server
 async function handleApproval(requestId, status, comment) {
     try {
-        const response = await fetch('../backend/update_approval_status.php', {
+        const response = await fetch('../backend/admin/admin_update_approval_status.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -198,67 +198,85 @@ async function handleApproval(requestId, status, comment) {
         
         if (data.success) {
             if (status === 'Rejected') {
-                showError(`Request ${status.toLowerCase()} successfully`);
+                showError('Request rejected successfully');
             } else {
-                showSuccess(`Request ${status.toLowerCase()} successfully`);
+                showSuccess('Request approved successfully');
             }
+            // Refresh the approval requests list
             fetchApprovalRequests();
         } else {
-            showError(data.message || 'Failed to update request status');
+            throw new Error(data.message || 'Failed to update request status');
         }
     } catch (error) {
-        console.error('Error updating approval status:', error);
-        showError('Error connecting to server');
+        console.error('Error updating request status:', error);
+        showError(error.message);
     }
 }
 
-// Format date 
+// Format date for display
 function formatDate(dateString) {
-    const options = { 
-        year: 'numeric', 
-        month: 'long', 
+    if (!dateString) return 'N/A';
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'short',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
-    };
-    return new Date(dateString).toLocaleDateString('en-US', options);
+    });
 }
 
-// Success toast notification
-function showSuccess(message) {
-    const toast = document.createElement('div');
-    toast.className = 'toast success';
-    toast.innerHTML = `
-        <i class="fas fa-check-circle"></i>
-        <span>${message}</span>
-    `;
-    showToast(toast);
-}
-
-// Error toast notification
-function showError(message) {
-    const toast = document.createElement('div');
-    toast.className = 'toast error';
-    toast.innerHTML = `
-        <i class="fas fa-exclamation-circle"></i>
-        <span>${message}</span>
-    `;
-    showToast(toast);
-}
-
-// Display toast notifications
-function showToast(toast) {
-    let container = document.querySelector('.toast-container');
-    if (!container) {
-        container = document.createElement('div');
-        container.className = 'toast-container';
-        document.body.appendChild(container);
+// Toast notification system
+const ToastSystem = {
+    container: null,
+    
+    init() {
+        if (!this.container) {
+            this.container = document.createElement('div');
+            this.container.className = 'toast-container';
+            document.body.appendChild(this.container);
+        }
+        return this.container;
+    },
+    
+    show(message, type = 'success') {
+        const container = this.init();
+        
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `
+            <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i>
+            <span>${message}</span>
+        `;
+        
+        container.appendChild(toast);
+        
+        // Remove toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.add('fade-out');
+            setTimeout(() => {
+                if (toast.parentNode === container) {
+                    container.removeChild(toast);
+                }
+            }, 300);
+        }, 3000);
+    },
+    
+    success(message) {
+        this.show(message, 'success');
+    },
+    
+    error(message) {
+        this.show(message, 'error');
     }
-    container.appendChild(toast);
+};
 
-    // Remove toast after 3 seconds
-    setTimeout(() => {
-        toast.classList.add('fade-out');
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
+// Show success message
+function showSuccess(message) {
+    ToastSystem.success(message);
+}
+
+// Show error message
+function showError(message) {
+    ToastSystem.error(message);
 } 

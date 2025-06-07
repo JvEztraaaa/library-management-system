@@ -1,146 +1,139 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize FullCalendar
-    const calendarEl = document.getElementById('calendar');
-    const calendar = new FullCalendar.Calendar(calendarEl, {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,listMonth'
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        events: '../backend/get_calendar_events.php',
-        eventContent: function(arg) {
-            return {
-                html: `<div class="fc-event-title">${arg.event.title}</div>`
-            };
-        },
-        eventClick: function(info) {
-            const event = info.event;
-            const startDate = event.start ? new Date(event.start) : null;
-            const endDate = event.end ? new Date(event.end) : null;
-            
-            const formatTime = (date) => {
-                if (!date) return 'N/A';
-                return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            };
-
-            const formatDate = (date) => {
-                if (!date) return 'N/A';
-                return date.toLocaleDateString();
-            };
-
-            // Update modal content
-            document.getElementById('modalEventTitle').textContent = event.title || 'N/A';
-            document.getElementById('modalEventDescription').textContent = event.extendedProps?.description || 'No description available';
-            document.getElementById('modalEventDateTime').textContent = `${formatDate(startDate)} ${formatTime(startDate)} - ${formatTime(endDate)}`;
-            document.getElementById('modalEventLocation').textContent = event.extendedProps?.location || 'N/A';
-            
-            const eventTypeElement = document.getElementById('modalEventType');
-            eventTypeElement.textContent = event.extendedProps?.event_type || 'Other';
-            eventTypeElement.className = 'event-type-badge event-type-' + 
-                (event.extendedProps?.event_type || 'other').toLowerCase().replace(/\s+/g, '-');
-
-            // Show modal
-            const modal = document.getElementById('eventDetailsModal');
-            modal.style.display = 'block';
-            setTimeout(() => modal.classList.add('show'), 10);
-        },
-        eventDidMount: function(info) {
-            // Add event type class for styling
-            const eventType = info.event.extendedProps?.event_type;
-            if (eventType) {
-                info.el.classList.add('event-type-' + eventType.toLowerCase().replace(/\s+/g, '-'));
+        events: {
+            url: '../backend/admin/admin_get_calendar_events.php',
+            method: 'GET',
+            failure: function(error) {
+                console.error('Error loading events:', error);
+                alert('Failed to load calendar events. Please try again later.');
             }
         },
-        eventSourceFailure: function(error) {
-            console.error('Error loading events:', error);
-            showToast('Error loading calendar events', 'error');
+        eventClick: function(info) {
+            // Show event details in a modal
+            var modal = document.getElementById('eventDetailsModal');
+            var modalTitle = document.getElementById('modalEventTitle');
+            var modalDescription = document.getElementById('modalEventDescription');
+            var modalLocation = document.getElementById('modalEventLocation');
+            var modalDateTime = document.getElementById('modalEventDateTime');
+            var modalType = document.getElementById('modalEventType');
+
+            modalTitle.textContent = info.event.title;
+            modalDescription.textContent = info.event.extendedProps.description || 'No description available';
+            modalLocation.textContent = info.event.extendedProps.location || 'No location specified';
+            modalDateTime.textContent = formatEventTime(info.event.start, info.event.end);
+            modalType.textContent = info.event.extendedProps.type || 'No type specified';
+
+            modal.style.display = 'block';
+        },
+        eventDidMount: function(info) {
+            // Add tooltips to events
+            info.el.title = info.event.title;
         }
     });
     calendar.render();
 
-    // Event Details Modal
-    const eventModal = document.getElementById('eventDetailsModal');
-    const eventModalClose = eventModal.querySelector('.event-modal-close');
+    // Close modal when clicking the close button or outside the modal
+    var modal = document.getElementById('eventDetailsModal');
+    var closeBtn = document.getElementsByClassName('event-modal-close')[0];
     
-    eventModalClose.onclick = function() {
-        eventModal.classList.remove('show');
-        setTimeout(() => eventModal.style.display = 'none', 300);
-    };
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
 
     window.onclick = function(event) {
-        if (event.target === eventModal) {
-            eventModal.classList.remove('show');
-            setTimeout(() => eventModal.style.display = 'none', 300);
+        if (event.target == modal) {
+            modal.style.display = 'none';
         }
-    };
+    }
 
     // Add Event Modal Elements
-    const modal = document.getElementById('addEventModal');
+    const addEventModal = document.getElementById('addEventModal');
     const addEventForm = document.getElementById('addEventForm');
-    const closeBtn = document.querySelector('.close');
+    const addCloseBtn = document.querySelector('.close');
 
     // Open Modal Function
     window.openAddEventModal = function() {
-        modal.style.display = 'block';
+        addEventModal.style.display = 'block';
         // Set default date to today
         document.getElementById('eventDate').valueAsDate = new Date();
     };
 
     // Close Modal Function
     window.closeAddEventModal = function() {
-        modal.style.display = 'none';
+        addEventModal.style.display = 'none';
         addEventForm.reset();
     };
 
     // Close modal when clicking the close button
-    if (closeBtn) {
-        closeBtn.onclick = closeAddEventModal;
+    if (addCloseBtn) {
+        addCloseBtn.onclick = closeAddEventModal;
     }
 
     // Handle form submission
     if (addEventForm) {
         addEventForm.addEventListener('submit', function(e) {
             e.preventDefault();
-
-            const formData = {
-                title: document.getElementById('eventTitle').value,
-                description: document.getElementById('eventDescription').value,
-                date: document.getElementById('eventDate').value,
-                start_time: document.getElementById('startTime').value,
-                end_time: document.getElementById('endTime').value,
-                location: document.getElementById('eventLocation').value,
-                event_type: document.getElementById('eventType').value
+            
+            var formData = new FormData(addEventForm);
+            var eventData = {
+                title: formData.get('title'),
+                description: formData.get('description'),
+                event_date: formData.get('date'),
+                start_time: formData.get('start_time'),
+                end_time: formData.get('end_time'),
+                location: formData.get('location'),
+                event_type: formData.get('event_type')
             };
 
-            // Send data to backend
-            fetch('../backend/add_calendar_event.php', {
+            fetch('../backend/admin/admin_add_calendar_event.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(eventData)
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Show success message
-                    showToast('Event added successfully!', 'success');
-                    // Close modal and refresh calendar
-                    closeAddEventModal();
                     calendar.refetchEvents();
+                    closeAddEventModal();
+                    alert('Event added successfully!');
                 } else {
-                    // Show error message
-                    showToast(data.message || 'Error adding event', 'error');
+                    alert('Error adding event: ' + data.message);
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                showToast('Error adding event', 'error');
+                alert('Failed to add event. Please try again later.');
             });
         });
     }
 });
+
+function formatEventTime(start, end) {
+    var startDate = new Date(start);
+    var endDate = new Date(end);
+    
+    var options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    };
+    
+    return startDate.toLocaleDateString(undefined, options) + ' - ' + 
+           endDate.toLocaleDateString(undefined, options);
+}
 
 // Toast notification function
 function showToast(message, type = 'success') {

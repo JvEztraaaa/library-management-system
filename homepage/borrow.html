@@ -3,23 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Borrow Books</title>
-  <link rel="stylesheet" href="css/borrow_styles.css" />
+  <title>Borrowed Books</title>
+  <link rel="stylesheet" href="./css/borrow_styles.css" />
+  <link rel="stylesheet" href="./css/notification_styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
+  <!-- Custom Popup -->
+  <div id="custom-popup" class="custom-popup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3 id="popup-title">Notification</h3>
+        <button class="close-popup">&times;</button>
+      </div>
+      <div class="popup-body">
+        <p id="popup-message"></p>
+      </div>
+      <div class="popup-footer">
+        <button id="popup-cancel" class="popup-btn cancel-btn">Cancel</button>
+        <button id="popup-ok" class="popup-btn confirm-btn">OK</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Header Section -->
   <div class="banner">
     <div class="header">
       <a href="../index.html">
-        <img src="images/logo_nudasma.png" alt="Logo" class="logo" />
+        <img src="./images/logo_nudasma.png" alt="Logo" class="logo" />
       </a>
 
       <nav class="nav-links">
-        <a href="homepage.html">Home</a>
-        <a href="borrow.html" class="active">Borrowed Books</a>
-        <a href="favorites.html">Favorites</a>
+        <a href="./homepage.html">Home</a>
+        <a href="./borrow.html" class="active">Borrowed Books</a>
+        <a href="./favorites.html">Favorites</a>
       </nav>
 
       <div class="header-right">
@@ -36,19 +54,28 @@
   <div class="books-section">
     <h2>Borrow Books</h2>
     
+    <!-- Debug Info -->
+    <div id="debug-info" style="display: none; color: white; margin: 10px; padding: 10px; background: rgba(0,0,0,0.5);">
+      <h3>Debug Information</h3>
+      <div id="debug-content"></div>
+    </div>
+    
     <!-- Borrowed Books Table -->
     <div class="borrow-table-wrapper">
       <table class="borrow-table">
         <thead>
           <tr>
             <th>Book Name</th>
-            <th>Author</th>
-            <th>Genre</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Remaining Days</th>
+            <th>Overdue Fine</th>
             <th>Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody id="borrowed-books-body">
-          <tr><td colspan="4" class="placeholder">Loading borrowed books...</td></tr>
+          <tr><td colspan="7" class="placeholder">Loading borrowed books...</td></tr>
         </tbody>
       </table>
     </div>
@@ -67,6 +94,7 @@
     <div class="border"></div>
   </div>
 
-  <script src="js/borrow_script.js"></script>
+  <!-- Scripts -->
+  <script src="./js/borrow_script.js"></script>
 </body>
 </html>

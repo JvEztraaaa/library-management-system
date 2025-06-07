@@ -1,6 +1,6 @@
 <?php
 // Function to create a notification
-function createNotification($conn, $user_id, $type, $book_title, $message) {
+function createAdminNotification($conn, $user_id, $type, $book_title, $message) {
     $sql = "INSERT INTO notifications (user_id, type, book_title, message) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
@@ -17,7 +17,7 @@ function createNotification($conn, $user_id, $type, $book_title, $message) {
 }
 
 // Function to get notifications
-function getNotifications($conn) {
+function getAdminNotifications($conn) {
     $sql = "SELECT n.*, u.first_name, u.last_name 
             FROM notifications n 
             JOIN users u ON n.user_id = u.id 
@@ -55,4 +55,4 @@ function isAdmin() {
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
 }
-?>
+?> 
