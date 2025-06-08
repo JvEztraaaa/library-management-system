@@ -49,7 +49,13 @@ if (!isset($data['request_id']) || !isset($data['status'])) {
 
 $requestId = $data['request_id'];
 $status = $data['status'];
-$comment = isset($data['comment']) ? $data['comment'] : '';
+$comment = isset($data['comment']) ? trim($data['comment']) : '';
+
+// Validate that comment is provided when rejecting
+if ($status === 'Rejected' && empty($comment)) {
+    sendJsonResponse(false, 'Feedback is required when rejecting a request', 400);
+}
+
 $adminId = $_SESSION['user_id'];
 
 try {

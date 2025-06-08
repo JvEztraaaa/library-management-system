@@ -230,12 +230,17 @@ body {
     font-weight: 600;
 }
 
+.status-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .approval-status {
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
     font-weight: 500;
-    text-transform: capitalize;
 }
 
 .status-pending {
@@ -251,6 +256,24 @@ body {
 }
 
 .status-rejected {
+    background: rgba(231, 74, 59, 0.2);
+    color: #e74a3b;
+    border: 1px solid rgba(231, 74, 59, 0.3);
+}
+
+.status-borrowed {
+    background: rgba(78, 115, 223, 0.2);
+    color: #4e73df;
+    border: 1px solid rgba(78, 115, 223, 0.3);
+}
+
+.status-returned {
+    background: rgba(54, 185, 204, 0.2);
+    color: #36b9cc;
+    border: 1px solid rgba(54, 185, 204, 0.3);
+}
+
+.status-overdue {
     background: rgba(231, 74, 59, 0.2);
     color: #e74a3b;
     border: 1px solid rgba(231, 74, 59, 0.3);
@@ -387,43 +410,6 @@ body {
         transform: translateX(100%);
         opacity: 0;
     }
-}
-
-/* Status Colors */
-.status-pending {
-    background: rgba(246, 194, 62, 0.2);
-    color: #f6c23e;
-    border: 1px solid rgba(246, 194, 62, 0.3);
-}
-
-.status-approved {
-    background: rgba(28, 200, 138, 0.2);
-    color: #1cc88a;
-    border: 1px solid rgba(28, 200, 138, 0.3);
-}
-
-.status-rejected {
-    background: rgba(231, 74, 59, 0.2);
-    color: #e74a3b;
-    border: 1px solid rgba(231, 74, 59, 0.3);
-}
-
-.status-borrowed {
-    background: rgba(78, 115, 223, 0.2);
-    color: #4e73df;
-    border: 1px solid rgba(78, 115, 223, 0.3);
-}
-
-.status-returned {
-    background: rgba(54, 185, 204, 0.2);
-    color: #36b9cc;
-    border: 1px solid rgba(54, 185, 204, 0.3);
-}
-
-.status-overdue {
-    background: rgba(231, 74, 59, 0.2);
-    color: #e74a3b;
-    border: 1px solid rgba(231, 74, 59, 0.3);
 }
 
 /* Responsive Styles */
@@ -579,6 +565,11 @@ body {
 }
 
 .fine-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
     color: #e74a3b;
     font-weight: 600;
     padding: 10px;
@@ -586,10 +577,91 @@ body {
     border-radius: 6px;
     margin-top: 10px;
     border: 1px solid rgba(231, 74, 59, 0.2);
-    display: block !important;
 }
 
-.fine-amount strong {
-    color: #e74a3b;
-    margin-right: 5px;
+.approval-card .quick-feedback {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.02)
+    );
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.approval-card .quick-feedback-label {
+    color: #fff;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.approval-card .quick-feedback-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.approval-card .quick-feedback-btn {
+    padding: 8px 16px;
+    background-color: rgba(46, 46, 69, 0.8);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+.approval-card .quick-feedback-btn:hover {
+    background-color: rgba(78, 115, 223, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(78, 115, 223, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.approval-card .quick-feedback-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mark-paid-btn {
+    padding: 8px 16px;
+    background-color: #1cc88a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 36px;
+}
+
+.mark-paid-btn:hover {
+    background-color: #17a673;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mark-paid-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mark-paid-btn i {
+    font-size: 1.1em;
 } 

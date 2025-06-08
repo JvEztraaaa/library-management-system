@@ -126,10 +126,30 @@ function createApprovalCard(request) {
             <strong>Fine Amount:</strong> ₱${parseFloat(fineAmount).toFixed(2)}
         </div>` : '';
     
+    // Quick feedback options
+    const quickFeedbackOptions = isPending ? `
+        <div class="quick-feedback">
+            <p class="quick-feedback-label">Quick Feedback:</p>
+            <div class="quick-feedback-buttons">
+                <button type="button" class="quick-feedback-btn" data-feedback="Not Available">Not Available</button>
+                <button type="button" class="quick-feedback-btn" data-feedback="Already Borrowed">Already Borrowed</button>
+                <button type="button" class="quick-feedback-btn" data-feedback="Book Under Maintenance">Under Maintenance</button>
+                <button type="button" class="quick-feedback-btn" data-feedback="Invalid Request">Invalid Request</button>
+            </div>
+        </div>
+    ` : '';
+    
     const cardHTML = `
         <div class="approval-header">
             <h3 class="approval-title">${request.book_title}</h3>
-            <span class="approval-status status-${statusClass}">${request.status}</span>
+            <div class="status-container">
+                <span class="approval-status status-${statusClass}">${request.status}</span>
+                ${isOverdue ? `
+                    <button type="button" class="approval-btn mark-paid-btn" onclick="markAsPaid(${request.id})">
+                        <i class="fas fa-check"></i> Mark as Paid
+                    </button>
+                ` : ''}
+            </div>
         </div>
         <div class="approval-details">
             <p><strong>Student:</strong> ${request.student_name}</p>
@@ -142,7 +162,8 @@ function createApprovalCard(request) {
         </div>
         ${isPending ? `
             <div class="approval-actions">
-                <textarea class="approval-comment" placeholder="Add a comment (optional)"></textarea>
+                ${quickFeedbackOptions}
+                <textarea class="approval-comment" placeholder="Add a comment (required for rejection)"></textarea>
                 <div class="button-group">
                     <button type="button" class="approval-btn approve-btn" onclick="approveRequest(${request.id})">
                         <i class="fas fa-check"></i> Approve
@@ -157,6 +178,22 @@ function createApprovalCard(request) {
     
     console.log('Generated card HTML:', cardHTML);
     card.innerHTML = cardHTML;
+
+    // Add event listeners for quick feedback buttons
+    if (isPending) {
+        const quickFeedbackBtns = card.querySelectorAll('.quick-feedback-btn');
+        const commentTextarea = card.querySelector('.approval-comment');
+        
+        quickFeedbackBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (commentTextarea) {
+                    commentTextarea.value = btn.dataset.feedback;
+                    // Trigger input event to ensure any validation is updated
+                    commentTextarea.dispatchEvent(new Event('input'));
+                }
+            });
+        });
+    }
 
     return card;
 }
@@ -175,7 +212,24 @@ async function rejectRequest(requestId) {
     const card = document.querySelector(`[data-request-id="${requestId}"]`);
     if (!card) return;
     
-    const comment = card.querySelector('.approval-comment')?.value || '';
+    const commentInput = card.querySelector('.approval-comment');
+    const comment = commentInput?.value?.trim() || '';
+    
+    // Check if comment is empty when rejecting
+    if (!comment) {
+        showError('Please provide a reason for rejection');
+        // Highlight the comment textarea
+        if (commentInput) {
+            commentInput.style.borderColor = '#e74a3b';
+            commentInput.focus();
+            // Remove the highlight after 2 seconds
+            setTimeout(() => {
+                commentInput.style.borderColor = '';
+            }, 2000);
+        }
+        return;
+    }
+    
     await handleApproval(requestId, 'Rejected', comment);
 }
 
@@ -279,4 +333,36 @@ function showSuccess(message) {
 // Show error message
 function showError(message) {
     ToastSystem.error(message);
+}
+
+// Add the markAsPaid function
+async function markAsPaid(requestId) {
+    try {
+        const response = await fetch('/library-management-system/backend/admin/admin_mark_as_paid.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ request_id: requestId })
+        });
+
+        // Check if response is JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('Server returned non-JSON response');
+        }
+
+        const data = await response.json();
+        
+        if (data.success) {
+            ToastSystem.success('Book marked as paid and returned successfully');
+            // Refresh the book approvals list
+            location.reload(); // Simple page reload to refresh the data
+        } else {
+            ToastSystem.error(data.message || 'Failed to mark book as paid');
+        }
+    } catch (error) {
+        console.error('Error marking book as paid:', error);
+        ToastSystem.error('An error occurred while marking the book as paid');
+    }
 } 
