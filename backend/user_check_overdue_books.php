@@ -19,10 +19,10 @@ try {
     while ($row = $result->fetch_assoc()) {
         // Create overdue notification
         $notification_type = 'borrow_overdue';
-        $message = "Your book '{$row['title']}' is overdue. Please return it as soon as possible.";
+        $message = "Warning: Your borrowed book \"{$row['title']}\" is overdue. Please return it as soon as possible.";
         
         $stmt = $conn->prepare("
-            INSERT INTO user_notifications (user_id, book_id, type, message)
+            INSERT INTO notifications (user_id, book_id, type, message)
             VALUES (?, ?, ?, ?)
         ");
         $stmt->bind_param("iiss", $row['user_id'], $row['book_id'], $notification_type, $message);

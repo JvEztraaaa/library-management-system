@@ -20,6 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $conn->begin_transaction();
 
+        // Get book title for notification
+        $stmt = $conn->prepare("SELECT b.title FROM borrowed_books bb JOIN books b ON bb.book_id = b.id WHERE bb.id = ?");
+        $stmt->bind_param("i", $book_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $book = $result->fetch_assoc();
+        $book_title = $book['title'];
+
         // Update book status to returned
         $stmt = $conn->prepare("UPDATE borrowed_books SET status = 'returned', returned_at = NOW() WHERE id = ?");
         $stmt->bind_param("i", $book_id);
@@ -27,10 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Create notification for user
         $notification_type = 'return_confirmed';
-        $message = "Your book has been marked as returned.";
+        $message = "Your return of \"$book_title\" has been confirmed.";
         
         // Insert notification
-        $stmt = $conn->prepare("INSERT INTO user_notifications (user_id, admin_id, book_id, type, message) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO notifications (user_id, admin_id, book_id, type, message) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("iiiss", $user_id, $_SESSION['user_id'], $book_id, $notification_type, $message);
         $stmt->execute();
 

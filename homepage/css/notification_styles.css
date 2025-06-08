@@ -56,17 +56,17 @@
   position: fixed;
   top: 80px;
   right: 20px;
-  width: 350px;
-  max-height: 500px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-height: 600px;
+  background: linear-gradient(135deg, #1a1a2e, #0f3460);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.3s ease;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .notification-panel.show {
@@ -77,117 +77,161 @@
 
 /* Notification Header */
 .notification-header {
-  padding: 15px;
-  border-bottom: 1px solid #eee;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa;
-  border-radius: 8px 8px 0 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px 12px 0 0;
 }
 
 .notification-header h3 {
   margin: 0;
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 600;
 }
 
 .mark-all-read {
   background: none;
   border: none;
-  color: #007bff;
+  color: #4e73df;
   cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .mark-all-read:hover {
-  text-decoration: underline;
+  background: rgba(78, 115, 223, 0.1);
+  color: #fff;
 }
 
 /* Notification List */
 .notification-list {
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: white;
+  background: transparent;
 }
 
 /* Notification Item */
 .notification-item {
-  padding: 15px;
-  border-bottom: 1px solid #eee;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
   position: relative;
+  border-left: 4px solid transparent;
+  margin: 2px 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .notification-item:hover {
-  background-color: #f8f9fa;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Unread notification styling */
 .notification-item.unread {
-  background-color: #f0f7ff;
+  background: rgba(78, 115, 223, 0.15);
+  border-left-color: #4e73df;
 }
 
-.notification-item.unread::before {
+.notification-item.unread::after {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background-color: #007bff;
+  top: 20px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  background-color: #4e73df;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Read notification styling */
+.notification-item:not(.unread) {
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 0.8;
 }
 
 /* Notification Content */
 .notification-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .notification-message {
   margin: 0;
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.4;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.5;
 }
 
 .notification-time {
-  font-size: 0.8rem;
-  color: #6c757d;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Notification Types */
 .notification-item.borrow_approved {
-  border-left: 4px solid #28a745;
+  border-left-color: #28a745; /* Green for approved */
 }
 
 .notification-item.borrow_rejected {
-  border-left: 4px solid #dc3545;
+  border-left-color: #dc3545; /* Red for rejected */
 }
 
 .notification-item.borrow_overdue {
-  border-left: 4px solid #ffc107;
+  border-left-color: #8B0000; /* Dark red for overdue */
 }
 
 .notification-item.return_confirmed {
-  border-left: 4px solid #17a2b8;
+  border-left-color: #4e73df; /* Blue for return confirmed */
 }
 
 .notification-item.return_overdue {
-  border-left: 4px solid #dc3545;
+  border-left-color: #8B0000; /* Dark red for return overdue */
+}
+
+/* Default blue shade for other notifications */
+.notification-item:not(.borrow_approved):not(.borrow_rejected):not(.borrow_overdue):not(.return_confirmed):not(.return_overdue) {
+  border-left-color: #4e73df;
 }
 
 /* Empty State */
 .empty-notifications {
-  padding: 20px;
+  padding: 30px;
   text-align: center;
-  color: #6c757d;
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+}
+
+/* Scrollbar Styles */
+.notification-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.notification-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.notification-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.notification-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Responsive Design */

@@ -62,6 +62,30 @@ try {
     // Start transaction
     $conn->begin_transaction();
 
+    // Get book and user details for notification
+    $detailsQuery = "
+        SELECT bb.*, u.id as user_id 
+        FROM borrowed_books bb 
+        JOIN users u ON bb.user_id = u.id 
+        WHERE bb.id = ?
+    ";
+    $stmt = $conn->prepare($detailsQuery);
+    if (!$stmt) {
+        throw new Exception("Prepare failed: " . $conn->error);
+    }
+    
+    $stmt->bind_param('i', $requestId);
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed: " . $stmt->error);
+    }
+    
+    $result = $stmt->get_result();
+    $details = $result->fetch_assoc();
+    
+    if (!$details) {
+        throw new Exception("Book request not found");
+    }
+
     // Update the borrowed_books record
     $updateQuery = "
         UPDATE borrowed_books 
@@ -101,6 +125,27 @@ try {
     $deleteStmt->bind_param('i', $requestId);
     if (!$deleteStmt->execute()) {
         throw new Exception("Execute failed: " . $deleteStmt->error);
+    }
+
+    // Create user notification
+    $userMessage = $status === 'Approved' 
+        ? "Your request to borrow \"{$details['title']}\" has been approved."
+        : "Your request to borrow \"{$details['title']}\" has been rejected. Reason: $comment";
+
+    $userNotificationQuery = "
+        INSERT INTO user_notifications (user_id, book_id, type, message) 
+        VALUES (?, ?, ?, ?)
+    ";
+    
+    $stmt = $conn->prepare($userNotificationQuery);
+    if (!$stmt) {
+        throw new Exception("Prepare failed: " . $conn->error);
+    }
+    
+    $userType = $status === 'Approved' ? 'borrow_approved' : 'borrow_rejected';
+    $stmt->bind_param('iiss', $details['user_id'], $requestId, $userType, $userMessage);
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed: " . $stmt->error);
     }
 
     // Commit transaction

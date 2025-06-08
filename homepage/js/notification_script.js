@@ -43,6 +43,14 @@ class NotificationSystem {
             }
         }
         
+        // Add scroll event listener to close panel
+        window.addEventListener('scroll', () => {
+            if (this.isPanelOpen) {
+                this.panel.classList.remove('show');
+                this.isPanelOpen = false;
+            }
+        });
+        
         // Check for notifications every 30 seconds
         this.checkNotifications();
         setInterval(() => this.checkNotifications(), 30000);

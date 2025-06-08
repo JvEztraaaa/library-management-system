@@ -1,0 +1,483 @@
+[08-Jun-2025 02:26:18 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:26:18 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:26:23 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:26:23 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:26:24 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:26:24 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:26:24 Europe/Berlin] Error in get notifications: Table 'library.books' doesn't exist
+[08-Jun-2025 02:26:54 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:26:54 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:27:24 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:27:24 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:27:54 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:27:54 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:28:45 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:28:45 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:28:47 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:28:47 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:28:47 Europe/Berlin] Error in get notifications: Table 'library.books' doesn't exist
+[08-Jun-2025 02:28:50 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:28:50 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:28:50 Europe/Berlin] Error in get notifications: Table 'library.books' doesn't exist
+[08-Jun-2025 02:29:16 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:29:16 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:29:46 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:29:46 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:30:16 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:30:16 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:30:34 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:30:34 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:30:36 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:30:36 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:30:36 Europe/Berlin] Error in get notifications: Table 'library.books' doesn't exist
+[08-Jun-2025 02:31:05 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:31:05 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:31:35 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:31:35 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:32:05 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:32:05 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:32:35 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:32:35 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:33:05 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:33:05 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:33:35 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:33:35 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:34:06 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:34:06 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:35:03 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:35:03 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:35:35 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:35:35 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:36:05 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:36:05 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:37:06 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:37:06 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:38:07 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:38:07 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:39:08 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:39:08 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:40:09 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:40:09 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:41:09 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:41:09 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:42:09 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:42:09 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:42:35 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:42:35 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:42:50 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:42:50 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:42:50 Europe/Berlin] Error in get notifications: Table 'library.books' doesn't exist
+[08-Jun-2025 02:43:04 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:43:04 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:43:35 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:43:35 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:44:05 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:44:05 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:45:09 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:45:09 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:45:15 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:45:15 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:45:15 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:45:15 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:45:15 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:45:15 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:45:15 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:45:15 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:45:15 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:45:15 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:45:15 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:45:15 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":0,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:45:15 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:45:45 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:45:45 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:46:15 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:46:15 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:46:30 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:46:30 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:46:31 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:46:31 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:46:31 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:46:31 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:46:31 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:46:31 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:46:31 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:46:31 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:46:31 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:46:31 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":0,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:46:31 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:00 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:00 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:47:08 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:08 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:47:08 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:08 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:08 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:08 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:08 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:08 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:08 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:08 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:08 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:08 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":0,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:08 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:25 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:25 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:25 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:25 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:25 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:25 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:25 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":0,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:25 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:29 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:29 Europe/Berlin] Operation requested: mark_read
+[08-Jun-2025 02:47:29 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:29 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:29 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:29 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:29 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:29 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:29 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:29 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:29 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:29 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:29 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:33 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:33 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:33 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:33 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:33 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:33 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:33 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:33 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:33 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:33 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:33 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:38 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:38 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:47:41 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:41 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:47:42 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:42 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:42 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:42 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":0,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:42 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:42 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:42 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:42 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:42 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:42 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:42 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:46 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:46 Europe/Berlin] Operation requested: mark_read
+[08-Jun-2025 02:47:46 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:46 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:46 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:46 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:46 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:46 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:46 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:46 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:46 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:46 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:46 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:47:49 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:47:49 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:47:49 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:47:49 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:47:49 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:49 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:47:49 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:49 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:47:49 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:47:49 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:47:49 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:48:12 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:48:12 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:48:42 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:48:42 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:48:54 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:48:54 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:48:56 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:48:56 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:48:56 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:48:56 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:48:56 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:48:56 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:48:56 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:48:56 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:48:56 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:48:56 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:48:56 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:49:25 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:49:25 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:49:51 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:49:51 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:49:52 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:49:52 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:49:52 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:49:52 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:49:52 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:49:52 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:49:52 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:49:52 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:49:52 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:49:52 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:49:52 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:50:22 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:50:22 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:50:52 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:50:52 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:51:22 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:51:22 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:51:52 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:51:52 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:52:00 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:52:00 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:52:01 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:52:01 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:52:01 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:52:01 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:52:01 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:52:01 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:52:01 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:52:01 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:52:01 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:52:01 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:52:01 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:52:31 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:52:31 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:53:01 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:53:01 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:53:31 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:53:31 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:53:42 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:53:42 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:53:43 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:53:43 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:53:43 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:53:43 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:53:43 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:53:43 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:53:43 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:53:43 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:53:43 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:53:43 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:53:43 Europe/Berlin] Found 4 notifications
+[08-Jun-2025 02:54:13 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:54:13 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:54:22 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:54:22 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:54:23 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:54:23 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:54:23 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:54:23 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:54:23 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:54:23 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:54:23 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:54:23 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:54:23 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:54:53 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:54:53 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:55:23 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:55:23 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:55:24 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:55:24 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:55:25 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:55:25 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:55:25 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:55:25 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:55:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:55:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:55:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:55:25 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:55:25 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:55:30 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:55:30 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:55:30 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:55:30 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:55:30 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:55:30 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:55:30 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:55:30 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:55:30 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:55:54 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:55:54 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:56:15 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:56:15 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:56:17 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:56:17 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:56:17 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:56:17 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:56:17 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:56:17 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:56:17 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:56:17 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:56:17 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:56:46 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:56:46 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:57:16 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:57:16 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:57:46 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:57:46 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:57:47 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:57:47 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:57:47 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:57:47 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:57:47 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:57:47 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:57:47 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:57:47 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:57:47 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:57:51 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:57:51 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:57:53 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:57:53 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:57:53 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:57:53 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:57:53 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:57:53 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:57:53 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:57:53 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:57:53 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:01 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:58:01 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:58:01 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:58:01 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:58:01 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:58:01 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:58:01 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:01 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:58:01 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:58:22 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:22 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:24 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:24 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:25 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:58:25 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:58:25 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:58:25 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:58:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:58:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:58:25 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:25 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:58:25 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:28 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:58:28 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:58:28 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:58:28 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:58:28 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:58:28 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:58:28 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:28 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:58:28 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:31 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:58:31 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:58:31 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:58:31 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:58:31 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:58:31 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:58:31 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:31 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:58:31 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:33 Europe/Berlin] Operation requested: get
+[08-Jun-2025 02:58:33 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notification: {"id":6,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":132,"is_read":0,"created_at":"2025-06-08 08:54:19","book_title":"Dogeaters"}
+[08-Jun-2025 02:58:33 Europe/Berlin] Formatting message for type: borrow_rejected
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notification: {"id":5,"user_id":3,"type":"borrow_rejected","message":"Your request to borrow \"Things Fall Apart\" has been rejected. Reason: Already Borrowed","book_id":141,"is_read":0,"created_at":"2025-06-08 08:54:13","book_title":"Things Fall Apart"}
+[08-Jun-2025 02:58:33 Europe/Berlin] Formatting message for type: borrow_approved
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notification: {"id":4,"user_id":3,"type":"borrow_approved","message":"Your request to borrow \"The Stranger\" has been approved.","book_id":142,"is_read":1,"created_at":"2025-06-08 08:42:26","book_title":"The Stranger"}
+[08-Jun-2025 02:58:33 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notification: {"id":3,"user_id":3,"type":"return","message":"Your overdue book \"To Kill a Mockingbird\" has been marked as paid and returned.","book_id":136,"is_read":0,"created_at":"2025-06-08 08:14:30","book_title":"To Kill a Mockingbird"}
+[08-Jun-2025 02:58:33 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notification: {"id":2,"user_id":3,"type":"return","message":"Your overdue book \"1984\" has been marked as paid and returned.","book_id":137,"is_read":0,"created_at":"2025-06-08 08:13:38","book_title":"1984"}
+[08-Jun-2025 02:58:33 Europe/Berlin] Formatting message for type: return
+[08-Jun-2025 02:58:33 Europe/Berlin] Processing notification: {"id":1,"user_id":3,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":135,"is_read":1,"created_at":"2025-06-08 08:12:23","book_title":"The Great Gatsby"}
+[08-Jun-2025 02:58:33 Europe/Berlin] Found 6 notifications
+[08-Jun-2025 02:58:41 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:41 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:43 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:43 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:44 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:44 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:45 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:45 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:45 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:45 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:46 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:46 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:47 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:47 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:48 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:48 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:48 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:48 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:49 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:49 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:50 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:50 Europe/Berlin] Operation requested: get_unread_count
+[08-Jun-2025 02:58:51 Europe/Berlin] Processing notifications for user ID: 3
+[08-Jun-2025 02:58:51 Europe/Berlin] Operation requested: get_unread_count
