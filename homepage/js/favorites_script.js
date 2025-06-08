@@ -77,6 +77,57 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Banner Carousel for favorites.html
+  if (window.location.pathname.endsWith('favorites.html')) {
+    const slidesContainer = document.querySelector(".banner-slides");
+    const slides = document.querySelectorAll(".banner-slide");
+    const nextBtn = document.querySelector(".banner-next");
+    const prevBtn = document.querySelector(".banner-prev");
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    const slideDuration = 10000;
+
+    if (slidesContainer && slides.length > 0) {
+        slidesContainer.style.width = `${totalSlides * 100}%`;
+
+        const imagePaths = [
+            "images/bg_cover.png",
+            "images/bg_cover2.JPG",
+            "images/bg_cover3.JPG",
+            "images/bg_cover4.JPG",
+            "images/bg_cover5.JPG",
+            "images/bg_cover6.JPG"
+        ];
+
+        slides.forEach((slide, index) => {
+            slide.style.backgroundImage = `url('${imagePaths[index % imagePaths.length]}')`;
+        });
+
+        function showSlide(index) {
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+
+            slidesContainer.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            showSlide(currentSlide + 1);
+        });
+
+        prevBtn.addEventListener("click", () => {
+            showSlide(currentSlide - 1);
+        });
+
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, slideDuration);
+
+        showSlide(currentSlide);
+    }
+  }
 });
 
 // ====================== Favorite Button ======================
@@ -146,19 +197,34 @@ if (window.location.pathname.endsWith('favorites.html')) {
       data.favorites.forEach(book => {
     const bookContainer = document.createElement('div');
     bookContainer.classList.add("book-container");
-    bookContainer.style.padding = "20px";
 
    bookContainer.innerHTML = `
   <div class="book-image-wrapper">
     <img src="${book.cover}" alt="${book.title}" class="book" />
-    <button class="btn-favorites image-fav" title="Remove from favorites">❤️</button>
+            <button class="image-fav" title="Remove from favorites">
+              <i class="fas fa-heart"></i>
+            </button>
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">${book.title}</h3>
+            <p class="book-author">${book.author}</p>
+            <span class="book-genre">${book.genre}</span>
+            <div class="book-actions">
+              <button class="action-btn borrow-btn" onclick="window.location.href='borrow.html'">
+                <i class="fas fa-book"></i> Borrow
+              </button>
+              <button class="action-btn remove-btn">
+                <i class="fas fa-trash"></i> Remove
+              </button>
+            </div>
   </div> 
 `;
 
     favoritesContainer.appendChild(bookContainer);
 
     // Remove from favorites
-    bookContainer.querySelector('.btn-favorites').addEventListener('click', () => {
+        const removeBtn = bookContainer.querySelector('.remove-btn');
+        removeBtn.addEventListener('click', () => {
           const formData = new FormData();
           formData.append('operation', 'remove');
           formData.append('title', book.title);
@@ -171,7 +237,7 @@ if (window.location.pathname.endsWith('favorites.html')) {
           .then(data => {
             if (data.success) {
       bookContainer.remove();
-              alert('Book removed from favorites!');
+              showPopup('Book removed from favorites!', 'success');
               
               // Only try to update homepage buttons if we're on the homepage
               if (window.location.pathname.endsWith('homepage.html')) {
@@ -187,13 +253,20 @@ if (window.location.pathname.endsWith('favorites.html')) {
                 });
               }
             } else {
-              alert(data.message);
+              showPopup(data.message, 'error');
             }
           })
           .catch(error => {
             console.error('Error:', error);
-            alert('Error removing from favorites');
+            showPopup('Error removing from favorites', 'error');
           });
+        });
+
+        // Add click event to book image
+        const bookImage = bookContainer.querySelector('.book');
+        bookImage.addEventListener('click', () => {
+          // Add your book details view logic here
+          console.log('View book details:', book.title);
         });
       });
     } else {

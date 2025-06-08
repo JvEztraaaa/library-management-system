@@ -156,7 +156,7 @@ try {
 } catch (Exception $e) {
     // Rollback transaction on error
     if (isset($conn)) {
-        $conn->rollback();
+    $conn->rollback();
     }
     
     error_log("Error in admin_update_approval_status.php: " . $e->getMessage() . "\nStack trace: " . $e->getTraceAsString());
@@ -168,10 +168,10 @@ try {
     }
     if (isset($deleteStmt)) {
         $deleteStmt->close();
-    }
+}
     // Close connection
     if (isset($conn)) {
-        $conn->close();
+$conn->close();
     }
 }
 ?> 
