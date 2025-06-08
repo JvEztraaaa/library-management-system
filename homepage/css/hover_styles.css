@@ -11,12 +11,140 @@
     width: 300px;
     margin: 0 20px;
   }
+
+  .book-card {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .book-container {
+    width: 280px;
+    margin: 0 15px;
+  }
+
+  .book-card {
+    width: 280px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .book-container {
+    width: 260px;
+    margin: 0 12px;
+  }
+
+  .book-card {
+    width: 260px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .btn-book,
+  .btn-favorites {
+    height: 38px;
+    min-width: 38px;
+    max-width: 38px;
+    font-size: 0.95rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .book-container {
     width: 250px;
-    margin: 0 15px;
+    margin: 0 10px;
+  }
+
+  .book-card {
+    width: 250px;
+    height: 100%;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .btn-book,
+  .btn-favorites {
+    height: 36px;
+    min-width: 36px;
+    max-width: 36px;
+    font-size: 0.9rem;
+  }
+
+  .infos {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .book-container {
+    width: 220px;
+    margin: 0 8px;
+  }
+
+  .book-card {
+    width: 220px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .btn-book,
+  .btn-favorites {
+    height: 34px;
+    min-width: 34px;
+    max-width: 34px;
+    font-size: 0.85rem;
+  }
+
+  .infos {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .info-right span {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .book-container {
+    width: 200px;
+    margin: 0 6px;
+  }
+
+  .book-card {
+    width: 200px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .btn-book,
+  .btn-favorites {
+    height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    font-size: 0.8rem;
+  }
+
+  .infos {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .info-right span {
+    font-size: 0.75rem;
   }
 }
 
@@ -62,20 +190,6 @@
   opacity: 0;
   visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Responsive adjustments for book card */
-@media screen and (max-width: 1400px) {
-  .book-card {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .book-card {
-    width: 250px;
-    height: 100%;
-  }
 }
 
 /* Adjust card position for last items */

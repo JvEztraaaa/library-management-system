@@ -235,6 +235,42 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .notification-panel {
+    width: 450px;
+  }
+
+  .notification-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .notification-message {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .notification-panel {
+    width: 400px;
+  }
+
+  .notification-header {
+    padding: 15px;
+  }
+
+  .notification-item {
+    padding: 15px;
+  }
+
+  .notification-message {
+    font-size: 0.95rem;
+  }
+
+  .notification-time {
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 768px) {
   .notification-panel {
     position: fixed;
@@ -248,5 +284,133 @@
 
   .notification-list {
     max-height: calc(100vh - 140px);
+  }
+
+  .notification-header {
+    padding: 12px;
+  }
+
+  .notification-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .mark-all-read {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .notification-item {
+    padding: 12px;
+  }
+
+  .notification-message {
+    font-size: 0.9rem;
+  }
+
+  .notification-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .notification-bell {
+    padding: 6px;
+  }
+
+  .notification-bell i {
+    font-size: 1.1rem;
+  }
+
+  .notification-badge {
+    padding: 1px 5px;
+    font-size: 0.65rem;
+    min-width: 16px;
+    height: 16px;
+  }
+
+  .notification-header {
+    padding: 10px;
+  }
+
+  .notification-header h3 {
+    font-size: 1rem;
+  }
+
+  .mark-all-read {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .notification-item {
+    padding: 10px;
+  }
+
+  .notification-message {
+    font-size: 0.85rem;
+  }
+
+  .notification-time {
+    font-size: 0.75rem;
+  }
+
+  .notification-item.unread::after {
+    width: 6px;
+    height: 6px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-bell {
+    padding: 5px;
+  }
+
+  .notification-bell i {
+    font-size: 1rem;
+  }
+
+  .notification-badge {
+    padding: 1px 4px;
+    font-size: 0.6rem;
+    min-width: 14px;
+    height: 14px;
+  }
+
+  .notification-header {
+    padding: 8px;
+  }
+
+  .notification-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .mark-all-read {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .notification-item {
+    padding: 8px;
+  }
+
+  .notification-message {
+    font-size: 0.8rem;
+  }
+
+  .notification-time {
+    font-size: 0.7rem;
+  }
+
+  .notification-item.unread::after {
+    width: 5px;
+    height: 5px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .empty-notifications {
+    padding: 20px;
+    font-size: 0.95rem;
   }
 } 

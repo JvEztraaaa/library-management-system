@@ -319,6 +319,122 @@ td.status-overdue {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .borrow-table-wrapper {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .borrow-table th,
+  .borrow-table td {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+
+  /* Header specific adjustments for 1200px */
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 280px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    order: 2;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+    padding: 7px 14px;
+    margin: 0 5px;
+  }
+
+  .header-right {
+    order: 1;
+    flex-basis: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 250px;
+    margin-right: 0;
+  }
+
+  .user-icons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    width: 220px;
+    height: auto;
+  }
+
+  .header {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links {
+    order: 2;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0 5px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 200px;
+    margin-right: 0;
+  }
+
+  .header-right {
+    order: 1;
+    flex-basis: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .user-icons {
+    gap: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .logo {
     width: 260px;
@@ -336,22 +452,28 @@ td.status-overdue {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
+    width: 100%;
+    justify-content: center;
   }
 
   .nav-links a {
     font-size: 14px;
     padding: 6px 12px;
+    margin-right: 0;
   }
 
   .header-right {
     margin-top: 10px;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
+    justify-content: center;
   }
 
   .search-bar {
     width: 100%;
     max-width: 100%;
+    margin-right: 0;
   }
 
   .books-section {
@@ -363,17 +485,14 @@ td.status-overdue {
     margin-left: 20px;
   }
 
-  .footer-links {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
-    gap: 10px;
-  }
-
   .borrow-table-wrapper {
     width: 95%;
     padding: 15px;
+    overflow-x: auto;
+  }
+
+  .borrow-table {
+    min-width: 600px;
   }
 
   .borrow-table th,
@@ -385,6 +504,54 @@ td.status-overdue {
   .action-btn {
     padding: 6px 12px;
     font-size: 0.9em;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 200px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .books-section h2 {
+    font-size: 24px;
+    margin-left: 15px;
+  }
+
+  .borrow-table th,
+  .borrow-table td {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  .action-btn {
+    padding: 5px 10px;
+    font-size: 0.85em;
+  }
+
+  .status-text {
+    padding: 4px 8px;
+    font-size: 0.8em;
   }
 }
 
@@ -404,12 +571,17 @@ td.status-overdue {
 
   .borrow-table th,
   .borrow-table td {
-    padding: 10px;
+    padding: 8px;
     font-size: 13px;
   }
 
   .borrow-table {
     font-size: 13px;
+  }
+
+  .action-btn {
+    padding: 4px 8px;
+    font-size: 0.8em;
   }
 }
 

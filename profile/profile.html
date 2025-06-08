@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Library Management System</title>
+    <link rel="stylesheet" href="../homepage/css/homepage_styles.css">
+    <link rel="stylesheet" href="css/profile_styles.css">
+    <link rel="stylesheet" href="../homepage/css/notification_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="../homepage/images/logo_nudasma.png" alt="Library Logo" class="logo">
+        </div>
+        <nav class="nav-links">
+            <a href="../homepage/homepage.html">Home</a>
+            <a href="../homepage/borrow.html">Borrowed Books</a>
+            <a href="../homepage/favorites.html">Favorites</a>
+        </nav>
+        <div class="header-right">
+            <div class="user-icons">
+                <div class="icon notification-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" style="display: none;">0</span>
+                </div>
+                <div class="icon profile-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-main-content">
+        <div class="profile-container">
+            <h2>User Profile</h2>
+            <form id="profile-form" class="profile-form">
+                <div class="profile-avatar">
+                    <img src="../homepage/images/default_avatar.jpg" alt="User Avatar" id="avatar-preview">
+                    <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                    <label for="avatar-upload" class="upload-btn"><i class="fas fa-camera"></i> Change Photo</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" id="full_name" value="John A. Doe" readonly>
+                    <button type="button" class="edit-btn" data-field="full_name"><i class="fas fa-edit"></i></button>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="john.doe@example.com" readonly>
+                    <button type="button" class="edit-btn" data-field="email"><i class="fas fa-edit"></i></button>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" value="********" readonly>
+                    <button type="button" class="edit-btn" data-field="password"><i class="fas fa-edit"></i></button>
+                </div>
+                
+                <div class="profile-actions">
+                    <button type="submit" class="save-btn" style="display: none;"><i class="fas fa-save"></i> Save Changes</button>
+                    <button type="button" class="cancel-edit-btn" style="display: none;"><i class="fas fa-times-circle"></i> Cancel</button>
+                    <button type="button" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-links">
+        <a href="#">About Us</a> | 
+        <a href="#">Contact</a>
+    </footer>
+
+    <script src="js/profile_script.js"></script>
+    <script src="../homepage/js/notification_script.js"></script>
+    <script>
+        // Initialize notification system
+        document.addEventListener('DOMContentLoaded', () => {
+            new NotificationSystem();
+        });
+    </script>
+</body>
+</html> 

@@ -37,7 +37,7 @@ if (strlen($pass) < 8) {
 }
 
 // Retrieve full user data by email
-$stmt = $conn->prepare("SELECT id, first_name, last_name, password_hash, role FROM users WHERE email = ?");
+$stmt = $conn->prepare("SELECT id, first_name, last_name, password_hash, role, avatar_url FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $stmt->store_result();
@@ -49,7 +49,7 @@ if ($stmt->num_rows === 0) {
     exit();
 }
 
-$stmt->bind_result($user_id, $first_name, $last_name, $password_hash_from_db, $role);
+$stmt->bind_result($user_id, $first_name, $last_name, $password_hash_from_db, $role, $avatar_url);
 $stmt->fetch();
 
 // Verify password
@@ -60,6 +60,7 @@ if (password_verify($pass, $password_hash_from_db)) {
     $_SESSION['first_name'] = $first_name;
     $_SESSION['last_name'] = $last_name;
     $_SESSION['role'] = $role;
+    $_SESSION['avatar_url'] = $avatar_url;
 
     // Debug role value
     error_log("User role: " . $role);

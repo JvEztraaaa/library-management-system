@@ -10,40 +10,30 @@ class NotificationSystem {
     }
 
     init() {
-        // Create notification panel
+        // Create notification panel (this will be appended to body)
         this.createNotificationPanel();
         
-        // Add notification bell to header-right
-        const headerRight = document.querySelector('.header-right .user-icons');
-        if (headerRight) {
-            // Check if notification bell already exists
-            if (!document.querySelector('.notification-bell')) {
-                const notificationBell = document.createElement('div');
-                notificationBell.className = 'notification-bell';
-                notificationBell.innerHTML = `
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge" style="display: none;">0</span>
-                `;
-                
-                // Replace the existing notification icon
-                const existingBell = headerRight.querySelector('.notification');
-                if (existingBell) {
-                    existingBell.replaceWith(notificationBell);
-                } else {
-                    headerRight.appendChild(notificationBell);
-                }
-                
-                // Add click event to bell
-                notificationBell.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Prevent event from bubbling up
-                    this.togglePanel();
-                });
-                
-                this.badge = notificationBell.querySelector('.notification-badge');
-            }
+        // Get the existing notification bell from the HTML structure
+        const notificationBell = document.querySelector('.header-right .user-icons .notification-bell');
+        console.log('NotificationSystem: Looking for .notification-bell', notificationBell);
+
+        if (notificationBell) {
+            // Add click event to bell to toggle the panel
+            notificationBell.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event from bubbling up and closing panel immediately
+                this.togglePanel();
+                console.log('NotificationSystem: Notification bell clicked!');
+            });
+            
+            // Get the existing notification badge
+            this.badge = notificationBell.querySelector('.notification-badge');
+            console.log('NotificationSystem: Looking for .notification-badge', this.badge);
+
+        } else {
+            console.warn('NotificationSystem: Notification bell element not found!');
         }
         
-        // Add scroll event listener to close panel
+        // Add scroll event listener to close panel (optional, but good for UX)
         window.addEventListener('scroll', () => {
             if (this.isPanelOpen) {
                 this.panel.classList.remove('show');
@@ -51,9 +41,13 @@ class NotificationSystem {
             }
         });
         
-        // Check for notifications every 30 seconds
+        // Periodically check for new notifications
+        console.log('NotificationSystem: Calling checkNotifications() from init...');
         this.checkNotifications();
-        setInterval(() => this.checkNotifications(), 30000);
+        setInterval(() => {
+            this.checkNotifications();
+            console.log('NotificationSystem: Checking notifications via interval...');
+        }, 30000); // Check every 30 seconds
     }
 
     createNotificationPanel() {
