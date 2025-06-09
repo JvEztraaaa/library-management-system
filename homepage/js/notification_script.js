@@ -139,6 +139,11 @@ class NotificationSystem {
             const item = document.createElement('li');
             item.className = `notification-item ${notification.type} ${notification.is_read ? '' : 'unread'}`;
             
+            // Add special styling for calendar events
+            if (notification.type === 'calendar_event') {
+                item.classList.add('calendar-event');
+            }
+            
             item.innerHTML = `
                 <div class="notification-content">
                     <p class="notification-message">${notification.message}</p>
@@ -246,8 +251,16 @@ class NotificationSystem {
             return `${days} day${days > 1 ? 's' : ''} ago`;
         }
         
-        // Otherwise show the date
-        return date.toLocaleDateString();
+        // Otherwise show the date and time in 12-hour format
+        const options = {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        };
+        return date.toLocaleString('en-US', options);
     }
 }
 

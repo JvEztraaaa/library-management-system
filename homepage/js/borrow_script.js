@@ -1,5 +1,85 @@
 window.addEventListener("DOMContentLoaded", () => {
   loadBorrowedBooks();
+  
+  const searchBar = document.querySelector(".search-bar");
+  const searchSuggestions = document.querySelector(".search-suggestions");
+
+  let allBorrowedBookTitles = [];
+
+  // Function to update the search suggestions and filter the table
+  const updateSearchAndSuggestions = () => {
+    const searchTerm = searchBar.value.toLowerCase();
+    
+    // Clear previous suggestions
+    searchSuggestions.innerHTML = '';
+
+    if (searchTerm.length > 0) {
+      const filteredSuggestions = allBorrowedBookTitles.filter(title => title.includes(searchTerm));
+
+      if (filteredSuggestions.length > 0) {
+        filteredSuggestions.forEach(suggestion => {
+          const suggestionItem = document.createElement('div');
+          suggestionItem.classList.add('suggestion-item');
+          suggestionItem.textContent = suggestion;
+          suggestionItem.addEventListener('click', () => {
+            searchBar.value = suggestion;
+            updateSearchAndSuggestions(); // Trigger update with selected suggestion
+            searchSuggestions.innerHTML = ''; // Clear suggestions after selection
+            searchSuggestions.style.display = 'none';
+          });
+          searchSuggestions.appendChild(suggestionItem);
+        });
+        searchSuggestions.style.display = 'block'; // Show suggestions
+      } else {
+        searchSuggestions.style.display = 'none'; // Hide if no suggestions
+      }
+    } else {
+      searchSuggestions.style.display = 'none'; // Hide when search bar is empty
+    }
+
+    // Filter the table rows based on the search term
+    const tableRows = document.querySelectorAll("#borrowed-books-body tr");
+    tableRows.forEach(row => {
+      if (row.classList.contains('placeholder')) return; // Skip placeholder row
+      
+      const bookName = row.cells[0].textContent.toLowerCase();
+      const status = row.cells[5].textContent.toLowerCase();
+      
+      if (bookName.includes(searchTerm) || status.includes(searchTerm)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  };
+
+  // Add event listener for search bar input
+  searchBar.addEventListener("input", updateSearchAndSuggestions);
+
+  // Function to populate allBorrowedBookTitles after books are loaded
+  const populateBorrowedBookTitles = () => {
+    allBorrowedBookTitles = []; // Clear previous titles
+    document.querySelectorAll("#borrowed-books-body tr").forEach(row => {
+      if (!row.classList.contains('placeholder')) {
+        const bookName = row.cells[0].textContent.toLowerCase();
+        if (!allBorrowedBookTitles.includes(bookName)) {
+          allBorrowedBookTitles.push(bookName);
+        }
+      }
+    });
+  };
+
+  // Override the original loadBorrowedBooks to also populate titles and trigger initial search
+  const originalLoadBorrowedBooks = loadBorrowedBooks;
+  loadBorrowedBooks = () => {
+    originalLoadBorrowedBooks().then(() => {
+      populateBorrowedBookTitles();
+      updateSearchAndSuggestions(); // Apply initial filter and suggestions if there's existing text
+    });
+  };
+
+  // Initial load of borrowed books
+  loadBorrowedBooks();
 });
 
 function loadBorrowedBooks() {
@@ -8,6 +88,7 @@ function loadBorrowedBooks() {
     .then(html => {
       document.getElementById("borrowed-books-body").innerHTML = html;
       setupActionButtons();
+      // No longer populate titles here, as it's done by the overridden function
     })
     .catch(err => {
       console.error("Error loading borrowed books:", err);

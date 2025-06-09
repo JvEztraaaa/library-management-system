@@ -229,6 +229,9 @@ function formatNotificationMessage($row) {
         case 'return_overdue':
             return "Your return of \"$bookTitle\" is overdue. Please return it immediately.";
             
+        case 'calendar_event':
+            return $row['message']; // Calendar events already have formatted messages
+            
         default:
             return $row['message'];
     }

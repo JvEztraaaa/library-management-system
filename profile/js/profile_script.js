@@ -1,10 +1,12 @@
 // JavaScript for User Profile Page
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize notification system
+    new NotificationSystem();
+
     const profileForm = document.getElementById('profile-form');
     const editButtons = document.querySelectorAll('.edit-btn');
     const saveButton = profileForm.querySelector('.save-btn');
     const cancelButton = profileForm.querySelector('.cancel-edit-btn');
-    const logoutButton = profileForm.querySelector('.logout-btn');
     const avatarUpload = document.getElementById('avatar-upload');
     const avatarPreview = document.getElementById('avatar-preview');
     const fullNameInput = document.getElementById('full_name');
@@ -89,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         saveButton.style.display = 'none';
         cancelButton.style.display = 'none';
-        // originalValues = {}; // Keep original values for subsequent edits until saved
     };
 
     // Event listeners for edit buttons
@@ -179,26 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error submitting profile data:', error);
             alert('An error occurred during profile update.');
-        }
-    });
-
-    // Event listener for logout button
-    logoutButton.addEventListener('click', async () => {
-        if (confirm('Are you sure you want to log out?')) {
-            try {
-                const response = await fetch('update_profile.php?action=logout');
-                const data = await response.json();
-                if (data.status === 'success' && data.redirect) {
-                    console.log(data.message);
-                    window.location.href = data.redirect;
-                } else {
-                    alert('Logout failed: ' + data.message);
-                    console.error('Logout failed:', data.message);
-                }
-            } catch (error) {
-                console.error('Error during logout:', error);
-                alert('An error occurred during logout.');
-            }
         }
     });
 }); 

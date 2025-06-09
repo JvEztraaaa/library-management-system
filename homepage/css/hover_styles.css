@@ -3,6 +3,286 @@
   position: relative;
   margin: 0 40px;
   width: 35vw;
+  display: inline-block;
+}
+
+/* Adjust margins for book containers when search is active */
+body.search-active .book-container {
+  flex-basis: 250px !important; /* Enforce a consistent fixed width for search results */
+  height: 350px !important; /* Enforce a consistent fixed height for search results */
+  flex-grow: 0 !important; /* Prevent the item from growing */
+  flex-shrink: 0 !important; /* Prevent the item from shrinking */
+  margin: 0 10px !important; /* Consistent horizontal margin for spacing, and no vertical margin */
+}
+
+/* Force hover card to the right when search is active */
+body.search-active .book-container:nth-last-child(-n + 2) .book-card {
+  left: auto;
+  right: 100%;
+  height: 110% !important;
+  margin-left: 12px;
+  margin-right: 0;
+}
+
+body.search-active .book-container .book-card {
+  left: 100%;
+  right: auto;
+  height: 110% !important;
+  margin-left: 12px;
+  margin-right: 0;
+}
+
+/* Force hover card to the right when search is active and less than 3 books are visible */
+body.search-active-less-than-three .book-card {
+  left: 100% !important;
+  right: auto !important;
+  height: 110% !important;
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+}
+
+/* Book images */
+.book {
+  display: block;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book:hover {
+  transform: scale(1.02);
+}
+
+/* Ensure book image conforms to container height when search is active */
+body.search-active .book {
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Hover card panel */
+.book-card {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 12px;
+  max-height: 90vh;
+  z-index: 1000;
+  width: 25vw;
+  height: 120%;
+  overflow-y: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Ensure hover card conforms to container height when search is active */
+body.search-active .book-card {
+  height: 100% !important;
+  overflow: hidden !important; /* Hide any overflowing content */
+  max-height: unset !important; /* Remove max-height constraint */
+}
+
+.book-card.left {
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: 12px;
+}
+
+/* Reveal on hover */
+.book-container:hover .book-card,
+.book-card:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Top image + gradient */
+.background-image-container {
+  height: 58%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.gradient {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(24, 24, 24, 0.8)
+  );
+}
+
+/* Controls row (title + buttons) */
+.controls {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.title {
+  flex: 1;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.title:hover {
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.btn-book,
+.btn-favorites {
+  padding: 8px 16px;
+  height: 42px;
+  min-width: 42px;
+  max-width: 42px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.btn-book:hover,
+.btn-favorites:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Favorite button styles */
+.btn-favorites {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 42px;
+  padding: 0;
+}
+
+/* Borrow button specific styles */
+.btn-book {
+  width: auto;
+  min-width: 80px;
+  max-width: none;
+}
+
+.btn-favorites.in-favorites {
+  background: rgba(255, 0, 0, 0.3) !important;
+  border-color: #ff4444 !important;
+  color: #ff4444 !important;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3) !important;
+}
+
+.btn-favorites.in-favorites:hover {
+  background: rgba(255, 0, 0, 0.4) !important;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4) !important;
+}
+
+.btn-favorites.in-favorites::before {
+  content: "❤️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  opacity: 1;
+  animation: heartBeat 1s ease infinite;
+}
+
+@keyframes heartBeat {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Ensure hover styles work in the book card */
+.book-card:hover .btn-favorites.in-favorites {
+  background: rgba(255, 0, 0, 0.4) !important;
+  border-color: #ff4444 !important;
+  color: #ff4444 !important;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4) !important;
+}
+
+/* Bottom info area */
+.infos {
+  height: 42%;
+  padding: 16px;
+  background: rgba(20, 20, 20, 0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  color: #eee;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Description */
+.info-left {
+  flex: 1;
+  opacity: 0.9;
+  overflow: auto;
+  padding-right: 8px;
+}
+
+/* Author & Genres */
+.info-right {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info-right p {
+  margin: 6px 0;
+}
+
+.info-right span {
+  font-weight: 600;
+  color: #bbb;
+  margin-right: 6px;
 }
 
 /* Responsive adjustments for book container */
@@ -148,48 +428,65 @@
   }
 }
 
-.book-container:nth-last-child(-n + 2) .book-card {
-  left: auto;
-  right: 100%;
-  margin-left: 0;
-  margin-right: 12px;
+/* Ensure consistent book container size during search across all breakpoints */
+@media screen and (max-width: 1400px) {
+  body.search-active .book-container {
+    flex-basis: 250px !important;
+    height: 350px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 10px !important;
+  }
 }
 
-/* Book images */
-.book {
-  display: block;
-  cursor: pointer;
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+@media screen and (max-width: 1200px) {
+  body.search-active .book-container {
+    flex-basis: 250px !important;
+    height: 350px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 10px !important;
+  }
 }
 
-.book:hover {
-  transform: scale(1.02);
+@media screen and (max-width: 992px) {
+  body.search-active .book-container {
+    flex-basis: 250px !important;
+    height: 350px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 10px !important;
+  }
 }
 
-/* Hover card panel */
-.book-card {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 12px;
-  max-height: 90vh;
-  z-index: 1000;
-  width: 25vw;
-  height: 120%;
-  overflow-y: auto;
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  opacity: 0;
-  visibility: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+@media screen and (max-width: 768px) {
+  body.search-active .book-container {
+    flex-basis: 250px !important;
+    height: 350px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 10px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body.search-active .book-container {
+    flex-basis: 250px !important;
+    height: 350px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 10px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body.search-active .book-container {
+    flex-basis: 250px !important;
+    height: 350px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 10px !important;
+  }
 }
 
 /* Adjust card position for last items */
@@ -217,52 +514,6 @@
     margin-left: 12px;
     margin-right: 0;
   }
-}
-
-.book-card.left {
-  left: auto;
-  right: 100%;
-  margin-left: 0;
-  margin-right: 12px;
-}
-
-/* Reveal on hover */
-.book-container:hover .book-card,
-.book-card:hover {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Top image + gradient */
-.background-image-container {
-  height: 58%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.gradient {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(24, 24, 24, 0.8)
-  );
-}
-
-/* Controls row (title + buttons) */
-.controls {
-  position: absolute;
-  bottom: 12px;
-  left: 16px;
-  right: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
 }
 
 /* Responsive adjustments for controls */
@@ -295,69 +546,6 @@
   }
 }
 
-.title {
-  flex: 1;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-  transition: transform 0.2s ease;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-}
-
-.title:hover {
-  transform: scale(1.02);
-}
-
-/* Buttons */
-.btn-book,
-.btn-favorites {
-  padding: 8px 16px;
-  height: 42px;
-  min-width: 42px;
-  max-width: 42px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.btn-book:hover,
-.btn-favorites:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Favorite button styles */
-.btn-favorites {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  width: 42px;
-  padding: 0;
-}
-
 @media screen and (max-width: 768px) {
   .btn-favorites {
     width: 36px;
@@ -367,70 +555,11 @@
   }
 }
 
-/* Borrow button specific styles */
-.btn-book {
-  width: auto;
-  min-width: 80px;
-  max-width: none;
-}
-
 @media screen and (max-width: 768px) {
   .btn-book {
     min-width: 70px;
     padding: 8px 12px;
   }
-}
-
-.btn-favorites.in-favorites {
-  background: rgba(255, 0, 0, 0.3) !important;
-  border-color: #ff4444 !important;
-  color: #ff4444 !important;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3) !important;
-}
-
-.btn-favorites.in-favorites:hover {
-  background: rgba(255, 0, 0, 0.4) !important;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4) !important;
-}
-
-.btn-favorites.in-favorites::before {
-  content: "❤️";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.2rem;
-  opacity: 1;
-  animation: heartBeat 1s ease infinite;
-}
-
-@keyframes heartBeat {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.1); }
-  100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-/* Ensure hover styles work in the book card */
-.book-card:hover .btn-favorites.in-favorites {
-  background: rgba(255, 0, 0, 0.4) !important;
-  border-color: #ff4444 !important;
-  color: #ff4444 !important;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4) !important;
-}
-
-/* Bottom info area */
-.infos {
-  height: 42%;
-  padding: 16px;
-  background: rgba(20, 20, 20, 0.9);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 16px;
-  color: #eee;
-  font-size: 0.95rem;
-  line-height: 1.4;
 }
 
 /* Responsive adjustments for infos */
@@ -450,30 +579,4 @@
   .info-right {
     margin-top: 8px;
   }
-}
-
-/* Description */
-.info-left {
-  flex: 1;
-  opacity: 0.9;
-  overflow: auto;
-  padding-right: 8px;
-}
-
-/* Author & Genres */
-.info-right {
-  flex: 0 0 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.info-right p {
-  margin: 6px 0;
-}
-
-.info-right span {
-  font-weight: 600;
-  color: #bbb;
-  margin-right: 6px;
 }

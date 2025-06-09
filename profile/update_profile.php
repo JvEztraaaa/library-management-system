@@ -54,11 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo json_encode(['status' => 'error', 'message' => 'User not found']);
         }
         exit();
-    } else if (isset($_GET['action']) && $_GET['action'] === 'logout') {
-        session_unset();
-        session_destroy();
-        echo json_encode(['status' => 'success', 'message' => 'Logged out successfully', 'redirect' => '../index.php']);
-        exit();
     }
 }
 

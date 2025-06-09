@@ -84,6 +84,35 @@ try {
 
     $event_id = mysqli_insert_id($conn);
     mysqli_stmt_close($stmt);
+
+    // Create notifications for all users about the new event
+    $notification_query = "INSERT INTO user_notifications (user_id, type, message, created_at) 
+                         SELECT id, 'calendar_event', ?, NOW() 
+                         FROM users 
+                         WHERE role = 'user'";
+    
+    $notification_stmt = mysqli_prepare($conn, $notification_query);
+    if (!$notification_stmt) {
+        throw new Exception("Failed to prepare notification statement: " . mysqli_error($conn));
+    }
+
+    // Create a more detailed notification message
+    $notification_message = sprintf(
+        "New event: %s on %s from %s to %s at %s",
+        $title,
+        $event_date,
+        $start_time,
+        $end_time,
+        $location
+    );
+    
+    mysqli_stmt_bind_param($notification_stmt, "s", $notification_message);
+    
+    if (!mysqli_stmt_execute($notification_stmt)) {
+        throw new Exception("Failed to create notifications: " . mysqli_stmt_error($notification_stmt));
+    }
+
+    mysqli_stmt_close($notification_stmt);
     mysqli_close($conn);
 
     // Return success response

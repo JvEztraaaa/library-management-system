@@ -35,7 +35,7 @@
     <main class="profile-main-content">
         <div class="profile-container">
             <h2>User Profile</h2>
-            <form id="profile-form" class="profile-form">
+            <div id="profile-form" class="profile-form">
                 <div class="profile-avatar">
                     <img src="../homepage/images/default_avatar.jpg" alt="User Avatar" id="avatar-preview">
                     <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
@@ -44,26 +44,26 @@
 
                 <div class="form-group">
                     <label for="full_name">Full Name:</label>
-                    <input type="text" id="full_name" value="John A. Doe" readonly>
+                    <input type="text" id="full_name" value="John A. Doe" readonly autocomplete="off">
                     <button type="button" class="edit-btn" data-field="full_name"><i class="fas fa-edit"></i></button>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" value="john.doe@example.com" readonly>
+                    <input type="email" id="email" value="john.doe@example.com" readonly autocomplete="off">
                     <button type="button" class="edit-btn" data-field="email"><i class="fas fa-edit"></i></button>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" value="********" readonly>
+                    <input type="password" id="password" value="********" readonly autocomplete="off">
                     <button type="button" class="edit-btn" data-field="password"><i class="fas fa-edit"></i></button>
                 </div>
                 
                 <div class="profile-actions">
-                    <button type="submit" class="save-btn" style="display: none;"><i class="fas fa-save"></i> Save Changes</button>
+                    <button type="button" class="save-btn" style="display: none;"><i class="fas fa-save"></i> Save Changes</button>
                     <button type="button" class="cancel-edit-btn" style="display: none;"><i class="fas fa-times-circle"></i> Cancel</button>
-                    <button type="button" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    <a href="../index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </form>
         </div>
@@ -76,11 +76,5 @@
 
     <script src="js/profile_script.js"></script>
     <script src="../homepage/js/notification_script.js"></script>
-    <script>
-        // Initialize notification system
-        document.addEventListener('DOMContentLoaded', () => {
-            new NotificationSystem();
-        });
-    </script>
 </body>
 </html> 
