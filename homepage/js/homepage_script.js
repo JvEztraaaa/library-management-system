@@ -181,6 +181,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // No longer explicitly adjust width here, let CSS handle it via search-active-grid
     });
   });
+
+  // Initialize custom alert
+  // const borrowAlert = document.getElementById('borrowAlert');
+  // if (borrowAlert) {
+  //   borrowAlert.style.display = 'none';
+  // }
 });
 
 function borrowBook(button) {
@@ -198,17 +204,13 @@ function borrowBook(button) {
   .then(response => response.json())
   .then(data => {
     if (data.success) {
-      alert(`You borrowed "${title}"!`);
-    } else if (data.message === 'already_borrowed') {
-      alert(`"${title}" is already being borrowed.`);
-    } else if (data.message === 'unauthorized') {
-      alert("Please log in to borrow books.");
+      showToast(data.message, 'success'); // Use showToast
     } else {
-      alert(data.message || "Error borrowing book.");
+      showToast(data.message, 'error'); // Use showToast
     }
   })
   .catch(error => {
     console.error('Error:', error);
-    alert("Error borrowing book. Please try again.");
+    showToast("Error borrowing book. Please try again.", 'error'); // Use showToast
   });
 }

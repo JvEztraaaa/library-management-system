@@ -3718,3 +3718,1391 @@
 [09-Jun-2025 22:22:45 Europe/Berlin] Operation requested: get_unread_count
 [09-Jun-2025 22:23:15 Europe/Berlin] Processing notifications for user ID: 3
 [09-Jun-2025 22:23:15 Europe/Berlin] Operation requested: get_unread_count
+[09-Jun-2025 22:23:45 Europe/Berlin] Processing notifications for user ID: 3
+[09-Jun-2025 22:23:45 Europe/Berlin] Operation requested: get_unread_count
+[09-Jun-2025 22:24:19 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\library-management-system\backend\user_notifications.php:15
+Stack trace:
+#0 C:\xampp\htdocs\library-management-system\backend\user_notifications.php(15): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'library')
+#1 {main}
+  thrown in C:\xampp\htdocs\library-management-system\backend\user_notifications.php on line 15
+[09-Jun-2025 22:24:52 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\library-management-system\backend\user_notifications.php:15
+Stack trace:
+#0 C:\xampp\htdocs\library-management-system\backend\user_notifications.php(15): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'library')
+#1 {main}
+  thrown in C:\xampp\htdocs\library-management-system\backend\user_notifications.php on line 15
+[09-Jun-2025 22:25:46 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\library-management-system\backend\user_notifications.php:15
+Stack trace:
+#0 C:\xampp\htdocs\library-management-system\backend\user_notifications.php(15): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'library')
+#1 {main}
+  thrown in C:\xampp\htdocs\library-management-system\backend\user_notifications.php on line 15
+[10-Jun-2025 00:02:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:02:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:02:38 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:02:38 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:03:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:03:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:04:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:04:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:04:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:04:05 Europe/Berlin] Operation requested: get
+[10-Jun-2025 00:04:05 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 00:04:05 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":0,"created_at":"2025-06-10 06:03:52","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:04:05 Europe/Berlin] Found 1 notifications
+[10-Jun-2025 00:04:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:04:24 Europe/Berlin] Operation requested: get
+[10-Jun-2025 00:04:24 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 00:04:24 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":0,"created_at":"2025-06-10 06:03:52","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:04:24 Europe/Berlin] Found 1 notifications
+[10-Jun-2025 00:04:33 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:04:33 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:06:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:06:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:06:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:06:28 Europe/Berlin] Operation requested: get
+[10-Jun-2025 00:06:28 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 00:06:28 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":0,"created_at":"2025-06-10 06:03:52","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:06:28 Europe/Berlin] Found 1 notifications
+[10-Jun-2025 00:06:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:06:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:06:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:06:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:49:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:49:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:49:17 Europe/Berlin] Operation requested: get
+[10-Jun-2025 00:49:17 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notification: {"id":38,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:47 to 08:45 at asfsf","book_id":null,"is_read":0,"created_at":"2025-06-10 06:46:00","book_title":null}
+[10-Jun-2025 00:49:17 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notification: {"id":31,"user_id":4,"type":"calendar_event","message":"New event: asfsaf on 2025-06-09 from 06:46 to 08:44 at asf","book_id":null,"is_read":0,"created_at":"2025-06-10 06:45:01","book_title":null}
+[10-Jun-2025 00:49:17 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notification: {"id":24,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:45 to 06:46 at saf","book_id":null,"is_read":0,"created_at":"2025-06-10 06:43:41","book_title":null}
+[10-Jun-2025 00:49:17 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notification: {"id":21,"user_id":4,"type":"return","message":"Your overdue book \"The Alchemist\" has been marked as paid and returned.","book_id":155,"is_read":0,"created_at":"2025-06-10 06:25:31","book_title":"The Alchemist"}
+[10-Jun-2025 00:49:17 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notification: {"id":15,"user_id":4,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":143,"is_read":0,"created_at":"2025-06-10 06:17:39","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:49:17 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 00:49:17 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":0,"created_at":"2025-06-10 06:03:52","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:49:17 Europe/Berlin] Found 6 notifications
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:49:24 Europe/Berlin] Operation requested: get
+[10-Jun-2025 00:49:24 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notification: {"id":38,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:47 to 08:45 at asfsf","book_id":null,"is_read":0,"created_at":"2025-06-10 06:46:00","book_title":null}
+[10-Jun-2025 00:49:24 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notification: {"id":31,"user_id":4,"type":"calendar_event","message":"New event: asfsaf on 2025-06-09 from 06:46 to 08:44 at asf","book_id":null,"is_read":0,"created_at":"2025-06-10 06:45:01","book_title":null}
+[10-Jun-2025 00:49:24 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notification: {"id":24,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:45 to 06:46 at saf","book_id":null,"is_read":0,"created_at":"2025-06-10 06:43:41","book_title":null}
+[10-Jun-2025 00:49:24 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notification: {"id":21,"user_id":4,"type":"return","message":"Your overdue book \"The Alchemist\" has been marked as paid and returned.","book_id":155,"is_read":0,"created_at":"2025-06-10 06:25:31","book_title":"The Alchemist"}
+[10-Jun-2025 00:49:24 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notification: {"id":15,"user_id":4,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":143,"is_read":0,"created_at":"2025-06-10 06:17:39","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:49:24 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 00:49:24 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":0,"created_at":"2025-06-10 06:03:52","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:49:24 Europe/Berlin] Found 6 notifications
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:49:25 Europe/Berlin] Operation requested: mark_all_read
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:49:25 Europe/Berlin] Operation requested: get
+[10-Jun-2025 00:49:25 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notification: {"id":38,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:47 to 08:45 at asfsf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:46:00","book_title":null}
+[10-Jun-2025 00:49:25 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notification: {"id":31,"user_id":4,"type":"calendar_event","message":"New event: asfsaf on 2025-06-09 from 06:46 to 08:44 at asf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:45:01","book_title":null}
+[10-Jun-2025 00:49:25 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notification: {"id":24,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:45 to 06:46 at saf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:43:41","book_title":null}
+[10-Jun-2025 00:49:25 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notification: {"id":21,"user_id":4,"type":"return","message":"Your overdue book \"The Alchemist\" has been marked as paid and returned.","book_id":155,"is_read":1,"created_at":"2025-06-10 06:25:31","book_title":"The Alchemist"}
+[10-Jun-2025 00:49:25 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notification: {"id":15,"user_id":4,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":143,"is_read":1,"created_at":"2025-06-10 06:17:39","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:49:25 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 00:49:25 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":1,"created_at":"2025-06-10 06:03:52","book_title":"The Great Gatsby"}
+[10-Jun-2025 00:49:25 Europe/Berlin] Found 6 notifications
+[10-Jun-2025 00:49:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:49:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:50:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:50:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:50:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:50:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:51:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:51:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:51:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:51:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:52:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:52:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:52:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:52:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:52:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:52:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:52:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:52:57 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:53:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:53:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:53:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:53:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:53:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:53:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:53:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:53:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:54:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:54:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:54:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:54:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:54:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:54:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:55:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:55:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:55:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:55:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:56:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:56:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:56:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:56:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:56:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:56:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:56:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:56:58 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:57:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:57:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:57:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:57:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:57:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:57:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:58:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:58:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:58:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:58:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:58:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:58:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:58:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:58:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:58:42 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:58:42 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:58:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:58:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:59:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:59:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 00:59:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 00:59:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:00:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:00:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:00:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:00:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:00:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:00:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:01:02 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:01:02 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:01:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:01:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:01:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:01:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:02:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:02:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:02:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:02:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:02:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:02:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:03:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:03:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:03:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:03:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:03:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:03:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:03:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:03:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:03:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:03:57 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:04:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:04:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:04:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:04:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:05:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:05:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:05:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:05:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:05:33 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:05:33 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:06:04 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:06:04 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:06:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:06:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:06:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:06:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:06:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:06:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:07:16 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:07:16 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:07:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:07:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:07:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:07:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:08:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:08:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:08:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:08:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:09:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:09:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:09:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:09:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:10:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:10:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:10:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:10:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:11:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:11:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:11:20 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:11:20 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:11:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:11:51 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:12:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:12:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:12:38 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:12:38 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:13:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:13:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:13:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:13:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:13:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:13:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:14:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:14:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:14:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:14:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:14:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:14:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:15:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:15:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:15:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:15:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:16:16 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:16:16 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:16:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:16:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:17:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:17:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:17:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:17:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:17:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:17:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:17:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:17:57 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:18:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:18:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:18:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:18:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:18:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:18:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:19:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:19:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:19:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:19:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:19:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:19:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:19:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:19:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:19:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:19:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:20:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:20:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:20:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:20:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:20:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:20:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:21:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:21:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:21:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:21:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:22:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:22:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:23:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:23:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:23:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:23:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:24:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:24:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:25:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:25:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:25:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:25:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:28:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:28:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:02 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:02 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:09 Europe/Berlin] Operation requested: get
+[10-Jun-2025 01:29:09 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notification: {"id":38,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:47 to 08:45 at asfsf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:46:00","book_title":null}
+[10-Jun-2025 01:29:09 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notification: {"id":31,"user_id":4,"type":"calendar_event","message":"New event: asfsaf on 2025-06-09 from 06:46 to 08:44 at asf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:45:01","book_title":null}
+[10-Jun-2025 01:29:09 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notification: {"id":24,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:45 to 06:46 at saf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:43:41","book_title":null}
+[10-Jun-2025 01:29:09 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notification: {"id":21,"user_id":4,"type":"return","message":"Your overdue book \"The Alchemist\" has been marked as paid and returned.","book_id":155,"is_read":1,"created_at":"2025-06-10 06:25:31","book_title":null}
+[10-Jun-2025 01:29:09 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notification: {"id":15,"user_id":4,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":143,"is_read":1,"created_at":"2025-06-10 06:17:39","book_title":null}
+[10-Jun-2025 01:29:09 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 01:29:09 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":1,"created_at":"2025-06-10 06:03:52","book_title":null}
+[10-Jun-2025 01:29:09 Europe/Berlin] Found 6 notifications
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:11 Europe/Berlin] Operation requested: mark_all_read
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:11 Europe/Berlin] Operation requested: get
+[10-Jun-2025 01:29:11 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notification: {"id":38,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:47 to 08:45 at asfsf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:46:00","book_title":null}
+[10-Jun-2025 01:29:11 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notification: {"id":31,"user_id":4,"type":"calendar_event","message":"New event: asfsaf on 2025-06-09 from 06:46 to 08:44 at asf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:45:01","book_title":null}
+[10-Jun-2025 01:29:11 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notification: {"id":24,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:45 to 06:46 at saf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:43:41","book_title":null}
+[10-Jun-2025 01:29:11 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notification: {"id":21,"user_id":4,"type":"return","message":"Your overdue book \"The Alchemist\" has been marked as paid and returned.","book_id":155,"is_read":1,"created_at":"2025-06-10 06:25:31","book_title":null}
+[10-Jun-2025 01:29:11 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notification: {"id":15,"user_id":4,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":143,"is_read":1,"created_at":"2025-06-10 06:17:39","book_title":null}
+[10-Jun-2025 01:29:11 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 01:29:11 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":1,"created_at":"2025-06-10 06:03:52","book_title":null}
+[10-Jun-2025 01:29:11 Europe/Berlin] Found 6 notifications
+[10-Jun-2025 01:29:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:16 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:16 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:29:42 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:29:42 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:30:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:30:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:30:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:30:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:31:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:31:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:31:50 Europe/Berlin] Operation requested: get
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":48,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-09 from 07:31 to 07:31 at Room 407","book_id":null,"is_read":0,"created_at":"2025-06-10 07:31:37","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":47,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"World Almanac 2023\" has been approved.","book_id":172,"is_read":0,"created_at":"2025-06-10 07:31:09","book_title":"World Almanac 2023"}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":46,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Oxford English Dictionary\" has been rejected. Reason: not available","book_id":173,"is_read":0,"created_at":"2025-06-10 07:30:58","book_title":"Oxford English Dictionary"}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":45,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Roget's Thesaurus\" has been approved.","book_id":174,"is_read":0,"created_at":"2025-06-10 07:30:40","book_title":"Roget's Thesaurus"}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":38,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:47 to 08:45 at asfsf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:46:00","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":31,"user_id":4,"type":"calendar_event","message":"New event: asfsaf on 2025-06-09 from 06:46 to 08:44 at asf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:45:01","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":24,"user_id":4,"type":"calendar_event","message":"New event: asf on 2025-06-09 from 06:45 to 06:46 at saf","book_id":null,"is_read":1,"created_at":"2025-06-10 06:43:41","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":21,"user_id":4,"type":"return","message":"Your overdue book \"The Alchemist\" has been marked as paid and returned.","book_id":155,"is_read":1,"created_at":"2025-06-10 06:25:31","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: return
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":15,"user_id":4,"type":"return","message":"Your overdue book \"The Great Gatsby\" has been marked as paid and returned.","book_id":143,"is_read":1,"created_at":"2025-06-10 06:17:39","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 01:31:50 Europe/Berlin] Processing notification: {"id":11,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 6, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":143,"is_read":1,"created_at":"2025-06-10 06:03:52","book_title":null}
+[10-Jun-2025 01:31:50 Europe/Berlin] Found 10 notifications
+[10-Jun-2025 01:31:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:31:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:32:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:32:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:32:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:32:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:32:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:32:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:34:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:34:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:34:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:34:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:34:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:34:58 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:35:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:35:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:35:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:35:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:37:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:37:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:37:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:37:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:37:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:37:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:37:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:37:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:38:17 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:38:17 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:38:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:38:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:39:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:39:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:39:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:39:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:40:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:40:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:40:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:40:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:40:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:40:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:41:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:41:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:41:34 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:41:34 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:41:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:41:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:42:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:42:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:42:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:42:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:42:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:42:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:43:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:43:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:43:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:43:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:43:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:43:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:43:48 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:43:48 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:43:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:43:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:44:20 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:44:20 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:44:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:44:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:45:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:45:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:45:33 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:45:33 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:45:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:45:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:46:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:46:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:46:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:46:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:47:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:47:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:47:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:47:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:48:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:48:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:48:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:48:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:48:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:48:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:48:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:48:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:49:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:49:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:49:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:49:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:50:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:50:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:50:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:50:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:51:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:51:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:51:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:51:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:52:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:52:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:52:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:52:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:52:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:52:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:53:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:53:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:53:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:53:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:54:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:54:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:54:33 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:54:33 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:54:38 Europe/Berlin] Operation requested: get
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":60,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"El Filibusterismo\" has been rejected. Reason: Not Available","book_id":177,"is_read":0,"created_at":"2025-06-10 07:37:26","book_title":"El Filibusterismo"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":59,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Noli Me Tangere\" has been rejected. Reason: Already Borrowed","book_id":178,"is_read":0,"created_at":"2025-06-10 07:36:14","book_title":"Noli Me Tangere"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":58,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Noli Me Tangere\" has been rejected. Reason: Already Borrowed","book_id":178,"is_read":0,"created_at":"2025-06-10 07:36:13","book_title":"Noli Me Tangere"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":56,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Dogeaters\" has been rejected. Reason: Not Available","book_id":179,"is_read":0,"created_at":"2025-06-10 07:36:07","book_title":"Dogeaters"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":57,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Dogeaters\" has been rejected. Reason: Not Available","book_id":179,"is_read":0,"created_at":"2025-06-10 07:36:07","book_title":"Dogeaters"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":55,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":170,"is_read":0,"created_at":"2025-06-10 07:34:34","book_title":"The World Book Encyclopedia"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":48,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-09 from 07:31 to 07:31 at Room 407","book_id":null,"is_read":0,"created_at":"2025-06-10 07:31:37","book_title":null}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":47,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"World Almanac 2023\" has been approved.","book_id":172,"is_read":0,"created_at":"2025-06-10 07:31:09","book_title":"World Almanac 2023"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":46,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Oxford English Dictionary\" has been rejected. Reason: not available","book_id":173,"is_read":0,"created_at":"2025-06-10 07:30:58","book_title":"Oxford English Dictionary"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 01:54:38 Europe/Berlin] Processing notification: {"id":45,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Roget's Thesaurus\" has been approved.","book_id":174,"is_read":0,"created_at":"2025-06-10 07:30:40","book_title":"Roget's Thesaurus"}
+[10-Jun-2025 01:54:38 Europe/Berlin] Found 10 notifications
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:54:40 Europe/Berlin] Operation requested: mark_all_read
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:54:40 Europe/Berlin] Operation requested: get
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":60,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"El Filibusterismo\" has been rejected. Reason: Not Available","book_id":177,"is_read":1,"created_at":"2025-06-10 07:37:26","book_title":"El Filibusterismo"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":59,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Noli Me Tangere\" has been rejected. Reason: Already Borrowed","book_id":178,"is_read":1,"created_at":"2025-06-10 07:36:14","book_title":"Noli Me Tangere"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":58,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Noli Me Tangere\" has been rejected. Reason: Already Borrowed","book_id":178,"is_read":1,"created_at":"2025-06-10 07:36:13","book_title":"Noli Me Tangere"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":56,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Dogeaters\" has been rejected. Reason: Not Available","book_id":179,"is_read":1,"created_at":"2025-06-10 07:36:07","book_title":"Dogeaters"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":57,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Dogeaters\" has been rejected. Reason: Not Available","book_id":179,"is_read":1,"created_at":"2025-06-10 07:36:07","book_title":"Dogeaters"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":55,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":170,"is_read":1,"created_at":"2025-06-10 07:34:34","book_title":"The World Book Encyclopedia"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":48,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-09 from 07:31 to 07:31 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 07:31:37","book_title":null}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":47,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"World Almanac 2023\" has been approved.","book_id":172,"is_read":1,"created_at":"2025-06-10 07:31:09","book_title":"World Almanac 2023"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":46,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Oxford English Dictionary\" has been rejected. Reason: not available","book_id":173,"is_read":1,"created_at":"2025-06-10 07:30:58","book_title":"Oxford English Dictionary"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 01:54:40 Europe/Berlin] Processing notification: {"id":45,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Roget's Thesaurus\" has been approved.","book_id":174,"is_read":1,"created_at":"2025-06-10 07:30:40","book_title":"Roget's Thesaurus"}
+[10-Jun-2025 01:54:40 Europe/Berlin] Found 10 notifications
+[10-Jun-2025 01:55:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:03 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:03 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:55:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:55:51 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:56:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:56:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:56:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:56:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:56:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:56:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:56:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:56:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:57:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:57:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:57:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:57:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:57:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:57:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:16 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:16 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:38 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:38 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:58:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:58:57 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 01:59:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 01:59:51 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:00:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:00:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:00:52 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:00:52 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:01:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:01:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:01:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:01:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:01:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:01:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:01:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:01:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:02:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:02:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:02:02 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:02:02 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:02:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:02:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:02:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:02:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:03:08 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:03:08 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:03:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:03:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:03:34 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:03:34 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:03:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:03:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:03:52 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:03:52 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:03:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:03:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:04:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:04:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:04:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:04:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:05:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:05:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:05:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:05:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:05:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:05:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:06:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:06:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:06:52 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:06:52 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:06:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:06:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:07:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:07:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:07:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:07:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:08:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:08:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:08:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:08:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:09:07 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:09:07 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:09:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:09:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:09:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:09:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:10:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:10:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:10:42 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:10:42 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:11:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:11:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:11:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:11:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:11:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:11:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:12:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:12:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:12:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:12:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:12:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:12:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:12:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:12:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:13:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:13:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:13:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:13:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:14:04 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:14:04 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:14:34 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:14:34 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:14:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:14:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:14:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:14:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:15:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:15:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:15:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:15:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:15:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:15:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:15:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:15:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:16:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:16:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:16:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:16:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:17:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:17:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:17:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:17:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:18:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:18:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:18:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:18:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:19:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:19:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:19:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:19:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:19:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:19:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:19:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:19:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:19:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:19:51 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:20:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:20:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:20:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:20:51 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:21:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:21:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:21:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:21:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:21:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:21:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:22:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:22:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:22:48 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:22:48 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:23:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:23:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:23:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:23:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:24:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:24:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:24:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:24:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:25:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:25:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:25:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:25:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:25:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:25:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:25:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:25:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:26:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:26:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:26:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:26:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:26:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:26:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:27:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:27:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:27:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:27:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:27:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:27:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:28:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:28:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:28:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:28:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:28:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:28:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:29:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:29:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:29:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:29:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:29:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:29:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:30:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:30:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:30:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:30:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:30:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:30:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:31:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:31:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:31:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:31:47 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:32:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:32:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:32:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:32:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:32:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:32:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:33:20 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:33:20 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:33:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:33:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:33:52 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:33:52 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:34:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:34:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:34:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:34:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:34:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:34:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:35:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:35:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:35:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:35:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:36:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:36:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:36:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:36:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:37:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:37:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:37:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:37:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:38:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:38:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:38:33 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:38:33 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:38:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:38:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:38:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:38:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:39:17 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:39:17 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:39:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:39:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:39:52 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:39:52 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:40:02 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:40:02 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:40:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:40:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:40:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:40:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:40:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:40:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:41:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:41:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:41:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:41:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:42:16 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:42:16 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:42:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:42:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:42:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:42:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:43:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:43:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:43:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:43:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:43:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:43:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:44:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:44:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:44:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:44:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:45:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:45:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:45:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:45:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:46:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:46:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:46:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:46:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:47:04 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:47:04 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:47:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:47:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:47:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:47:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:47:37 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:47:37 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:47:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:47:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:48:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:48:19 Europe/Berlin] Operation requested: get
+[10-Jun-2025 02:48:19 Europe/Berlin] Found 0 notifications
+[10-Jun-2025 02:48:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:48:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:48:21 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:48:21 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:53:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:53:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:53:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:53:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 02:54:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 02:54:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:00:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:00:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:00:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:00:49 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:00:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:00:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:01:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:01:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:01:42 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:01:42 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:02:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:02:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:02:42 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:02:42 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:03:13 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:03:13 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:03:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:03:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:03:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:03:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:04:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:04:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:04:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:04:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:05:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:05:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:05:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:05:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:06:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:06:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:06:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:06:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:06:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:06:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:06:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:06:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:06:43 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:06:43 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:06:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:06:58 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:07:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:07:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:07:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:07:57 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:08:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:08:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:08:42 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:08:42 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:09:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:09:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:09:31 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:09:31 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:09:56 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:09:56 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:10:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:10:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:10:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:10:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:11:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:11:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:11:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:11:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:11:41 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:11:41 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:12:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:12:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:12:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:12:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:12:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:12:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:13:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:13:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:13:30 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:13:30 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:13:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:13:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:14:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:14:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:14:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:14:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:14:38 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:14:38 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:15:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:15:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:15:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:15:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:16:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:16:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:16:36 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:16:36 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:17:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:17:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:17:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:17:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:17:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:17:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:17:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:17:58 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:18:18 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:18:18 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:18:48 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:18:48 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:18:48 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:18:48 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:19:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:19:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:19:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:19:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:19:26 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:19:26 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:19:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:19:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:20:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:20:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:20:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:20:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:20:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:20:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:20:33 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:20:33 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:20:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:20:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:21:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:21:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:21:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:21:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:22:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:22:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:22:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:22:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:23:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:23:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:23:24 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:23:24 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:23:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:23:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:23:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:23:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:24:02 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:24:02 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:24:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:24:32 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:24:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:24:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:25:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:25:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:25:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:25:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:25:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:25:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:25:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:25:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:26:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:26:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:26:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:26:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:26:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:26:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:26:32 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:26:32 Europe/Berlin] Operation requested: get
+[10-Jun-2025 03:26:32 Europe/Berlin] Found 0 notifications
+[10-Jun-2025 03:26:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:26:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:26:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:26:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:27:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:27:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:27:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:27:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:27:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:27:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:28:09 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:28:09 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:28:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:28:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 03:28:11 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 03:28:11 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:06:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:06:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:06:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:06:57 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:06:57 Europe/Berlin] Found 0 notifications
+[10-Jun-2025 04:06:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:06:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:06 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:06 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:39 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:39 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:40 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:40 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:45 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:45 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:07:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:07:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:09:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:09:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:49 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:09:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:49 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":0,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:09:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:49 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":0,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:09:49 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:09:49 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":0,"created_at":"2025-06-10 10:08:44","book_title":"Project Hail Mary"}
+[10-Jun-2025 04:09:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:09:49 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":0,"created_at":"2025-06-10 10:08:35","book_title":"The World Book Encyclopedia"}
+[10-Jun-2025 04:09:49 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:09:49 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":0,"created_at":"2025-06-10 10:08:31","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:09:49 Europe/Berlin] Found 5 notifications
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:55 Europe/Berlin] Operation requested: mark_read
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:55 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:09:55 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:09:55 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":0,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:09:55 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":0,"created_at":"2025-06-10 10:08:44","book_title":"Project Hail Mary"}
+[10-Jun-2025 04:09:55 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":0,"created_at":"2025-06-10 10:08:35","book_title":"The World Book Encyclopedia"}
+[10-Jun-2025 04:09:55 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:09:55 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":0,"created_at":"2025-06-10 10:08:31","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:09:55 Europe/Berlin] Found 5 notifications
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:57 Europe/Berlin] Operation requested: mark_read
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:57 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:09:57 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:09:57 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:09:57 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":0,"created_at":"2025-06-10 10:08:44","book_title":"Project Hail Mary"}
+[10-Jun-2025 04:09:57 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":0,"created_at":"2025-06-10 10:08:35","book_title":"The World Book Encyclopedia"}
+[10-Jun-2025 04:09:57 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:09:57 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":0,"created_at":"2025-06-10 10:08:31","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:09:57 Europe/Berlin] Found 5 notifications
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:58 Europe/Berlin] Operation requested: mark_all_read
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:09:58 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:09:58 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:09:58 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:09:58 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":1,"created_at":"2025-06-10 10:08:44","book_title":"Project Hail Mary"}
+[10-Jun-2025 04:09:58 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":1,"created_at":"2025-06-10 10:08:35","book_title":"The World Book Encyclopedia"}
+[10-Jun-2025 04:09:58 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:09:58 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":1,"created_at":"2025-06-10 10:08:31","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:09:58 Europe/Berlin] Found 5 notifications
+[10-Jun-2025 04:10:00 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:10:00 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:10:10 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:10:10 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:10:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:10:15 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:10:19 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:10:19 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:10:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:10:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:10:23 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:10:23 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:18:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:18:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:19:01 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:19:01 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:19:04 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:19:04 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:19:34 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:19:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:20:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:20:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:20:28 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:20:28 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:20:58 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:20:58 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:21:29 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:21:29 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:21:59 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:21:59 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:22:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:22:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:22:44 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:22:44 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:23:14 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:23:14 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:23:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:23:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:23:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:23:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:24:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:24:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:24:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:24:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:25:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:25:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:25:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:25:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:26:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:26:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:26:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:26:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:27:05 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:27:05 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:27:35 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:27:35 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:27:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:27:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:27:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:27:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:27:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:27:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:27:55 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:27:55 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:28:50 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:28:50 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:28:53 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:28:53 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:28:54 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:28:54 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:28:57 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:28:57 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:29:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:29:22 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:22 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:29:27 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:27 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:29:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:29:46 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:46 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:47 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":1,"created_at":"2025-06-10 10:08:44","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":1,"created_at":"2025-06-10 10:08:35","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":1,"created_at":"2025-06-10 10:08:31","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Found 5 notifications
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:29:47 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":1,"created_at":"2025-06-10 10:08:44","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":1,"created_at":"2025-06-10 10:08:35","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:29:47 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":1,"created_at":"2025-06-10 10:08:31","book_title":null}
+[10-Jun-2025 04:29:47 Europe/Berlin] Found 5 notifications
+[10-Jun-2025 04:31:12 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:12 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:15 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":100,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 10:30 to 10:30 at asdasdsad","book_id":null,"is_read":0,"created_at":"2025-06-10 10:31:04","book_title":null}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":98,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 4, 2025\nDays Overdue: 5 days\nFine Amount: \u20b1100\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":293,"is_read":0,"created_at":"2025-06-10 10:30:33","book_title":"The Great Gatsby"}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":97,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Guinness World Records 2024\" has been rejected. Reason: Already Borrowed","book_id":303,"is_read":0,"created_at":"2025-06-10 10:30:22","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":96,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Ilustrado\" has been rejected. Reason: Not Available","book_id":305,"is_read":0,"created_at":"2025-06-10 10:30:20","book_title":"Ilustrado"}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":95,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"El Filibusterismo\" has been approved.","book_id":306,"is_read":0,"created_at":"2025-06-10 10:30:16","book_title":"El Filibusterismo"}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":1,"created_at":"2025-06-10 10:08:44","book_title":null}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":1,"created_at":"2025-06-10 10:08:35","book_title":null}
+[10-Jun-2025 04:31:15 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:31:15 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":1,"created_at":"2025-06-10 10:08:31","book_title":null}
+[10-Jun-2025 04:31:15 Europe/Berlin] Found 10 notifications
+[10-Jun-2025 04:31:25 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:25 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:49 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":100,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 10:30 to 10:30 at asdasdsad","book_id":null,"is_read":0,"created_at":"2025-06-10 10:31:04","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":98,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 4, 2025\nDays Overdue: 5 days\nFine Amount: \u20b1100\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":293,"is_read":0,"created_at":"2025-06-10 10:30:33","book_title":"The Great Gatsby"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":97,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Guinness World Records 2024\" has been rejected. Reason: Already Borrowed","book_id":303,"is_read":0,"created_at":"2025-06-10 10:30:22","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":96,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Ilustrado\" has been rejected. Reason: Not Available","book_id":305,"is_read":0,"created_at":"2025-06-10 10:30:20","book_title":"Ilustrado"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":95,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"El Filibusterismo\" has been approved.","book_id":306,"is_read":0,"created_at":"2025-06-10 10:30:16","book_title":"El Filibusterismo"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":1,"created_at":"2025-06-10 10:08:44","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":1,"created_at":"2025-06-10 10:08:35","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":1,"created_at":"2025-06-10 10:08:31","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Found 10 notifications
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:49 Europe/Berlin] Operation requested: mark_all_read
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:49 Europe/Berlin] Operation requested: get
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":100,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 10:30 to 10:30 at asdasdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:31:04","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":98,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: The Great Gatsby\nDue Date: June 4, 2025\nDays Overdue: 5 days\nFine Amount: \u20b1100\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":293,"is_read":1,"created_at":"2025-06-10 10:30:33","book_title":"The Great Gatsby"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":97,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Guinness World Records 2024\" has been rejected. Reason: Already Borrowed","book_id":303,"is_read":1,"created_at":"2025-06-10 10:30:22","book_title":"Guinness World Records 2024"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":96,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Ilustrado\" has been rejected. Reason: Not Available","book_id":305,"is_read":1,"created_at":"2025-06-10 10:30:20","book_title":"Ilustrado"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":95,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"El Filibusterismo\" has been approved.","book_id":306,"is_read":1,"created_at":"2025-06-10 10:30:16","book_title":"El Filibusterismo"}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":88,"user_id":4,"type":"calendar_event","message":"New event: asdasd on 2025-06-10 from 10:11 to 00:09 at asdsad","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:35","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: calendar_event
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":81,"user_id":4,"type":"calendar_event","message":"New event: Project Presentation on 2025-06-10 from 01:00 to 22:09 at Room 407","book_id":null,"is_read":1,"created_at":"2025-06-10 10:09:26","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: overdue
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":79,"user_id":4,"type":"overdue","message":"Dear Alvin Malabaguio,\n\nThis is a reminder that you have an overdue book:\nBook Title: Project Hail Mary\nDue Date: June 7, 2025\nDays Overdue: 3 days\nFine Amount: \u20b160\n\nPlease return the book and settle the fine at the library counter.\nThank you for your cooperation.\n\nLibrary Management System","book_id":283,"is_read":1,"created_at":"2025-06-10 10:08:44","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_rejected
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":78,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"The World Book Encyclopedia\" has been rejected. Reason: Not Available","book_id":290,"is_read":1,"created_at":"2025-06-10 10:08:35","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Formatting message for type: borrow_approved
+[10-Jun-2025 04:31:49 Europe/Berlin] Processing notification: {"id":77,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Guinness World Records 2024\" has been approved.","book_id":291,"is_read":1,"created_at":"2025-06-10 10:08:31","book_title":null}
+[10-Jun-2025 04:31:49 Europe/Berlin] Found 10 notifications
+[10-Jun-2025 04:31:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:51 Europe/Berlin] Operation requested: get_unread_count
+[10-Jun-2025 04:31:51 Europe/Berlin] Processing notifications for user ID: 4
+[10-Jun-2025 04:31:51 Europe/Berlin] Operation requested: get_unread_count

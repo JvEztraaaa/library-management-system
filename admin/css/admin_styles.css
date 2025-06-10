@@ -182,6 +182,10 @@ body {
 }
 .div3 {
   grid-area: 1 / 3 / 3 / 3;
+  cursor: pointer !important;
+}
+.div3:hover {
+  cursor: pointer !important;
 }
 .div4 {
   grid-area: 1 / 4 / 3 / 4;
@@ -366,6 +370,61 @@ body {
   font-size: 1.5rem;
   color: #ffffff;
   margin-bottom: 15px;
+}
+
+.stat-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.stat-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.stat-card:hover .stat-link {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+.stat-link h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stat-link .stat-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.stat-link .stat-value p {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #b4b4b8;
+}
+
+/* Add styles for anchor tag stat cards */
+a.stat-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.stat-card:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Responsive Styles */

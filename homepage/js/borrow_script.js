@@ -83,17 +83,21 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadBorrowedBooks() {
-  fetch("../backend/get_borrowed_books.php")
-    .then(res => res.text())
+  return fetch("../backend/get_borrowed_books.php")
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.text();
+    })
     .then(html => {
       document.getElementById("borrowed-books-body").innerHTML = html;
       setupActionButtons();
-      // No longer populate titles here, as it's done by the overridden function
     })
     .catch(err => {
       console.error("Error loading borrowed books:", err);
       document.getElementById("borrowed-books-body").innerHTML =
-        "<tr><td colspan='5' class='placeholder'>Error loading data</td></tr>";
+        "<tr><td colspan='7' class='placeholder'>Error loading data</td></tr>";
     });
 }
 
@@ -129,20 +133,75 @@ function debugLog(message) {
 }
 
 // Custom Popup Functions
-function showPopup(title, message) {
+function showPopup(title, message, onOkCallback = null, onCancelCallback = null, showCancel = true) {
     const popup = document.getElementById('custom-popup');
     const popupTitle = document.getElementById('popup-title');
     const popupMessage = document.getElementById('popup-message');
+    const popupOk = document.getElementById('popup-ok');
+    const popupCancel = document.getElementById('popup-cancel');
+    const closeBtn = document.querySelector('.close-popup');
     
-    if (!popup || !popupTitle || !popupMessage) {
+    if (!popup || !popupTitle || !popupMessage || !popupOk || !popupCancel || !closeBtn) {
         console.error('Popup elements not found');
-        // Fallback to regular alert if popup elements are missing
-        alert(message);
+        alert(message); // Fallback to regular alert
         return;
     }
     
+    // Clear previous event listeners for OK and Cancel buttons
+    // This is important because we are re-using the same popup instance
+    const oldPopupOk = popupOk.cloneNode(true);
+    popupOk.parentNode.replaceChild(oldPopupOk, popupOk);
+    const currentPopupOk = document.getElementById('popup-ok'); // Get new reference
+
+    const oldPopupCancel = popupCancel.cloneNode(true);
+    popupCancel.parentNode.replaceChild(oldPopupCancel, popupCancel);
+    const currentPopupCancel = document.getElementById('popup-cancel'); // Get new reference
+
+    // Set title and message
     popupTitle.textContent = title;
     popupMessage.textContent = message;
+    
+    // Handle OK button
+    if (onOkCallback) {
+        currentPopupOk.style.display = 'inline-block'; // Show OK button
+        currentPopupOk.addEventListener('click', onOkCallback, { once: true }); // Use { once: true } to remove after first click
+    } else {
+        currentPopupOk.style.display = 'none'; // Hide OK button if no callback
+    }
+
+    // Handle Cancel button
+    if (showCancel && onCancelCallback) {
+        currentPopupCancel.style.display = 'inline-block'; // Show Cancel button
+        currentPopupCancel.addEventListener('click', onCancelCallback, { once: true });
+    } else {
+        currentPopupCancel.style.display = 'none'; // Hide Cancel button
+    }
+
+    // Always attach hidePopup to close button and clicking outside
+    // Ensure these listeners are not duplicated
+    const closePopupAndHide = () => {
+      hidePopup();
+      // Also ensure that the original OK/Cancel buttons are reset for next use
+      currentPopupOk.removeEventListener('click', onOkCallback);
+      currentPopupCancel.removeEventListener('click', onCancelCallback);
+    };
+    
+    // Remove existing event listener for closeBtn before adding a new one
+    const oldCloseBtn = closeBtn.cloneNode(true);
+    closeBtn.parentNode.replaceChild(oldCloseBtn, closeBtn);
+    const newCloseBtn = document.querySelector('.close-popup');
+    if (newCloseBtn) {
+        newCloseBtn.addEventListener('click', closePopupAndHide, { once: true }); // Only one listener
+    }
+
+    // Ensure the popup's click-outside-to-close listener is correctly set up only once
+    // Or handle it within the function that calls showPopup
+    popup.onclick = (e) => { // Use onclick to overwrite previous listeners
+      if (e.target === popup) {
+        closePopupAndHide();
+      }
+    };
+
     popup.style.display = 'flex';
 }
 
@@ -241,46 +300,62 @@ function handleReturn(event) {
     // Get the row to check if book is overdue
     const row = button.closest('tr');
     const statusCell = row.querySelector('.status-text');
+    const remainingDaysCell = row.cells[3]; // Index 3 is the remaining days column
     const fineCell = row.cells[4]; // Index 4 is the fine amount column
     
+    // Get the custom popup elements
+    const popup = document.getElementById('custom-popup');
+    if (!popup) {
+        console.error('Custom popup element not found');
+        showToast('Error: Custom popup not found.', 'error');
+        return;
+    }
+
+    // Remove cloning logic - just get references to the existing elements
+    const popupTitle = popup.querySelector('#popup-title');
+    const popupMessage = popup.querySelector('#popup-message');
+    const popupOk = popup.querySelector('#popup-ok');
+    const popupCancel = popup.querySelector('#popup-cancel');
+    const closeBtn = popup.querySelector('.close-popup');
+
+    // Ensure popup elements are found
+    if (!popupTitle || !popupMessage || !popupOk || !popupCancel || !closeBtn) {
+        console.error('Missing popup sub-elements');
+        showToast('Error: Missing popup sub-elements.', 'error');
+        return;
+    }
+
     // Check if book is overdue
     if (statusCell.textContent.includes('Overdue')) {
-        const fineAmount = fineCell.textContent;
-        showPopup('Overdue Book', `Unable to return book. Please pay the fine of ${fineAmount} at the library counter.`);
-        // Disable the button and save its state
+        const fineAmount = fineCell.textContent.trim();
+        const remainingDays = remainingDaysCell.textContent.trim();
+        
+        // Extract the numeric value from the fine amount (remove ₱ symbol and any formatting)
+        const numericFine = fineAmount.replace(/[^\d.]/g, '');
+        
+        if (fineAmount === 'N/A' || !numericFine) {
+            showPopup('Overdue Book', `Unable to return book. Book is ${remainingDays}. Please visit the library counter to settle the fine.`, () => {
+                // OK callback for overdue message
+                disableButton(button);
+                hidePopup();
+            }, null, false); // No cancel button for overdue
+        } else {
+            showPopup('Overdue Book', `Unable to return book. Book is ${remainingDays}. Please pay the fine of ${fineAmount} at the library counter.`, () => {
+                // OK callback for overdue message
+                disableButton(button);
+                hidePopup();
+            }, null, false); // No cancel button for overdue
+        }
+        
+        // Disable the original return button and save its state, as this is a final action for this book
         disableButton(button);
         return;
     }
     
-    // Show custom popup for confirmation
-    const popup = document.getElementById('custom-popup');
-    const popupTitle = document.getElementById('popup-title');
-    const popupMessage = document.getElementById('popup-message');
-    const popupOk = document.getElementById('popup-ok');
-    const popupCancel = document.getElementById('popup-cancel');
-    
-    if (!popup || !popupTitle || !popupMessage || !popupOk || !popupCancel) {
-        console.error('Popup elements not found');
-        alert('Are you sure you want to return this book?');
-        return;
-    }
-    
-    popupTitle.textContent = 'Return Book';
-    popupMessage.textContent = 'Are you sure you want to return this book?';
-    popup.style.display = 'flex';
-    
-    // Show cancel button for return confirmation
-    popupCancel.style.display = 'block';
-    
-    // Remove any existing event listeners
-    const newOkBtn = popupOk.cloneNode(true);
-    const newCancelBtn = popupCancel.cloneNode(true);
-    popupOk.parentNode.replaceChild(newOkBtn, popupOk);
-    popupCancel.parentNode.replaceChild(newCancelBtn, popupCancel);
-    
-    // Add new event listener for OK button
-    newOkBtn.addEventListener('click', function confirmReturn() {
-        hidePopup();
+    // This part runs if the book is NOT overdue (i.e., for actual return confirmation)
+    showPopup('Return Book', 'Are you sure you want to return this book?', () => {
+        // OK callback for return confirmation
+        hidePopup(); // Hide popup immediately
         
         fetch('../backend/return_book.php', {
             method: 'POST',
@@ -306,13 +381,13 @@ function handleReturn(event) {
                 disableButton(button);
                 
                 // Show success message
-                showPopup('Success', 'Book returned successfully!');
+                showToast('Book returned successfully!', 'success');
             } else {
                 // Re-enable the button if there was an error
                 button.disabled = false;
                 button.style.opacity = '1';
                 button.style.cursor = 'pointer';
-                showPopup('Error', 'Error returning book: ' + data.message);
+                showToast('Error returning book: ' + data.message, 'error');
             }
         })
         .catch(err => {
@@ -322,29 +397,12 @@ function handleReturn(event) {
             button.disabled = false;
             button.style.opacity = '1';
             button.style.cursor = 'pointer';
-            showPopup('Error', 'Error returning book. Please try again.');
+            showToast('Error returning book. Please try again.', 'error');
         });
-    });
-    
-    // Add event listener for Cancel button
-    newCancelBtn.addEventListener('click', function() {
+    }, () => {
+        // Cancel callback for return confirmation
         hidePopup();
-    });
-    
-    // Add event listener for close button
-    const closeBtn = document.querySelector('.close-popup');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            hidePopup();
-        });
-    }
-    
-    // Close popup when clicking outside
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            hidePopup();
-        }
-    });
+    }, true); // Show cancel button
 }
 
 function handleViewFeedback(event) {
@@ -430,13 +488,24 @@ function handleViewFeedback(event) {
     });
 }
 
+// Toast message function - now using unified toast system from toast.js
+
 function handleCancel(event) {
     // Stop event propagation and prevent default
     event.stopPropagation();
     event.preventDefault();
     
     const button = event.target.closest('.action-btn');
-    const bookId = button.dataset.bookId;
+    const bookId = parseInt(button.dataset.bookId, 10); // Ensure bookId is an integer
+    
+    console.log('Book ID from dataset:', button.dataset.bookId);
+    console.log('Parsed Book ID:', bookId);
+    
+    if (isNaN(bookId)) {
+        console.error('Invalid book ID');
+        showToast('Invalid book ID. Please try again.', 'error');
+        return;
+    }
     
     // Show custom popup for confirmation
     const popup = document.getElementById('custom-popup');
@@ -451,66 +520,103 @@ function handleCancel(event) {
         return;
     }
     
-    popupTitle.textContent = 'Cancel Request';
-    popupMessage.textContent = 'Are you sure you want to cancel this request?';
-    popup.style.display = 'flex';
+    // Clear any existing event listeners by cloning and replacing elements
+    const newPopup = popup.cloneNode(true);
+    popup.parentNode.replaceChild(newPopup, popup);
     
-    // Show cancel button for confirmation
-    popupCancel.style.display = 'block';
+    // Get the new elements after cloning
+    const newPopupTitle = newPopup.querySelector('#popup-title');
+    const newPopupMessage = newPopup.querySelector('#popup-message');
+    const newPopupOk = newPopup.querySelector('#popup-ok');
+    const newPopupCancel = newPopup.querySelector('#popup-cancel');
+    const newCloseBtn = newPopup.querySelector('.close-popup');
     
-    // Remove any existing event listeners
-    const newOkBtn = popupOk.cloneNode(true);
-    const newCancelBtn = popupCancel.cloneNode(true);
-    popupOk.parentNode.replaceChild(newOkBtn, popupOk);
-    popupCancel.parentNode.replaceChild(newCancelBtn, popupCancel);
+    // Set up the popup content
+    newPopupTitle.textContent = 'Cancel Request';
+    newPopupMessage.textContent = 'Are you sure you want to cancel this request?';
+    newPopup.style.display = 'flex';
+    newPopupCancel.style.display = 'block';
     
-    // Add new event listener for OK button
-    newOkBtn.addEventListener('click', function confirmCancel() {
-        hidePopup();
+    // Flag to track if a request is in progress
+    let isRequestInProgress = false;
+    
+    // Add event listener for OK button
+    newPopupOk.addEventListener('click', function() {
+        if (isRequestInProgress) return; // Prevent multiple requests
+        isRequestInProgress = true;
+        
+        // Disable the button
+        newPopupOk.disabled = true;
+        newPopupOk.style.opacity = '0.5';
+        newPopupOk.style.cursor = 'not-allowed';
+        
+        // Hide the popup
+        newPopup.style.display = 'none';
+        
+        // Create form data
+        const formData = new FormData();
+        formData.append('book_id', bookId);
+        
+        console.log('Sending request with book_id:', bookId);
         
         fetch('../backend/cancel_request.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `book_id=${bookId}`
+            body: formData
         })
-        .then(res => res.json())
+        .then(res => {
+            console.log('Response status:', res.status);
+            if (!res.ok) {
+                return res.text().then(text => {
+                    console.log('Error response:', text);
+                    throw new Error('Network response was not ok');
+                });
+            }
+            return res.json();
+        })
         .then(data => {
+            console.log('Response data:', data);
             if (data.success) {
                 // Remove the row from the table
                 const row = button.closest('tr');
-                row.remove();
+                if (row) {
+                    row.remove();
+                }
                 
-                // Show success message
-                showPopup('Success', 'Request cancelled successfully!');
+                // Show success toast message
+                showToast('Request cancelled successfully!', 'success');
             } else {
-                showPopup('Error', 'Error cancelling request: ' + data.message);
+                showToast('Error cancelling request: ' + data.message, 'error');
             }
         })
         .catch(err => {
             console.error('Error:', err);
-            showPopup('Error', 'Error cancelling request. Please try again.');
+            showToast('Error cancelling request. Please try again.', 'error');
+        })
+        .finally(() => {
+            isRequestInProgress = false;
+            // Re-enable the OK button and reset its style
+            newPopupOk.disabled = false;
+            newPopupOk.style.opacity = '1';
+            newPopupOk.style.cursor = 'pointer';
         });
     });
     
     // Add event listener for Cancel button
-    newCancelBtn.addEventListener('click', function() {
-        hidePopup();
+    newPopupCancel.addEventListener('click', function() {
+        newPopup.style.display = 'none';
     });
     
     // Add event listener for close button
-    const closeBtn = document.querySelector('.close-popup');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            hidePopup();
+    if (newCloseBtn) {
+        newCloseBtn.addEventListener('click', function() {
+            newPopup.style.display = 'none';
         });
     }
     
     // Close popup when clicking outside
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) {
-            hidePopup();
+    newPopup.addEventListener('click', function(e) {
+        if (e.target === newPopup) {
+            newPopup.style.display = 'none';
         }
     });
 }

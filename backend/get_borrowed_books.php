@@ -44,18 +44,21 @@ try {
             $remaining_days_class = '';
             if ($row['status'] === 'Approved') {
                 if ($remaining_days < 0) {
-                    $remaining_days = abs($remaining_days) . ' days overdue';
+                    $remaining_days = 'Overdue';
                     $remaining_days_class = 'status-overdue';
                 } else {
                     $remaining_days = $remaining_days . ' days left';
                 }
+            } else if ($row['status'] === 'Overdue') {
+                $remaining_days = 'Overdue';
+                $remaining_days_class = 'status-overdue';
             } else {
                 $remaining_days = 'N/A';
             }
             
             // Format fine amount
             $fine = 'N/A';
-            if ($row['status'] === 'Approved' && $row['remaining_days'] < 0) {
+            if ($row['status'] === 'Overdue' || ($row['status'] === 'Approved' && $row['remaining_days'] < 0)) {
                 $fine = '₱' . number_format($row['fine_amount'], 2);
             }
             

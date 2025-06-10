@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="../css/toast.css" />
     <link rel="stylesheet" href="css/calendar.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
 </head>
@@ -142,6 +143,24 @@
         </div>
     </div>
 
+    <!-- Custom Confirmation Modal -->
+    <div id="deleteConfirmationModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <h3 class="custom-modal-title">Confirm Deletion</h3>
+                <span class="custom-modal-close">&times;</span>
+            </div>
+            <div class="custom-modal-body">
+                <p>Are you sure you want to delete this event? This action cannot be undone.</p>
+            </div>
+            <div class="custom-modal-actions">
+                <button class="custom-modal-btn cancel-btn">Cancel</button>
+                <button class="custom-modal-btn confirm-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/toast.js"></script>
     <script src="js/calendar_new.js?v=1.0"></script>
 </body>
 </html> 

@@ -54,6 +54,12 @@ $stmt->fetch();
 
 // Verify password
 if (password_verify($pass, $password_hash_from_db)) {
+    // Log the successful login
+    $log_stmt = $conn->prepare("INSERT INTO login_log (user_id) VALUES (?)");
+    $log_stmt->bind_param("i", $user_id);
+    $log_stmt->execute();
+    $log_stmt->close();
+
     // ✅ Store user data in session
     $_SESSION['user_id'] = $user_id;
     $_SESSION['email'] = $email;

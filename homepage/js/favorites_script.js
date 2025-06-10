@@ -1,26 +1,117 @@
-// Function to show custom popup message
-function showPopup(message, type = 'info') {
-  // Remove any existing popups
-  const existingPopup = document.querySelector('.custom-popup');
-  if (existingPopup) {
-    existingPopup.remove();
-  }
-
-  // Create new popup
-  const popup = document.createElement('div');
-  popup.className = `custom-popup ${type}`;
-  popup.textContent = message;
-  document.body.appendChild(popup);
-
-  // Show popup
-  setTimeout(() => popup.classList.add('show'), 100);
-
-  // Remove popup after 3 seconds
-  setTimeout(() => {
-    popup.classList.remove('show');
-    setTimeout(() => popup.remove(), 300);
-  }, 3000);
+// Function to show popup
+function showPopup(message, type = 'success') {
+    const popup = document.getElementById('custom-popup');
+    const popupTitle = document.getElementById('popup-title');
+    const popupMessage = document.getElementById('popup-message');
+    const popupOk = document.getElementById('popup-ok');
+    const popupCancel = document.getElementById('popup-cancel');
+    
+    if (!popup || !popupTitle || !popupMessage || !popupOk || !popupCancel) {
+        console.error('Popup elements not found');
+        showToast('Error: Popup elements not found', 'error');
+        return;
+    }
+    
+    // Set popup content
+    popupTitle.textContent = type === 'success' ? 'Success' : 'Error';
+    popupMessage.textContent = message;
+    
+    // Show popup
+    popup.style.display = 'flex';
+    
+    // Hide cancel button for simple messages
+    popupCancel.style.display = 'none';
+    
+    // Add event listener for OK button
+    popupOk.onclick = () => {
+        popup.style.display = 'none';
+    };
+    
+    // Add event listener for close button
+    const closeBtn = document.querySelector('.close-popup');
+    if (closeBtn) {
+        closeBtn.onclick = () => {
+            popup.style.display = 'none';
+        };
+    }
+    
+    // Close popup when clicking outside
+    popup.onclick = (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    };
 }
+
+// Function to update favorites
+function updateFavorites(bookId, action) {
+    const formData = new FormData();
+    formData.append('book_id', bookId);
+    formData.append('action', action);
+
+    fetch('../backend/update_favorites.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Update the heart icon
+            const heartIcon = document.querySelector(`.heart-icon[data-book-id="${bookId}"]`);
+            if (heartIcon) {
+                if (action === 'add') {
+                    heartIcon.classList.remove('far');
+                    heartIcon.classList.add('fas');
+                    showToast('Book added to favorites!', 'success');
+                } else {
+                    heartIcon.classList.remove('fas');
+                    heartIcon.classList.add('far');
+                    showToast('Book removed from favorites!', 'success');
+                }
+            }
+        } else {
+            showToast(data.message || 'Error updating favorites', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showToast('Error updating favorites', 'error');
+    });
+}
+
+// Function to handle heart icon click
+function handleHeartClick(event) {
+    const heartIcon = event.currentTarget;
+    const bookId = heartIcon.dataset.bookId;
+    const isFavorite = heartIcon.classList.contains('fas');
+
+    if (isFavorite) {
+        // Show confirmation popup before removing
+        showPopup('Are you sure you want to remove this book from favorites?', 'confirm');
+        const popupOk = document.getElementById('popup-ok');
+        const popupCancel = document.getElementById('popup-cancel');
+        
+        popupCancel.style.display = 'inline-block';
+        popupCancel.onclick = () => {
+            document.getElementById('custom-popup').style.display = 'none';
+        };
+        
+        popupOk.onclick = () => {
+            document.getElementById('custom-popup').style.display = 'none';
+            updateFavorites(bookId, 'remove');
+        };
+    } else {
+        updateFavorites(bookId, 'add');
+    }
+}
+
+// Initialize heart icons
+document.addEventListener('DOMContentLoaded', function() {
+    const heartIcons = document.querySelectorAll('.heart-icon');
+    heartIcons.forEach(icon => {
+        icon.addEventListener('click', handleHeartClick);
+    });
+});
 
 // Function to check if a book is in favorites
 function checkIfInFavorites(title) {
@@ -60,26 +151,123 @@ function updateButtonState(button, isFavorite) {
   }
 }
 
-// Update favorite buttons on page load
-document.addEventListener('DOMContentLoaded', () => {
-  // Check if we're on the homepage
+// Initialize all event listeners when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle favorite button clicks on homepage.html
   if (window.location.pathname.endsWith('homepage.html')) {
+    console.log('favorites_script.js: Initializing favorite buttons for homepage.html');
     document.querySelectorAll('.btn-favorites').forEach(async button => {
+      console.log('favorites_script.js: Found favorite button on homepage:', button);
       const bookCard = button.closest('.book-card');
+      const bookContainer = button.closest('.book-container');
       const title = bookCard.querySelector('.title').textContent;
       
       try {
         const isFavorite = await checkIfInFavorites(title);
-        console.log(`Book "${title}" is favorite:`, isFavorite); // Debug log
+        console.log(`favorites_script.js: Book "${title}" is favorite:`, isFavorite);
         updateButtonState(button, isFavorite);
       } catch (error) {
-        console.error('Error checking favorites status:', error);
+        console.error('favorites_script.js: Error checking favorites status on homepage:', error);
       }
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        console.log('favorites_script.js: Favorite button clicked (homepage.html)');
+        
+        const bookData = {
+          image: bookCard.querySelector('.background-image-container').style.backgroundImage,
+          cover: bookContainer.querySelector('img.book').src,
+          title: bookCard.querySelector('.title').textContent,
+          description: bookCard.querySelector('.info-left').textContent,
+          author: bookCard.querySelector('.info-right p:nth-child(1)').textContent,
+          genres: bookCard.querySelector('.info-right p:nth-child(2)').textContent,
+        };
+
+        const operation = button.classList.contains('in-favorites') ? 'remove' : 'add';
+        console.log('favorites_script.js: Operation:', operation);
+
+        const formData = new FormData();
+        formData.append('operation', operation);
+        formData.append('title', bookData.title);
+        formData.append('author', bookData.author);
+        formData.append('genre', bookData.genres);
+        formData.append('cover', bookData.cover);
+        formData.append('image', bookData.image);
+
+        fetch('../backend/favorites.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Server response:', data);
+          if (data.success) {
+            updateButtonState(button, operation === 'add');
+            showToast(operation === 'add' ? 'Book added to favorites!' : 'Book removed from favorites!', 'success');
+          } else {
+            showToast(data.message, 'error');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showToast('Error updating favorites', 'error');
+        });
+      });
     });
   }
 
-  // Banner Carousel for favorites.html
+  // Handle favorite button clicks and page rendering on favorites.html
   if (window.location.pathname.endsWith('favorites.html')) {
+    document.querySelectorAll('.btn-favorites').forEach(button => {
+      button.addEventListener('click', () => {
+        console.log('Favorite button clicked (favorites.html)'); // Debug log
+        const bookCard = button.closest('.book-card');
+        const bookContainer = button.closest('.book-container');
+        const bookData = {
+          image: bookCard.querySelector('.background-image-container').style.backgroundImage,
+          cover: bookContainer.querySelector('img.book').src,
+          title: bookCard.querySelector('.title').textContent,
+          description: bookCard.querySelector('.info-left').textContent,
+          author: bookCard.querySelector('.info-right p:nth-child(1)').textContent,
+          genres: bookCard.querySelector('.info-right p:nth-child(2)').textContent,
+        };
+
+        // Determine operation based on current state
+        const operation = button.classList.contains('in-favorites') ? 'remove' : 'add';
+        console.log('Operation:', operation); // Debug log
+
+        // Send to backend
+        const formData = new FormData();
+        formData.append('operation', operation);
+        formData.append('title', bookData.title);
+        formData.append('author', bookData.author);
+        formData.append('genre', bookData.genres);
+        formData.append('cover', bookData.cover);
+        formData.append('image', bookData.image);
+
+        fetch('../backend/favorites.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Server response:', data); // Debug log
+          if (data.success) {
+            // Toggle button state
+            updateButtonState(button, operation === 'add');
+            showToast(operation === 'add' ? 'Book added to favorites!' : 'Book removed from favorites!', 'success');
+          } else {
+            showToast(data.message, 'error');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showToast('Error updating favorites', 'error');
+        });
+      });
+    });
+
     const slidesContainer = document.querySelector(".banner-slides");
     const slides = document.querySelectorAll(".banner-slide");
     const nextBtn = document.querySelector(".banner-next");
@@ -128,153 +316,98 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
   }
-});
 
-// ====================== Favorite Button ======================
-document.querySelectorAll('.btn-favorites').forEach(button => {
-  button.addEventListener('click', () => {
-    console.log('Favorite button clicked'); // Debug log
-    const bookCard = button.closest('.book-card');
-    const bookContainer = button.closest('.book-container');
-    const bookData = {
-      image: bookCard.querySelector('.background-image-container').style.backgroundImage,
-      cover: bookContainer.querySelector('img.book').src,
-      title: bookCard.querySelector('.title').textContent,
-      description: bookCard.querySelector('.info-left').textContent,
-      author: bookCard.querySelector('.info-right p:nth-child(1)').textContent,
-      genres: bookCard.querySelector('.info-right p:nth-child(2)').textContent,
-    };
+  // ====================== Favorites Page Renderer ======================
+  if (window.location.pathname.endsWith('favorites.html')) {
+    const favoritesContainer = document.querySelector('.books-slides');
+    const noFavoritesMessageHTML = `
+      <div class="no-favorites-message">
+        <p>Your favorites list is currently empty. Add your favorite book now!</p>
+        <button class="add-books-btn" onclick="window.location.href='homepage.html'">Add Books</button>
+      </div>
+    `;
 
-    // Determine operation based on current state
-    const operation = button.classList.contains('in-favorites') ? 'remove' : 'add';
-    console.log('Operation:', operation); // Debug log
-
-    // Send to backend
-    const formData = new FormData();
-    formData.append('operation', operation);
-    formData.append('title', bookData.title);
-    formData.append('author', bookData.author);
-    formData.append('genre', bookData.genres);
-    formData.append('cover', bookData.cover);
-    formData.append('image', bookData.image);
-
+    // Fetch favorites from backend
     fetch('../backend/favorites.php', {
       method: 'POST',
-      body: formData
+      body: new URLSearchParams({
+        'operation': 'get'
+      })
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Server response:', data); // Debug log
       if (data.success) {
-        // Toggle button state
-        updateButtonState(button, operation === 'add');
-        alert(operation === 'add' ? 'Book added to favorites!' : 'Book removed from favorites!');
-    } else {
-        alert(data.message);
-    }
+        if (data.favorites && data.favorites.length > 0) {
+          favoritesContainer.classList.add('has-favorites'); // Add class when books are present
+          data.favorites.forEach(book => {
+            const bookContainer = document.createElement('div');
+            bookContainer.classList.add("book-container");
+
+            bookContainer.innerHTML = `
+              <div class="book-image-wrapper">
+                <img src="${book.cover}" alt="${book.title}" class="book" />
+                <button class="image-fav" title="Remove from favorites">
+                  <i class="fas fa-heart"></i>
+                </button>
+              </div>
+              <div class="book-info">
+                <h3 class="book-title">${book.title}</h3>
+                <p class="book-author">${book.author}</p>
+                <span class="book-genre">${book.genre}</span>
+              </div>
+            `;
+
+            favoritesContainer.appendChild(bookContainer);
+
+            // Add click handler for the heart icon
+            const heartButton = bookContainer.querySelector('.image-fav');
+            heartButton.addEventListener('click', () => {
+              const bookTitle = bookContainer.querySelector('.book-title').textContent;
+              const operation = 'remove';
+              const formData = new FormData();
+              formData.append('operation', operation);
+              formData.append('title', bookTitle);
+
+              fetch('../backend/favorites.php', {
+                method: 'POST',
+                body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
+                console.log('Remove favorite response:', data);
+                if (data.success) {
+                  bookContainer.remove(); // Remove the book card from the DOM
+                  showToast('Book removed from favorites!', 'success');
+                  
+                  // If no more favorites, show empty state and remove has-favorites class
+                  if (favoritesContainer.children.length === 0) {
+                    favoritesContainer.classList.remove('has-favorites');
+                    favoritesContainer.innerHTML = noFavoritesMessageHTML;
+                  }
+                } else {
+                  showToast(data.message, 'error');
+                }
+              })
+              .catch(error => {
+                console.error('Error removing favorite:', error);
+                showToast('Error removing favorite', 'error');
+              });
+            });
+          });
+        } else {
+          // Display message and button if favorites list is empty
+          favoritesContainer.classList.remove('has-favorites'); // Ensure class is not present
+          favoritesContainer.innerHTML = noFavoritesMessageHTML;
+        }
+      } else {
+        favoritesContainer.classList.remove('has-favorites'); // Ensure class is not present on error
+        favoritesContainer.innerHTML = `<p class="error">Error loading favorites: ${data.message}</p>`;
+      }
     })
     .catch(error => {
-      console.error('Error:', error);
-      alert('Error updating favorites');
+      console.error('Error fetching favorites:', error);
+      favoritesContainer.classList.remove('has-favorites'); // Ensure class is not present on error
+      favoritesContainer.innerHTML = '<p class="error">Failed to load favorites. Please try again later.</p>';
     });
-  });
+  }
 });
-
-// ====================== Favorites Page Renderer ======================
-if (window.location.pathname.endsWith('favorites.html')) {
-  const favoritesContainer = document.querySelector('.books-slides');
-
-  // Fetch favorites from backend
-  fetch('../backend/favorites.php', {
-    method: 'POST',
-    body: new URLSearchParams({
-      'operation': 'get'
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      data.favorites.forEach(book => {
-    const bookContainer = document.createElement('div');
-    bookContainer.classList.add("book-container");
-
-   bookContainer.innerHTML = `
-  <div class="book-image-wrapper">
-    <img src="${book.cover}" alt="${book.title}" class="book" />
-            <button class="image-fav" title="Remove from favorites">
-              <i class="fas fa-heart"></i>
-            </button>
-          </div>
-          <div class="book-info">
-            <h3 class="book-title">${book.title}</h3>
-            <p class="book-author">${book.author}</p>
-            <span class="book-genre">${book.genre}</span>
-            <div class="book-actions">
-              <button class="action-btn borrow-btn" onclick="window.location.href='borrow.html'">
-                <i class="fas fa-book"></i> Borrow
-              </button>
-              <button class="action-btn remove-btn">
-                <i class="fas fa-trash"></i> Remove
-              </button>
-            </div>
-  </div> 
-`;
-
-    favoritesContainer.appendChild(bookContainer);
-
-    // Remove from favorites
-        const removeBtn = bookContainer.querySelector('.remove-btn');
-        removeBtn.addEventListener('click', () => {
-          const formData = new FormData();
-          formData.append('operation', 'remove');
-          formData.append('title', book.title);
-
-          fetch('../backend/favorites.php', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-      bookContainer.remove();
-              showPopup('Book removed from favorites!', 'success');
-              
-              // Only try to update homepage buttons if we're on the homepage
-              if (window.location.pathname.endsWith('homepage.html')) {
-                const homepageButtons = document.querySelectorAll('.btn-favorites');
-                homepageButtons.forEach(button => {
-                  const bookCard = button.closest('.book-card');
-                  if (bookCard) {
-                    const buttonTitle = bookCard.querySelector('.title').textContent;
-                    if (buttonTitle === book.title) {
-                      updateButtonState(button, false);
-                    }
-                  }
-                });
-              }
-            } else {
-              showPopup(data.message, 'error');
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            showPopup('Error removing from favorites', 'error');
-          });
-        });
-
-        // Add click event to book image
-        const bookImage = bookContainer.querySelector('.book');
-        bookImage.addEventListener('click', () => {
-          // Add your book details view logic here
-          console.log('View book details:', book.title);
-        });
-      });
-    } else {
-      favoritesContainer.innerHTML = '<div class="no-favorites">No favorites yet</div>';
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    favoritesContainer.innerHTML = '<div class="error">Error loading favorites</div>';
-  });
-}

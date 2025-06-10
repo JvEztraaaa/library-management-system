@@ -65,6 +65,8 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  margin-bottom: 50px;
 }
 
 .student-number {
@@ -220,5 +222,41 @@ body::before {
 
   .container {
     padding: 0 10px;
+  }
+}
+
+/* Add these styles to your existing CSS */
+
+.status-indicator {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.status-indicator.show {
+  opacity: 1;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  14% {
+    transform: translateX(-50%) scale(1.3);
+  }
+  28% {
+    transform: translateX(-50%) scale(1);
+  }
+  42% {
+    transform: translateX(-50%) scale(1.3);
+  }
+  70% {
+    transform: translateX(-50%) scale(1);
   }
 }

@@ -34,7 +34,22 @@ mysqli_set_charset($conn, "utf8mb4");
 
 try {
     $status = isset($_GET['status']) ? $_GET['status'] : 'all';
-    $statusFilter = $status !== 'all' ? "WHERE bb.status = ?" : "";
+    $requestId = isset($_GET['id']) ? (int)$_GET['id'] : null;
+    
+    $statusFilter = "";
+    $idFilter = "";
+    $queryParams = [];
+    $paramTypes = "";
+
+    if ($requestId) {
+        $idFilter = "WHERE bb.id = ?";
+        $queryParams[] = $requestId;
+        $paramTypes .= "i";
+    } else if ($status !== 'all') {
+        $statusFilter = "WHERE bb.status = ?";
+        $queryParams[] = $status;
+        $paramTypes .= "s";
+    }
     
     $query = "
         SELECT 
@@ -48,18 +63,20 @@ try {
             bb.admin_comment,
             bb.approved_by,
             bb.approved_at,
+            bb.fine_amount,
             u.first_name,
             u.last_name
         FROM borrowed_books bb
         JOIN users u ON bb.user_id = u.id
         $statusFilter
+        $idFilter
         ORDER BY bb.borrow_time DESC
     ";
 
     $stmt = mysqli_prepare($conn, $query);
     
-    if ($status !== 'all') {
-        mysqli_stmt_bind_param($stmt, 's', $status);
+    if (!empty($queryParams)) {
+        mysqli_stmt_bind_param($stmt, $paramTypes, ...$queryParams);
     }
     
     mysqli_stmt_execute($stmt);
@@ -78,7 +95,8 @@ try {
             'status' => $row['status'],
             'admin_comment' => $row['admin_comment'],
             'approved_by' => $row['approved_by'],
-            'approved_at' => $row['approved_at']
+            'approved_at' => $row['approved_at'],
+            'fine_amount' => $row['fine_amount']
         ];
     }
     

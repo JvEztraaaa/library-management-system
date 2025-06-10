@@ -26,6 +26,7 @@ $last_name = sanitize($_POST['last_name'] ?? '');
 $email = sanitize($_POST['email'] ?? '');
 $student_number = sanitize($_POST['student_number'] ?? '');
 $pass = $_POST['password'] ?? '';
+$gender = sanitize($_POST['gender'] ?? '');
 
 // Validate first and last name (non-empty, optional further validation)
 if (empty($first_name) || empty($last_name)) {
@@ -39,13 +40,18 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
-if (!preg_match('/^\d{4}$/', $student_number)) {
-    echo json_encode(["success" => false, "message" => "Student number must be exactly 4 digits."]);
+if (!preg_match('/^\d{5}$/', $student_number)) {
+    echo json_encode(["success" => false, "message" => "Student number must be exactly 5 digits."]);
     exit();
 }
 
 if (strlen($pass) < 8) {
     echo json_encode(["success" => false, "message" => "Password must be at least 8 characters."]);
+    exit();
+}
+
+if (!in_array($gender, ['male', 'female'])) {
+    echo json_encode(["success" => false, "message" => "Please select a valid gender."]);
     exit();
 }
 
@@ -65,9 +71,9 @@ $stmt->close();
 // Hash the password securely
 $password_hash = password_hash($pass, PASSWORD_DEFAULT);
 
-// Insert user into database with first_name and last_name
-$stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, student_number, password_hash) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $first_name, $last_name, $email, $student_number, $password_hash);
+// Insert user into database with first_name, last_name, and gender
+$stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, student_number, password_hash, gender) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $first_name, $last_name, $email, $student_number, $password_hash, $gender);
 
 if ($stmt->execute()) {
     echo json_encode(["success" => true, "message" => "Signup successful! You can now log in."]);

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/book_approvals.css">
+    <link rel="stylesheet" href="../css/toast.css">
 </head>
 <body>
     <div class="approval-dashboard">
@@ -39,10 +40,10 @@
                 <h2>Book Approval Requests</h2>
                 <div class="approval-filters">
                     <button class="filter-btn active" data-status="all">All</button>
-                    <button class="filter-btn" data-status="Pending">Pending</button>
-                    <button class="filter-btn" data-status="Approved">Approved</button>
-                    <button class="filter-btn" data-status="Rejected">Rejected</button>
-                    <button class="filter-btn" data-status="Overdue">Overdue</button>
+                    <button class="filter-btn" data-status="pending">Pending</button>
+                    <button class="filter-btn" data-status="approved">Approved</button>
+                    <button class="filter-btn" data-status="rejected">Rejected</button>
+                    <button class="filter-btn" data-status="overdue">Overdue</button>
                 </div>
                 <div id="approvalContainer" class="approval-box">
                     <!-- Approval cards will be added here -->
@@ -50,6 +51,89 @@
             </div>
         </div>
     </div>
+
+    <!-- Custom Notification Popup -->
+    <div id="notificationPopup" class="notification-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="fas fa-bell"></i>
+                <h3>Send Reminder</h3>
+                <button class="close-popup">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Are you sure you want to send a reminder notification to this student?</p>
+                <div class="student-info">
+                    <p><strong>Student:</strong> <span id="studentName"></span></p>
+                    <p><strong>Book:</strong> <span id="bookTitle"></span></p>
+                    <p><strong>Due Date:</strong> <span id="dueDate"></span></p>
+                    <p><strong>Fine Amount:</strong> <span id="fineAmount"></span></p>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn">Send Reminder</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="notification-popup">
+        <div class="popup-content success-popup">
+            <div class="popup-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Success</h3>
+                <button class="close-popup">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p id="successMessage">Reminder notification sent successfully!</p>
+            </div>
+            <div class="popup-footer">
+                <button class="confirm-btn" onclick="closeSuccessPopup()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Paid Confirmation Popup -->
+    <div id="markPaidPopup" class="notification-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Mark as Paid</h3>
+                <button class="close-popup">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Are you sure you want to mark this fine as paid?</p>
+                <div class="student-info">
+                    <p><strong>Student:</strong> <span id="paidStudentName"></span></p>
+                    <p><strong>Book:</strong> <span id="paidBookTitle"></span></p>
+                    <p><strong>Fine Amount:</strong> <span id="paidAmount"></span></p>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn" id="confirmMarkPaid">Mark as Paid</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Paid Success Popup -->
+    <div id="markPaidSuccessPopup" class="notification-popup">
+        <div class="popup-content success-popup">
+            <div class="popup-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Success</h3>
+                <button class="close-popup">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p id="markPaidSuccessMessage">Fine has been marked as paid successfully!</p>
+            </div>
+            <div class="popup-footer">
+                <button class="confirm-btn" onclick="closeMarkPaidSuccessPopup()">OK</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/book_approvals_new.js"></script>
+    <script src="../js/toast.js"></script>
 </body>
 </html> 

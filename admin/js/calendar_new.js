@@ -12,15 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             method: 'GET',
             failure: function(error) {
                 console.error('Error loading events:', error);
-                alert('Failed to load calendar events. Please try again later.');
+                showToast('Failed to load calendar events. Please try again later.', 'error');
             }
         },
         eventClick: function(info) {
             console.log('Event clicked:', info.event);
-            console.log('Event title:', info.event.title);
-            console.log('Event start:', info.event.start);
-            console.log('Event end:', info.event.end);
-            console.log('Event extendedProps:', info.event.extendedProps);
             
             const modal = document.getElementById('eventDetailsModal');
             const modalTitle = document.getElementById('modalEventTitle');
@@ -58,11 +54,41 @@ document.addEventListener('DOMContentLoaded', function() {
             modalType.textContent = info.event.extendedProps.type || 'Other';
             modalType.className = 'event-type-badge ' + (info.event.extendedProps.type || 'other').toLowerCase().replace(/\s+/g, '-');
 
-            // Set up delete button
+            // Set up delete button with custom confirmation
             deleteBtn.onclick = function() {
-                if (confirm('Are you sure you want to delete this event?')) {
+                // Close the event details modal first
+                modal.style.display = 'none';
+                
+                // Show custom confirmation modal
+                const confirmModal = document.getElementById('deleteConfirmationModal');
+                const confirmBtn = confirmModal.querySelector('.confirm-btn');
+                const cancelBtn = confirmModal.querySelector('.cancel-btn');
+                const closeBtn = confirmModal.querySelector('.custom-modal-close');
+                
+                confirmModal.style.display = 'block';
+                
+                // Handle confirmation
+                const handleConfirm = () => {
+                    confirmModal.style.display = 'none';
                     deleteEvent(info.event.id);
-                }
+                };
+                
+                // Handle cancellation
+                const handleCancel = () => {
+                    confirmModal.style.display = 'none';
+                };
+                
+                // Set up event listeners
+                confirmBtn.onclick = handleConfirm;
+                cancelBtn.onclick = handleCancel;
+                closeBtn.onclick = handleCancel;
+                
+                // Close on outside click
+                window.onclick = function(event) {
+                    if (event.target === confirmModal) {
+                        handleCancel();
+                    }
+                };
             };
 
             // Show modal
@@ -132,20 +158,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.success) {
                     calendar.refetchEvents();
                     closeAddEventModal();
-                    alert('Event added successfully!');
+                    showToast('Event added successfully!', 'success');
                 } else {
-                    alert('Error adding event: ' + data.message);
+                    showToast('Error adding event: ' + data.message, 'error');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Failed to add event: ' + (error.message || 'Please try again later.'));
+                showToast('Failed to add event: ' + (error.message || 'Please try again later.'), 'error');
             });
         });
     }
 
-    // Delete event function
+    function showDeleteConfirmation(callback) {
+        const modal = document.getElementById('deleteConfirmationModal');
+        const closeBtn = modal.querySelector('.custom-modal-close');
+        const cancelBtn = modal.querySelector('.cancel-btn');
+        const confirmBtn = modal.querySelector('.confirm-btn');
+
+        modal.style.display = 'block';
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+        };
+
+        closeBtn.onclick = closeModal;
+        cancelBtn.onclick = closeModal;
+        confirmBtn.onclick = () => {
+            closeModal();
+            callback();
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    }
+
+    // Update the delete event function
     function deleteEvent(eventId) {
+        console.log('Attempting to delete event with ID:', eventId);
+        
         fetch('../backend/admin/admin_delete_calendar_event.php', {
             method: 'POST',
             headers: {
@@ -153,8 +207,17 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify({ id: eventId })
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response status:', response.status);
+            return response.json().then(data => {
+                if (!response.ok) {
+                    throw new Error(data.message || 'Server error occurred');
+                }
+                return data;
+            });
+        })
         .then(data => {
+            console.log('Delete response:', data);
             if (data.success) {
                 // Remove event from calendar
                 const event = calendar.getEventById(eventId);
@@ -163,15 +226,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 // Close modal
                 document.getElementById('eventDetailsModal').style.display = 'none';
-                // Show success message
-                alert('Event deleted successfully');
+                // Show toast
+                showToast('Event has been successfully deleted!', 'success');
             } else {
                 throw new Error(data.message || 'Failed to delete event');
             }
         })
         .catch(error => {
             console.error('Error deleting event:', error);
-            alert('Failed to delete event: ' + error.message);
+            showToast('Failed to delete event: ' + error.message, 'error');
         });
     }
 });

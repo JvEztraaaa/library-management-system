@@ -296,7 +296,7 @@ body {
 .button-group {
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .approval-btn {
@@ -349,67 +349,6 @@ body {
     outline: none;
     border-color: #4e73df;
     box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
-}
-
-/* Toast Notifications */
-.toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-}
-
-.toast {
-    display: flex;
-    align-items: center;
-    padding: 12px 20px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: slideIn 0.3s ease-out;
-    min-width: 300px;
-    max-width: 400px;
-}
-
-.toast.success {
-    background-color: #1cc88a;
-    color: white;
-}
-
-.toast.error {
-    background-color: #e74a3b;
-    color: white;
-}
-
-.toast i {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.toast.fade-out {
-    animation: fadeOut 0.3s ease-out forwards;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
 }
 
 /* Responsive Styles */
@@ -635,33 +574,259 @@ body {
 }
 
 .mark-paid-btn {
-    padding: 8px 16px;
-    background-color: #1cc88a;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 20px;
+    padding: 8px 15px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 36px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
 .mark-paid-btn:hover {
-    background-color: #17a673;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.mark-paid-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #45a049;
 }
 
 .mark-paid-btn i {
-    font-size: 1.1em;
+    font-size: 14px;
+}
+
+.notify-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.notify-btn:hover {
+    background-color: #f57c00;
+}
+
+.notify-btn i {
+    font-size: 14px;
+}
+
+.overdue-info {
+    color: #d32f2f;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.fine-info {
+    color: #d32f2f;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+/* Notification Popup Styles */
+.notification-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-popup.active {
+    display: flex;
+}
+
+.popup-content {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: popupSlideIn 0.3s ease-out;
+    border: 1px solid #333;
+}
+
+@keyframes popupSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.popup-header {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #222;
+    border-radius: 8px 8px 0 0;
+}
+
+.popup-header i {
+    color: #ff9800;
+    font-size: 24px;
+}
+
+.popup-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    color: #fff;
+}
+
+.close-popup {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.popup-body {
+    padding: 20px;
+    color: #fff;
+}
+
+.popup-body p {
+    margin: 0 0 15px 0;
+    color: #ccc;
+}
+
+.student-info {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    border: 1px solid #333;
+}
+
+.student-info p {
+    margin: 8px 0;
+    color: #fff;
+}
+
+.student-info strong {
+    color: #ff9800;
+}
+
+.popup-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background-color: #222;
+    border-radius: 0 0 8px 8px;
+}
+
+.cancel-btn, .confirm-btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.cancel-btn:hover {
+    background-color: #444;
+}
+
+.popup-footer .confirm-btn {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+.popup-footer .confirm-btn:hover {
+    background-color: #f57c00;
+}
+
+/* Override for mark paid popup */
+#markPaidPopup .popup-header i {
+    color: #4CAF50;
+}
+
+#markPaidPopup .popup-footer .confirm-btn {
+    background-color: #4CAF50;
+}
+
+#markPaidPopup .popup-footer .confirm-btn:hover {
+    background-color: #45a049;
+}
+
+/* Fix notification button style */
+.notification-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.notification-btn:hover {
+    background-color: #f57c00;
+}
+
+.notification-btn i {
+    font-size: 14px;
+}
+
+/* Success Popup Styles */
+.success-popup {
+    max-width: 400px;
+}
+
+.success-popup .popup-header i {
+    color: #4CAF50;
+}
+
+.success-popup .popup-body {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.success-popup .popup-body p {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+}
+
+.success-popup .popup-footer {
+    justify-content: center;
+}
+
+.success-popup .confirm-btn {
+    background-color: #4CAF50;
+    min-width: 100px;
+}
+
+.success-popup .confirm-btn:hover {
+    background-color: #45a049;
 } 

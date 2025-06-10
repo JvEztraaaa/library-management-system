@@ -18,14 +18,20 @@ try {
     // Get total students
     $total_students = $conn->query("SELECT COUNT(*) as count FROM users WHERE role = 'user'")->fetch_assoc()['count'];
 
+    // Get total check-ins (from index page)
+    $check_ins = $conn->query("SELECT SUM(check_in_count) as count FROM users WHERE role = 'user'")->fetch_assoc()['count'] ?? 0;
+
+    // Get total logins (from login page)
+    $logins = $conn->query("SELECT COUNT(*) as count FROM login_log")->fetch_assoc()['count'] ?? 0;
+
+    // Calculate total visitors (check-ins + logins)
+    $visitors_count = $check_ins + $logins;
+
     // Get total borrowed books (excluding rejected)
     $total_borrowed = $conn->query("SELECT COUNT(*) as count FROM borrowed_books WHERE status != 'Rejected'")->fetch_assoc()['count'];
 
-    // Get total books in (returned)
-    $total_in = $conn->query("SELECT COUNT(*) as count FROM borrowed_books WHERE status = 'Returned'")->fetch_assoc()['count'];
-
-    // Get total books out (currently borrowed)
-    $total_out = $conn->query("SELECT COUNT(*) as count FROM borrowed_books WHERE status = 'Borrowed'")->fetch_assoc()['count'];
+    // Get total overdue books
+    $total_overdue = $conn->query("SELECT COUNT(*) as count FROM borrowed_books WHERE status = 'Overdue'")->fetch_assoc()['count'];
 
     // Get recent activity log (last 5 activities)
     $activity_log = [];
@@ -129,9 +135,9 @@ try {
         'success' => true,
         'stats' => [
             'total_students' => (int)$total_students,
+            'visitors_count' => (int)$visitors_count,
             'total_borrowed' => (int)$total_borrowed,
-            'total_in' => (int)$total_in,
-            'total_out' => (int)$total_out,
+            'total_out' => (int)$total_overdue,
             'activity_log' => $activity_log,
             'engagement_data' => $engagement_data,
             'category_stats' => $category_stats

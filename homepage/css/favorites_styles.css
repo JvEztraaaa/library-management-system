@@ -1,11 +1,16 @@
 /* Favorites Page Specific Styles */
-.books-section {
+.favorites-section {
   padding: 40px 20px;
   background: linear-gradient(135deg, rgba(13, 13, 23, 0.98), rgba(8, 26, 48, 0.98));
-  min-height: 60vh;
+  min-height: calc(100vh - 200px); /* Adjusted min-height to allow vertical centering considering header/footer */
+  display: flex; /* Added for centering */
+  flex-direction: column; /* Added for vertical stacking */
+  justify-content: center; /* Added for vertical centering */
+  align-items: center; /* Added for horizontal centering */
+  padding-top: 80px; /* Add some top padding */
 }
 
-.books-section h2 {
+.favorites-section h2 {
   text-align: center;
   color: #fff;
   font-size: 2.5rem;
@@ -16,7 +21,7 @@
   line-height: 1.2;
 }
 
-.books-section h2::after {
+.favorites-section h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -46,34 +51,98 @@
   background: rgba(255, 68, 68, 0.1);
 }
 
+/* Empty state styles */
+.no-favorites-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #fff;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.no-favorites-message p {
+  font-size: 1.4rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.add-books-btn {
+  background: rgba(78, 115, 223, 0.2);
+  color: #4e73df;
+  border: 1px solid rgba(78, 115, 223, 0.3);
+  padding: 12px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-books-btn:hover {
+  background: rgba(78, 115, 223, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(78, 115, 223, 0.2);
+}
+
+.add-books-btn i {
+  font-size: 1.2rem;
+}
+
 /* Books Carousel */
 .books-carousel {
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  overflow: hidden;
+  flex-grow: 1; /* Allow carousel to take available height */
+  display: flex;
+  flex-direction: column;
+  /* Removed justify-content and align-items here to prevent conflict with grid centering */
+  min-height: 400px; /* Ensure sufficient height for centering */
 }
 
+/* Styles for when there are no favorites (default state of books-slides) */
 .books-slides {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
+  display: flex; /* Default to flex for centering empty message */
+  flex-direction: column; /* For vertical centering of empty message */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
   padding: 20px;
-  max-width: 1600px;
-  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Styles for when there are favorites (books-slides will have has-favorites class) */
+.books-slides.has-favorites {
+  display: grid; /* Change to grid when books are present */
+  grid-template-columns: repeat(auto-fill, minmax(280px, min-content)); /* Default for larger screens, use min-content */
+  gap: 30px; /* Consistent gap */
+  justify-content: center; /* Center grid items horizontally */
+  align-items: start; /* Align grid items to the start of their cells */
+  /* Reset flex properties */
+  flex-direction: unset;
 }
 
 /* Book container styles */
 .book-container {
-  position: relative;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 15px;
-  padding: 15px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  /* height: 100%; Removed as grid items will manage height based on content and grid properties */
   display: flex;
   flex-direction: column;
+  position: relative;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .book-container:hover {
@@ -83,32 +152,34 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
+.book-image-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
 .book {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   cursor: pointer;
-  border-radius: 12px;
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
 }
 
 .book:hover {
   transform: scale(1.02);
 }
 
-.book-image-wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
 .image-fav {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 0, 0, 0.2);
   border: none;
   border-radius: 50%;
   width: 45px;
@@ -125,141 +196,136 @@
 }
 
 .image-fav:hover {
-  background: rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.3);
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.image-fav i {
+  transition: transform 0.3s ease;
+}
+
+.image-fav:hover i {
+  transform: scale(1.1);
 }
 
 /* Book Info Styles */
 .book-info {
-  padding: 12px 0;
+  padding: 0;
   color: #fff;
   text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .book-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 6px;
   color: #fff;
   text-align: left;
-  line-height: 1.3;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   min-height: 2.6em;
+  max-height: 2.6em;
+  margin: 0;
 }
 
 .book-author {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 6px;
-  text-align: center;
-  line-height: 1.3;
+  text-align: left;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 5px;
+  margin: 0;
 }
 
 .book-genre {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #4e73df;
   background: rgba(78, 115, 223, 0.1);
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
-  display: block;
+  display: inline-block;
   text-align: center;
-  margin: 0 auto 10px;
+  margin: 0;
   width: fit-content;
 }
 
 /* Action Buttons */
 .book-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  justify-content: space-between;
-}
-
-.action-btn {
-  flex: 1;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.action-btn i {
-  font-size: 0.9rem;
-}
-
-.borrow-btn {
-  background: rgba(78, 115, 223, 0.15);
-  color: #4e73df;
-  border: 1px solid rgba(78, 115, 223, 0.2);
-}
-
-.borrow-btn:hover {
-  background: rgba(78, 115, 223, 0.25);
-  transform: translateY(-2px);
-}
-
-.remove-btn {
-  background: rgba(255, 0, 0, 0.1);
-  color: #ff4444;
-  border: 1px solid rgba(255, 0, 0, 0.15);
-}
-
-.remove-btn:hover {
-  background: rgba(255, 0, 0, 0.15);
-  transform: translateY(-2px);
+  display: none;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1400px) {
-  .books-slides {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  .books-slides.has-favorites { /* Targeting when books are present */
+    grid-template-columns: repeat(auto-fill, minmax(250px, min-content));
     gap: 20px;
-  }
-
-  .book {
-    height: 260px;
   }
 }
 
 @media (max-width: 1200px) {
-  .books-section {
+  .favorites-section {
     padding: 30px 15px;
   }
 
-  .books-section h2 {
+  .favorites-section h2 {
     font-size: 2.2rem;
+    margin-bottom: 30px;
   }
 
-  .books-slides {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .books-slides.has-favorites { /* Targeting when books are present */
+    grid-template-columns: repeat(auto-fill, minmax(220px, min-content));
+    gap: 15px;
   }
 }
 
 @media (max-width: 992px) {
-  .books-section h2 {
+  .favorites-section h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
+  .books-slides.has-favorites { /* Targeting when books are present */
+    grid-template-columns: repeat(auto-fill, minmax(200px, min-content));
+    gap: 15px;
+  }
+
+  .book-title {
+    font-size: 1.1rem;
+  }
+
+  .book-author {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites-section {
+    padding: 20px 10px;
+    min-height: calc(100vh - 180px); /* Adjust for smaller screens */
+  }
+
+  .favorites-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .books-slides.has-favorites { /* Targeting when books are present */
+    grid-template-columns: repeat(auto-fill, minmax(180px, min-content));
+    gap: 12px;
+  }
+  
   .book-container {
-    padding: 12px;
+    padding: 15px;
   }
 
   .book-title {
@@ -267,69 +333,51 @@
   }
 
   .book-author {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .books-section {
-    padding: 25px 15px;
-  }
-
-  .books-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-  
-  .books-slides {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 15px;
-  }
-  
-  .book {
-    height: 240px;
-  }
-
-  .book-container {
-    padding: 10px;
-  }
-
-  .book-title {
-    font-size: 0.95rem;
-  }
-
-  .book-author {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .book-genre {
-    font-size: 0.75rem;
-    padding: 2px 8px;
+    font-size: 0.8rem;
+    padding: 3px 10px;
   }
 
   .action-btn {
     padding: 5px 10px;
     font-size: 0.8rem;
   }
+
+  .no-favorites-message {
+    padding: 30px 15px;
+  }
+
+  .no-favorites-message p {
+    font-size: 1.2rem;
+  }
+
+  .add-books-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 576px) {
-  .books-section {
-    padding: 20px 10px;
+  .favorites-section {
+    padding: 15px 5px;
+    min-height: calc(100vh - 160px); /* Adjust for smaller screens */
   }
 
-  .books-section h2 {
+  .favorites-section h2 {
     font-size: 1.6rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   
-  .books-slides {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  .books-slides.has-favorites { /* Targeting when books are present */
+    grid-template-columns: repeat(auto-fill, minmax(180px, min-content));
     gap: 12px;
   }
   
   .book {
-    height: 220px;
+    /* height: 220px; Removed, aspect-ratio on wrapper handles it */
   }
 
   .book-container {
@@ -364,22 +412,23 @@
 }
 
 @media (max-width: 480px) {
-  .books-section {
-    padding: 15px 8px;
+  .favorites-section {
+    padding: 10px 0;
+    min-height: calc(100vh - 140px); /* Adjust for smaller screens */
   }
   
-  .books-section h2 {
+  .favorites-section h2 {
     font-size: 1.4rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
-  .books-slides {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  .books-slides.has-favorites { /* Targeting when books are present */
+    grid-template-columns: repeat(auto-fill, minmax(150px, min-content));
     gap: 10px;
   }
   
   .book {
-    height: 200px;
+    /* height: 200px; Removed, aspect-ratio on wrapper handles it */
   }
 
   .book-container {
@@ -409,4 +458,22 @@
     padding: 3px 6px;
     font-size: 0.7rem;
   }
+}
+
+/* Ensure the favorites section has proper positioning for absolute child */
+.favorites-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.favorites-section .section-header {
+  position: relative;
+  z-index: 2;
+}
+
+.favorites-section .book-slider {
+  position: relative;
+  z-index: 1;
 }

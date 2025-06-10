@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="css/admin_styles.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -38,21 +39,20 @@
         <div class="main-content">
           <div class="grid-container">
           <div class="stat-card div1">
-            <h3>Total In</h3>
-            <div class="stat-value"><p>150</p></div>
-            
+            <h3>Visitors Count</h3>
+            <div class="stat-value"><p></p></div>
           </div>
           <div class="stat-card div2">
-            <h3>Total Out</h3>
-            <div class="stat-value"><p>80</p></div>
+            <h3>Total Registered Accounts</h3>
+            <div class="stat-value"><p></p></div>
           </div>
-          <div class="stat-card div3">
-            <h3>Total Students</h3>
-            <div class="stat-value"><p>320</p></div>
+          <div class="stat-card div3" onclick="window.location.href='book_approvals.html?filter=overdue'" style="cursor: pointer !important;">
+            <h3>Total Overdue Books</h3>
+            <div class="stat-value"><p></p></div>
           </div>
-          <div class="stat-card div4">
+          <div class="stat-card div4" onclick="window.location.href='book_approvals.html?filter=approved'" style="cursor: pointer !important;">
             <h3>Total Borrowed Books</h3>
-            <div class="stat-value"><p>210</p></div>
+            <div class="stat-value"><p></p></div>
           </div>
 
           <div class="div5">
@@ -82,5 +82,6 @@
     </div>
     <script src="js/admin_script.js"></script>
     <script src="js/book_approvals_new.js"></script>
+    <script src="../js/toast.js"></script>
 </body>
 </html>

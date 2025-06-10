@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullNameInput = document.getElementById('full_name');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
+    const logoutLink = document.getElementById('logout-link');
 
     let originalValues = {};
 
@@ -182,4 +183,32 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred during profile update.');
         }
     });
+
+    // Event listener for logout link
+    if (logoutLink) {
+        logoutLink.addEventListener('click', async (e) => {
+            e.preventDefault(); // Prevent default link navigation
+
+            try {
+                const response = await fetch('../backend/logout.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ action: 'logout' })
+                });
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    // Redirect to index.html with a query parameter
+                    window.location.href = '../index.html?logout=success';
+                } else {
+                    alert('Logout failed: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error during logout:', error);
+                alert('An error occurred during logout.');
+            }
+        });
+    }
 }); 

@@ -5,23 +5,26 @@ async function fetchDashboardData() {
         const data = await response.json();
         
         if (data.success) {
+            console.log('Dashboard data received:', data.stats);
             updateDashboardStats(data.stats);
             updateActivityLog(data.stats.activity_log);
             updateEngagementChart(data.stats.engagement_data);
             updateCategoryChart(data.stats.category_stats);
         } else {
             console.error('Failed to fetch dashboard data:', data.error);
+            showToast('Failed to fetch dashboard data: ' + data.error, 'error');
         }
     } catch (error) {
         console.error('Error fetching dashboard data:', error);
+        showToast('Error fetching dashboard data. Please try again.', 'error');
     }
 }
 
 // Update dashboard statistics
 function updateDashboardStats(stats) {
-    document.querySelector('.div1 .stat-value p').textContent = stats.total_in;
-    document.querySelector('.div2 .stat-value p').textContent = stats.total_out;
-    document.querySelector('.div3 .stat-value p').textContent = stats.total_students;
+    document.querySelector('.div1 .stat-value p').textContent = stats.visitors_count;
+    document.querySelector('.div2 .stat-value p').textContent = stats.total_students;
+    document.querySelector('.div3 .stat-value p').textContent = stats.total_out;
     document.querySelector('.div4 .stat-value p').textContent = stats.total_borrowed;
 }
 

@@ -70,7 +70,7 @@ try {
     if ($check->num_rows > 0) {
         $check->close();
         $conn->close();
-        sendJsonResponse(false, 'already_borrowed', 400);
+        sendJsonResponse(false, 'This book is currently unavailable. Please try again later.', 400);
     }
     $check->close();
 
@@ -104,16 +104,16 @@ try {
         createAdminNotification($conn, $user_id, 'pending', $title, $message);
         
         $user_stmt->close();
-        sendJsonResponse(true, 'Book borrow request submitted successfully');
+        sendJsonResponse(true, 'Your book borrow request has been submitted successfully. Please wait for admin approval.');
     } else {
-        sendJsonResponse(false, 'Failed to submit borrow request', 500);
+        sendJsonResponse(false, 'Unable to process your request at this time. Please try again later.', 500);
     }
 
     $stmt->close();
 
 } catch (Exception $e) {
     error_log("Error in borrow_book.php: " . $e->getMessage() . "\nStack trace: " . $e->getTraceAsString());
-    sendJsonResponse(false, 'An error occurred while borrowing the book', 500);
+    sendJsonResponse(false, 'An unexpected error occurred. Please try again later.', 500);
 } finally {
     // Ensure connection is closed
     if (isset($conn)) {
