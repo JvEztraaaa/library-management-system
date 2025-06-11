@@ -50,10 +50,6 @@ if (strlen($pass) < 8) {
     exit();
 }
 
-if (!in_array($gender, ['male', 'female'])) {
-    echo json_encode(["success" => false, "message" => "Please select a valid gender."]);
-    exit();
-}
 
 // Check if email already exists
 $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");

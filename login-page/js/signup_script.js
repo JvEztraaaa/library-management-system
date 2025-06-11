@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Validate student number (must be 4-digit number)
-      const studentNumberPattern = /^\d{4}$/;
+      // Validate student number (must be 5-digit number)
+      const studentNumberPattern = /^\d{5}$/;
       if (!studentNumberPattern.test(studentNumber)) {
         showMessage("Please enter a valid student number.");
         return;
