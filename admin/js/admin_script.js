@@ -1,7 +1,7 @@
 // Fetch real-time data from the server
 async function fetchDashboardData() {
     try {
-        const response = await fetch('../backend/get_admin_stats.php');
+        const response = await fetch('../backend/admin/admin_get_admin_stats.php');
         const data = await response.json();
         
         if (data.success) {

@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', 'debug.log');
+// ini_set('error_log', 'debug.log');
 
 // Database configuration
 $host = 'localhost';
@@ -51,6 +51,8 @@ error_log("Processing notifications for user ID: " . $user_id);
 // Handle different operations
 $operation = $_POST['operation'] ?? '';
 error_log("Operation requested: " . $operation);
+
+require_once '../db_connection.php';
 
 switch ($operation) {
     case 'get':

@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!currentApprovalId) return;
                     
                     try {
-                        const response = await fetch('../backend/send_overdue_notification.php', {
+                        const response = await fetch('../backend/admin/admin_send_overdue_notification.php', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Send signup request to the backend with firstName and lastName added
-      fetch("../backend/signup.php", {
+      fetch("../backend/index/signup.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

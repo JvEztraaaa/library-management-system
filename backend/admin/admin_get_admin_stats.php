@@ -145,7 +145,7 @@ try {
     ]);
 
 } catch (Exception $e) {
-    error_log("Error in get_admin_stats.php: " . $e->getMessage());
+    error_log("Error in admin_get_admin_stats.php: " . $e->getMessage());
     http_response_code(500);
     echo json_encode(['error' => 'Internal server error']);
 } finally {

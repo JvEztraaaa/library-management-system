@@ -194,7 +194,7 @@ function borrowBook(button) {
   const author = button.dataset.author;
   const genre = button.dataset.genre;
 
-  fetch("../backend/borrow_book.php", {
+  fetch("../backend/homepage/borrow_book.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"

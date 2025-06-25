@@ -11,7 +11,7 @@ function updateClock() {
 // Function to update library stats
 async function updateLibraryStats() {
   try {
-    const response = await fetch('backend/get_stats.php');
+    const response = await fetch('backend/index/get_stats.php');
     const data = await response.json();
     
     if (data.success) {
@@ -73,7 +73,7 @@ async function checkStudentNumber(studentNumber) {
     const formData = new FormData();
     formData.append('student_number', studentNumber);
 
-    const response = await fetch('backend/check_student.php', {
+    const response = await fetch('backend/index/check_student.php', {
       method: 'POST',
       body: formData
     });

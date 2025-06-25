@@ -21,7 +21,7 @@ try {
     $_POST['user_id'] = $_SESSION['user_id'];
 
     // Forward the request to get_favorites.php
-    require_once 'get_favorites.php';
+    require_once __DIR__ . '/get_favorites.php';
 
 } catch (Exception $e) {
     // Clear any previous output

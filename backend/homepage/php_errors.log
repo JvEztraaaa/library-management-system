@@ -1,0 +1,20 @@
+[25-Jun-2025 15:04:26 Europe/Berlin] POST data: Array
+(
+    [book_id] => 327
+)
+
+[25-Jun-2025 15:04:26 Europe/Berlin] Session data: Array
+(
+    [user_id] => 4
+    [email] => alvin@nu.com
+    [first_name] => Alvin
+    [last_name] => Malabaguio
+    [role] => user
+    [avatar_url] => ../homepage/images/default_avatar.jpg
+)
+
+[25-Jun-2025 15:04:26 Europe/Berlin] Filtered book_id: 327
+[25-Jun-2025 15:04:26 Europe/Berlin] Processing request for user_id: 4, book_id: 327
+[25-Jun-2025 15:04:26 Europe/Berlin] Found 1 matching records
+[25-Jun-2025 15:04:26 Europe/Berlin] Delete operation result: success
+[25-Jun-2025 15:04:26 Europe/Berlin] Affected rows: 1

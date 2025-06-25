@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadBorrowedBooks() {
-  return fetch("../backend/get_borrowed_books.php")
+  return fetch("../backend/homepage/get_borrowed_books.php")
     .then(res => {
       if (!res.ok) {
         throw new Error('Network response was not ok');
@@ -121,15 +121,6 @@ function setupActionButtons() {
     console.log("Found cancel button:", btn);
     btn.addEventListener('click', handleCancel);
   });
-}
-
-// Debug function
-function debugLog(message) {
-  console.log(message);
-  const debugContent = document.getElementById('debug-content');
-  if (debugContent) {
-    debugContent.innerHTML += `<p>${message}</p>`;
-  }
 }
 
 // Custom Popup Functions
@@ -238,51 +229,6 @@ function checkButtonState(button) {
     }
 }
 
-// Initialize all event listeners when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize popup event listeners
-    const popup = document.getElementById('custom-popup');
-    const closeBtn = document.querySelector('.close-popup');
-    const okBtn = document.getElementById('popup-ok');
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', hidePopup);
-    }
-    
-    if (okBtn) {
-        okBtn.addEventListener('click', hidePopup);
-    }
-    
-    if (popup) {
-        // Close popup when clicking outside
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) {
-                hidePopup();
-            }
-        });
-    }
-
-    // Initialize return buttons
-    const returnButtons = document.querySelectorAll('.return-btn');
-    returnButtons.forEach(button => {
-        // Check if button should be disabled
-        checkButtonState(button);
-        button.addEventListener('click', handleReturn);
-    });
-
-    // Initialize view feedback buttons
-    const viewFeedbackButtons = document.querySelectorAll('.view-feedback-btn');
-    viewFeedbackButtons.forEach(button => {
-        button.addEventListener('click', handleViewFeedback);
-    });
-
-    // Initialize cancel buttons
-    const cancelButtons = document.querySelectorAll('.cancel-btn');
-    cancelButtons.forEach(button => {
-        button.addEventListener('click', handleCancel);
-    });
-});
-
 function handleReturn(event) {
     // Stop event propagation and prevent default
     event.stopPropagation();
@@ -294,7 +240,6 @@ function handleReturn(event) {
         return; // Exit if button is already disabled
     }
     
-    debugLog('Return button clicked');
     const bookId = button.dataset.bookId;
     
     // Get the row to check if book is overdue
@@ -352,12 +297,12 @@ function handleReturn(event) {
         return;
     }
     
-    // This part runs if the book is NOT overdue (i.e., for actual return confirmation)
+    // This part runs if the book is NOT overdue ( for actual return confirmation)
     showPopup('Return Book', 'Are you sure you want to return this book?', () => {
         // OK callback for return confirmation
         hidePopup(); // Hide popup immediately
         
-        fetch('../backend/return_book.php', {
+        fetch('../backend/homepage/return_book.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -366,7 +311,6 @@ function handleReturn(event) {
         })
         .then(res => res.json())
         .then(data => {
-            debugLog('Return response: ' + JSON.stringify(data));
             if (data.success) {
                 // Update the status cell
                 const statusCell = row.querySelector('.status-text');
@@ -374,7 +318,7 @@ function handleReturn(event) {
                 statusCell.className = 'status-text status-returned';
                 
                 // Remove the return button and replace with returned status
-                const actionCell = row.cells[6]; // Index 6 is the actions column
+                const actionCell = row.cells[6]; 
                 actionCell.innerHTML = '<span class="status-text status-returned"><i class="fas fa-check"></i> Returned</span>';
                 
                 // Disable the button
@@ -392,7 +336,6 @@ function handleReturn(event) {
         })
         .catch(err => {
             console.error('Error:', err);
-            debugLog('Error: ' + err.message);
             // Re-enable the button if there was an error
             button.disabled = false;
             button.style.opacity = '1';
@@ -457,7 +400,7 @@ function handleViewFeedback(event) {
     });
     
     // Fetch feedback from the server
-    fetch('../backend/get_feedback.php', {
+    fetch('../backend/homepage/get_feedback.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -466,7 +409,6 @@ function handleViewFeedback(event) {
     })
     .then(res => res.json())
     .then(data => {
-        console.log('Feedback data:', data); // Debug log
         if (data.success) {
             if (data.feedback && typeof data.feedback === 'object' && data.feedback.admin_comment) {
                 popupMessage.innerHTML = `
@@ -487,8 +429,6 @@ function handleViewFeedback(event) {
         popupMessage.textContent = 'Error loading feedback. Please try again.';
     });
 }
-
-// Toast message function - now using unified toast system from toast.js
 
 function handleCancel(event) {
     // Stop event propagation and prevent default
@@ -559,7 +499,7 @@ function handleCancel(event) {
         
         console.log('Sending request with book_id:', bookId);
         
-        fetch('../backend/cancel_request.php', {
+        fetch('../backend/homepage/cancel_request.php', {
             method: 'POST',
             body: formData
         })
@@ -619,69 +559,4 @@ function handleCancel(event) {
             newPopup.style.display = 'none';
         }
     });
-}
-
-function showFeedbackModal(feedback) {
-  let modal = document.querySelector('.feedback-modal');
-  if (!modal) {
-    modal = document.createElement('div');
-    modal.className = 'feedback-modal';
-    modal.innerHTML = `
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h3>Admin Feedback</h3>
-        <div class="feedback-text"></div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-
-    modal.querySelector('.close-modal').addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  }
-
-  modal.querySelector('.feedback-text').textContent = feedback;
-  modal.style.display = 'block';
-}
-
-function createBookRow(book) {
-  const row = document.createElement('tr');
-  
-  // Format dates
-  const borrowDate = new Date(book.borrow_date).toLocaleDateString();
-  const returnDate = new Date(book.return_date).toLocaleDateString();
-  
-  row.innerHTML = `
-    <td>${book.title}</td>
-    <td>${borrowDate}</td>
-    <td>${returnDate}</td>
-    <td>${book.status}</td>
-    <td>
-      ${book.status === 'Pending' ? 
-        `<button class="action-btn cancel" data-book-id="${book.id}">Cancel</button>` :
-        book.status === 'Borrowed' ?
-        `<button class="action-btn return" data-book-id="${book.id}">Return</button>` :
-        book.status === 'Returned' ?
-        `<button class="action-btn feedback" data-book-id="${book.id}">Give Feedback</button>` :
-        ''
-      }
-    </td>
-  `;
-
-  // Add event listeners based on status
-  if (book.status === 'Pending') {
-    row.querySelector('.cancel').addEventListener('click', handleCancel);
-  } else if (book.status === 'Borrowed') {
-    row.querySelector('.return').addEventListener('click', handleReturn);
-  } else if (book.status === 'Returned') {
-    row.querySelector('.feedback').addEventListener('click', handleViewFeedback);
-  }
-
-  return row;
 }

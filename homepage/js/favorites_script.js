@@ -49,7 +49,7 @@ function updateFavorites(bookId, action) {
     formData.append('book_id', bookId);
     formData.append('action', action);
 
-    fetch('../backend/update_favorites.php', {
+    fetch('../backend/homepage/update_favorites.php', {
         method: 'POST',
         body: formData
     })
@@ -119,7 +119,7 @@ function checkIfInFavorites(title) {
   formData.append('operation', 'check');
   formData.append('title', title);
 
-  return fetch('../backend/favorites.php', {
+  return fetch('../backend/homepage/favorites.php', {
     method: 'POST',
     body: formData
   })
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('cover', bookData.cover);
         formData.append('image', bookData.image);
 
-        fetch('../backend/favorites.php', {
+        fetch('../backend/homepage/favorites.php', {
           method: 'POST',
           body: formData
         })
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('cover', bookData.cover);
         formData.append('image', bookData.image);
 
-        fetch('../backend/favorites.php', {
+        fetch('../backend/homepage/favorites.php', {
           method: 'POST',
           body: formData
         })
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 
     // Fetch favorites from backend
-    fetch('../backend/favorites.php', {
+    fetch('../backend/homepage/favorites.php', {
       method: 'POST',
       body: new URLSearchParams({
         'operation': 'get'
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
               formData.append('operation', operation);
               formData.append('title', bookTitle);
 
-              fetch('../backend/favorites.php', {
+              fetch('../backend/homepage/favorites.php', {
                 method: 'POST',
                 body: formData
               })

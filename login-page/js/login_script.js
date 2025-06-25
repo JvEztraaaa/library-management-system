@@ -44,7 +44,7 @@ form.addEventListener("submit", function (event) {
   }
 
   // Send login request to the backend
-  fetch("../backend/login.php", {
+  fetch("../backend/index/login.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

@@ -1,0 +1,83 @@
+[25-Jun-2025 14:53:48 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:53:48 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:53:54 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:53:54 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:54:05 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:54:05 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:54:09 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:54:09 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:54:12 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:54:12 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:54:42 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:54:42 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:55:12 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:55:12 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:55:42 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:55:42 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:56:12 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:56:12 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:56:14 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:56:14 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:56:15 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:56:15 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:56:18 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:56:18 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:56:49 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:56:49 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:57:19 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:57:19 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:57:49 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:57:49 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:58:19 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:58:19 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:58:49 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:58:49 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 14:59:19 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 14:59:19 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:00:32 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:00:32 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:01:32 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:01:32 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:02:32 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:02:32 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:03:07 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:03:07 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:03:19 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:03:19 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:03:49 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:03:49 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:04:18 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:04:18 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:04:22 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:04:22 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:04:29 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:04:29 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:04:29 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:04:29 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:07:36 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:07:36 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:07:38 Europe/Berlin] Operation requested: get
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":152,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Roget's Thesaurus\" has been rejected. Reason: Already Borrowed","book_id":326,"is_read":0,"created_at":"2025-06-25 21:07:26","book_title":"Roget's Thesaurus"}
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: borrow_approved
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":151,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Ilustrado\" has been approved.","book_id":334,"is_read":0,"created_at":"2025-06-25 21:07:23","book_title":"Ilustrado"}
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: calendar_event
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":145,"user_id":4,"type":"calendar_event","message":"New event: asd on 2025-06-25 from 20:44 to 21:44 at asd","book_id":null,"is_read":1,"created_at":"2025-06-25 20:44:41","book_title":null}
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":143,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Encyclopaedia Britannica\" has been rejected. Reason: Already Borrowed","book_id":328,"is_read":1,"created_at":"2025-06-25 20:44:29","book_title":"Encyclopaedia Britannica"}
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: borrow_approved
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":142,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"The World Book Encyclopedia\" has been approved.","book_id":329,"is_read":1,"created_at":"2025-06-25 20:44:27","book_title":"The World Book Encyclopedia"}
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: borrow_rejected
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":141,"user_id":4,"type":"borrow_rejected","message":"Your request to borrow \"Oxford English Dictionary\" has been rejected. Reason: Not Available","book_id":330,"is_read":1,"created_at":"2025-06-25 20:44:24","book_title":"Oxford English Dictionary"}
+[25-Jun-2025 15:07:38 Europe/Berlin] Formatting message for type: borrow_approved
+[25-Jun-2025 15:07:38 Europe/Berlin] Processing notification: {"id":140,"user_id":4,"type":"borrow_approved","message":"Your request to borrow \"Dogeaters\" has been approved.","book_id":331,"is_read":1,"created_at":"2025-06-25 20:44:18","book_title":"Dogeaters"}
+[25-Jun-2025 15:07:38 Europe/Berlin] Found 7 notifications
+[25-Jun-2025 15:08:07 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:08:07 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:08:37 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:08:37 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:09:07 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:09:07 Europe/Berlin] Operation requested: get_unread_count
+[25-Jun-2025 15:09:37 Europe/Berlin] Processing notifications for user ID: 4
+[25-Jun-2025 15:09:37 Europe/Berlin] Operation requested: get_unread_count

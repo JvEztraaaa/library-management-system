@@ -19,7 +19,7 @@ function sendJsonResponse($success, $message, $code = 200) {
 }
 
 // Check if required file exists
-$status_file = __DIR__ . '/../status.php';
+$status_file = __DIR__ . '/../index/status.php';
 if (!file_exists($status_file)) {
     error_log("Required file not found: " . $status_file);
     sendJsonResponse(false, 'Server configuration error', 500);

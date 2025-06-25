@@ -126,7 +126,7 @@ try {
     echo json_encode(['success' => true, 'message' => 'Notification sent successfully']);
 
 } catch (Exception $e) {
-    error_log("Error in send_overdue_notification.php: " . $e->getMessage());
+    error_log("Error in admin_send_overdue_notification.php: " . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'Error sending notification: ' . $e->getMessage()]);
 }
 ?> 

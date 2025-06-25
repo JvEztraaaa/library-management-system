@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); // Prevent default link navigation
 
             try {
-                const response = await fetch('../backend/logout.php', {
+                const response = await fetch('../backend/index/logout.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

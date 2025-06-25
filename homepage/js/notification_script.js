@@ -84,7 +84,7 @@ class NotificationSystem {
 
     async checkNotifications() {
         try {
-            const response = await fetch('../backend/user_notifications.php', {
+            const response = await fetch('../backend/homepage/user_notifications.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -105,7 +105,7 @@ class NotificationSystem {
 
     async loadNotifications() {
         try {
-            const response = await fetch('../backend/user_notifications.php', {
+            const response = await fetch('../backend/homepage/user_notifications.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -161,7 +161,7 @@ class NotificationSystem {
 
     async markAsRead(notificationId) {
         try {
-            const response = await fetch('../backend/user_notifications.php', {
+            const response = await fetch('../backend/homepage/user_notifications.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -183,7 +183,7 @@ class NotificationSystem {
 
     async markAllAsRead() {
         try {
-            const response = await fetch('../backend/user_notifications.php', {
+            const response = await fetch('../backend/homepage/user_notifications.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

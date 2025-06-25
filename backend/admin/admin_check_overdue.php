@@ -1,5 +1,5 @@
 <?php
-require_once 'status.php';
+require_once '../index/status.php';
 
 try {
     // Update status to overdue for books past their due date

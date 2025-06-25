@@ -19,7 +19,7 @@ function sendJsonResponse($success, $message, $code = 200) {
 }
 
 // Check if required file exists
-$notification_file = __DIR__ . '/admin/admin_notification.php';
+$notification_file = __DIR__ . '/../admin/admin_notification.php';
 if (!file_exists($notification_file)) {
     error_log("Required file not found: " . $notification_file);
     sendJsonResponse(false, 'Server configuration error', 500);

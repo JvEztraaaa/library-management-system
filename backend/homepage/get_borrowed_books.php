@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db_connection.php';
+require_once '../db_connection.php';
 
 if (!isset($_SESSION['user_id'])) {
     echo "<tr><td colspan='7' class='placeholder'>Please login to view your borrowed books</td></tr>";

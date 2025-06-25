@@ -1,5 +1,10 @@
 <?php
-require_once 'db_connection.php';
+session_start();
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    echo json_encode(['success' => false, 'message' => 'Unauthorized access']);
+    exit;
+}
+require_once '../db_connection.php';
 
 try {
     // Get all borrowed books that are overdue

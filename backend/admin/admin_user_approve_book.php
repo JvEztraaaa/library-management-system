@@ -6,7 +6,7 @@ require_once 'db_connection.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', 'debug.log');
+// ini_set('error_log', 'debug.log');
 
 // Check if user is logged in and is an admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {

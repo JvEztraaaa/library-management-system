@@ -48,6 +48,8 @@ if ($book_id === false || $book_id <= 0) {
 $user_id = $_SESSION['user_id'];
 error_log("Processing request for user_id: $user_id, book_id: $book_id");
 
+require_once '../db_connection.php';
+
 try {
     $host = "localhost";
     $user = "root";
