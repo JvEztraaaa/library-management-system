@@ -4,8 +4,12 @@ This project is a web-based Library Management System developed as part of our W
 
 ## 💻 Preview
 ![Landing Page Preview](others/images/preview.png) <br><br>
+![Landing Page Preview](others/images/preview4.png) <br><br>
 ![Landing Page Preview](others/images/preview2.png) <br><br>
-![Landing Page Preview](others/images/preview3.png) <br><br>
+![Landing Page Preview](others/images/preview5.png) <br><br>
+![Landing Page Preview](others/images/preview6.png) <br><br>
+![Landing Page Preview](others/images/preview7.png) <br><br>
+![Landing Page Preview](others/images/preview8.png) <br><br>
 
 📁 Built using HTML, CSS, and JavaScript. <br>
 
