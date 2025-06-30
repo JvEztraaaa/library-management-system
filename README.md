@@ -48,5 +48,5 @@ Follow these steps to set up the project on your local machine:
    Open your browser and go to:  
    [http://localhost/library-management-system](http://localhost/library-management-system)<br>
 
-📁 Built using HTML, CSS, and JavaScript.<br>
+📁 Built using HTML, CSS, JavaScript, and PHP.<br>
 🗓️ Completed: June 2025
